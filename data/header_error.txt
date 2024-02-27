@@ -1,0 +1,18 @@
+=> j4-dmenu-desktop-2.18_1: running do_build ...
+[1/2] Building CXX object CMakeFiles/j4-dmenu-desktop.dir/src/main.cc.o
+FAILED: CMakeFiles/j4-dmenu-desktop.dir/src/main.cc.o
+/usr/lib/ccache/bin/g++   -DNDEBUG -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2    -ffile-prefix-map=/builddir/j4-dmenu-desktop-2.18/build=. -std=c++11 -Wall -Wextra -pedantic -O2 -D_WITH_GETLINE -MD -MT CMakeFiles/j4-dmenu-desktop.dir/src/main.cc.o -MF CMakeFiles/j4-dmenu-desktop.dir/src/main.cc.o.d -o CMakeFiles/j4-dmenu-desktop.dir/src/main.cc.o -c /builddir/j4-dmenu-desktop-2.18/src/main.cc
+In file included from ../src/Main.hh:16,
+                 from ../src/main.cc:2:
+../src/Application.hh:31:25: error: 'uint32_t' does not name a type
+   31 | static inline constexpr uint32_t make_istring(const char *s)
+      |                         ^~~~~~~~
+../src/Application.hh:27:1: note: 'uint32_t' is defined in header '<cstdint>'; did you forget to '#include <cstdint>'?
+   26 | #include "LocaleSuffixes.hh"
+  +++ |+#include <cstdint>
+   27 |
+../src/Application.hh:36:11: error: 'uint32_t' does not name a type
+   36 | constexpr uint32_t operator "" _istr(const char *s, size_t)
+      |           ^~~~~~~~
+../src/Application.hh:36:11: note: 'uint32_t' is defined in header '<cstdint>'; did you forget to '#include <cstdint>'?
+../src/Application.hh: In member function 'bool Application::read(const char*, char**, size_t*)':

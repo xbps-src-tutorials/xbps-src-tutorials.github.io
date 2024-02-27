@@ -1,0 +1,19 @@
+  thread 'main' panicked at /host/cargo/registry/src/index.crates.io-6f17d22bba15001f/onig_sys-69.8.1/build.rs:253:17:
+  Unable to find oniguruma in pkg-config, and RUSTONIG_SYSTEM_LIBONIG is set: Could not run `PKG_CONFIG_ALLOW_SYSTEM_CFLAGS="1" PKG_CONFIG_ALLOW_SYSTEM_LIBS="1" "pkg-config" "--libs" "--cflags" "oniguruma" "oniguruma >= 6.9.3"`
+  The pkg-config command could not be found.
+
+  Most likely, you need to install a pkg-config package for your OS.
+  Try `apt install pkg-config`, or `yum install pkg-config`,
+  or `pkg install pkg-config` depending on your distribution.
+
+  If you've already installed it, ensure the pkg-config command is one of the
+  directories in the PATH environment variable.
+
+  If you did not expect this build to link to a pre-installed system library,
+  then check documentation of the onig_sys crate for an option to
+  build the library from source, or disable features or dependencies
+  that require pkg-config.
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+warning: build failed, waiting for other jobs to finish...
+=> ERROR: bat-0.24.0_1: do_build: '${make_cmd} build --release --locked --target ${RUST_TARGET} ${configure_args}' exited with 101
+=> ERROR:   in do_build() at common/build-style/cargo.sh:8

@@ -1,0 +1,409 @@
+~=> xbps-src: updating repositories for host (x86_64)...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/bootstrap/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/x86_64-repodata' ...
+~x86_64-repodata: [1808KB 0%] 163MB/s ETA: 00m00s
+~x86_64-repodata: [1808KB 7%] 301KB/s ETA: 00m13s
+~x86_64-repodata: [1808KB 28%] 361KB/s ETA: 00m05s
+~x86_64-repodata: [1808KB 43%] 323KB/s ETA: 00m03s
+~x86_64-repodata: [1808KB 73%] 390KB/s ETA: 00m01s
+~x86_64-repodata: [1808KB 80%] 308KB/s ETA: 00m01s
+~x86_64-repodata: [1808KB 91%] 297KB/s ETA: 00m00s
+~x86_64-repodata: 1808KB [avg rate: 326KB/s]
+~[*] Updating repository `https://repo-default.voidlinux.org/current/nonfree/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/debug/x86_64-repodata' ...
+~x86_64-repodata: [848KB 0%] 163MB/s ETA: 00m00s
+~x86_64-repodata: [848KB 28%] 559KB/s ETA: 00m02s
+~x86_64-repodata: [848KB 98%] 584KB/s ETA: 00m00s
+~x86_64-repodata: 848KB [avg rate: 595KB/s]
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/bootstrap/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/x86_64-repodata' ...
+~x86_64-repodata: [680KB 0%] 95MB/s ETA: 00m00s
+~x86_64-repodata: 680KB [avg rate: 16GB/s]
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/nonfree/x86_64-repodata' ...
+~=> xbps-src: updating software in / masterdir...
+~=> xbps-src: cleaning up / masterdir...
+~=> oniguruma-6.9.9_1: removing autodeps, please wait...
+~=> oniguruma-6.9.9_1: building with [gnu-configure] for x86_64...
+~   [runtime] oniguruma-6.9.9_1: found (https://repo-default.voidlinux.org/current)
+~=> oniguruma-6.9.9_1: running do-fetch hook: 00-distfiles ...
+~=> oniguruma-6.9.9_1: running do-extract hook: 00-distfiles ...
+~=> oniguruma-6.9.9_1: extracting distfile(s), please wait...
+~=> oniguruma-6.9.9_1: running do-patch hook: 00-patches ...
+~=> oniguruma-6.9.9_1: running pre-configure hook: 00-gnu-configure-asneeded ...
+~=> oniguruma-6.9.9_1: running pre-configure hook: 01-override-config ...
+~=> oniguruma-6.9.9_1: running pre-configure hook: 02-script-wrapper ...
+~=> oniguruma-6.9.9_1: running do_configure ...
+~checking for a BSD-compatible install... /builddir/.xbps-oniguruma/wrappers/install -c
+~checking whether build environment is sane... yes
+~checking for a race-free mkdir -p... /usr/bin/mkdir -p
+~checking for gawk... gawk
+~checking whether make sets $(MAKE)... yes
+~checking whether make supports nested variables... yes
+~checking for x86_64-unknown-linux-gnu-gcc... cc
+~checking whether the C compiler works... yes
+~checking for C compiler default output file name... a.out
+~checking for suffix of executables... 
+~checking whether we are cross compiling... no
+~checking for suffix of object files... o
+~checking whether the compiler supports GNU C... yes
+~checking whether cc accepts -g... yes
+~checking for cc option to enable C11 features... none needed
+~checking whether cc understands -c and -o together... yes
+~checking whether make supports the include directive... yes (GNU style)
+~checking dependency style of cc... gcc3
+~checking build system type... x86_64-unknown-linux-gnu
+~checking host system type... x86_64-unknown-linux-gnu
+~checking how to print strings... printf
+~checking for a sed that does not truncate output... /usr/bin/sed
+~checking for grep that handles long lines and -e... /usr/bin/grep
+~checking for egrep... /usr/bin/grep -E
+~checking for fgrep... /usr/bin/grep -F
+~checking for ld used by cc... ld
+~checking if the linker (ld) is GNU ld... yes
+~checking for BSD- or MS-compatible name lister (nm)... nm
+~checking the name lister (nm) interface... BSD nm
+~checking whether ln -s works... yes
+~checking the maximum length of command line arguments... 1572864
+~checking how to convert x86_64-unknown-linux-gnu file names to x86_64-unknown-linux-gnu format... func_convert_file_noop
+~checking how to convert x86_64-unknown-linux-gnu file names to toolchain format... func_convert_file_noop
+~checking for ld option to reload object files... -r
+~checking for x86_64-unknown-linux-gnu-file... no
+~checking for file... file
+~checking for x86_64-unknown-linux-gnu-objdump... objdump
+~checking how to recognize dependent libraries... pass_all
+~checking for x86_64-unknown-linux-gnu-dlltool... no
+~checking for dlltool... no
+~checking how to associate runtime and link libraries... printf %s\n
+~checking for x86_64-unknown-linux-gnu-ar... ar
+~checking for archiver @FILE support... @
+~checking for x86_64-unknown-linux-gnu-strip... strip
+~checking for x86_64-unknown-linux-gnu-ranlib... ranlib
+~checking command to parse nm output from cc object... ok
+~checking for sysroot... no
+~checking for a working dd... /usr/bin/dd
+~checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+~checking for x86_64-unknown-linux-gnu-mt... no
+~checking for mt... no
+~checking if : is a manifest tool... no
+~checking for stdio.h... yes
+~checking for stdlib.h... yes
+~checking for string.h... yes
+~checking for inttypes.h... yes
+~checking for stdint.h... yes
+~checking for strings.h... yes
+~checking for sys/stat.h... yes
+~checking for sys/types.h... yes
+~checking for unistd.h... yes
+~checking for dlfcn.h... yes
+~checking for objdir... .libs
+~checking if cc supports -fno-rtti -fno-exceptions... no
+~checking for cc option to produce PIC... -fPIC -DPIC
+~checking if cc PIC flag -fPIC -DPIC works... yes
+~checking if cc static flag -static works... yes
+~checking if cc supports -c -o file.o... yes
+~checking if cc supports -c -o file.o... (cached) yes
+~checking whether the cc linker (ld -m elf_x86_64) supports shared libraries... yes
+~checking whether -lc should be explicitly linked in... no
+~checking dynamic linker characteristics... GNU/Linux ld.so
+~checking how to hardcode library paths into programs... immediate
+~checking whether stripping libraries is possible... no
+~checking if libtool supports shared libraries... yes
+~checking whether to build shared libraries... yes
+~checking whether to build static libraries... yes
+~checking whether make sets $(MAKE)... (cached) yes
+~checking for sys/time.h... yes
+~checking for unistd.h... (cached) yes
+~checking for sys/times.h... yes
+~checking size of int... 4
+~checking size of long... 8
+~checking size of long long... 8
+~checking size of void*... 8
+~checking for size_t... yes
+~checking for working alloca.h... yes
+~checking for alloca... yes
+~checking that generated files are newer than configure... done
+~configure: creating ./config.status
+~config.status: creating Makefile
+~config.status: creating src/Makefile
+~config.status: creating test/Makefile
+~config.status: creating sample/Makefile
+~config.status: creating onig-config
+~config.status: creating src/config.h
+~config.status: executing depfiles commands
+~config.status: executing libtool commands
+~config.status: executing default commands
+~=> oniguruma-6.9.9_1: running pre-build hook: 02-script-wrapper ...
+~=> oniguruma-6.9.9_1: running do_build ...
+~Making all in src
+~make[1]: Entering directory '/builddir/oniguruma-6.9.9/src'
+~make  all-am
+~make[2]: Entering directory '/builddir/oniguruma-6.9.9/src'
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regparse.lo -MD -MP -MF .deps/regparse.Tpo -c -o regparse.lo regparse.c
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regcomp.lo -MD -MP -MF .deps/regcomp.Tpo -c -o regcomp.lo regcomp.c
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regexec.lo -MD -MP -MF .deps/regexec.Tpo -c -o regexec.lo regexec.c
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regenc.lo -MD -MP -MF .deps/regenc.Tpo -c -o regenc.lo regenc.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regexec.lo -MD -MP -MF .deps/regexec.Tpo -c regexec.c  -fPIC -DPIC -o .libs/regexec.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regenc.lo -MD -MP -MF .deps/regenc.Tpo -c regenc.c  -fPIC -DPIC -o .libs/regenc.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regparse.lo -MD -MP -MF .deps/regparse.Tpo -c regparse.c  -fPIC -DPIC -o .libs/regparse.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regcomp.lo -MD -MP -MF .deps/regcomp.Tpo -c regcomp.c  -fPIC -DPIC -o .libs/regcomp.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regenc.lo -MD -MP -MF .deps/regenc.Tpo -c regenc.c -o regenc.o >/dev/null 2>&1
+~mv -f .deps/regenc.Tpo .deps/regenc.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regerror.lo -MD -MP -MF .deps/regerror.Tpo -c -o regerror.lo regerror.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regerror.lo -MD -MP -MF .deps/regerror.Tpo -c regerror.c  -fPIC -DPIC -o .libs/regerror.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regerror.lo -MD -MP -MF .deps/regerror.Tpo -c regerror.c -o regerror.o >/dev/null 2>&1
+~mv -f .deps/regerror.Tpo .deps/regerror.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regext.lo -MD -MP -MF .deps/regext.Tpo -c -o regext.lo regext.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regext.lo -MD -MP -MF .deps/regext.Tpo -c regext.c  -fPIC -DPIC -o .libs/regext.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regext.lo -MD -MP -MF .deps/regext.Tpo -c regext.c -o regext.o >/dev/null 2>&1
+~mv -f .deps/regext.Tpo .deps/regext.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regsyntax.lo -MD -MP -MF .deps/regsyntax.Tpo -c -o regsyntax.lo regsyntax.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regsyntax.lo -MD -MP -MF .deps/regsyntax.Tpo -c regsyntax.c  -fPIC -DPIC -o .libs/regsyntax.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regsyntax.lo -MD -MP -MF .deps/regsyntax.Tpo -c regsyntax.c -o regsyntax.o >/dev/null 2>&1
+~mv -f .deps/regsyntax.Tpo .deps/regsyntax.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regtrav.lo -MD -MP -MF .deps/regtrav.Tpo -c -o regtrav.lo regtrav.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regtrav.lo -MD -MP -MF .deps/regtrav.Tpo -c regtrav.c  -fPIC -DPIC -o .libs/regtrav.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regcomp.lo -MD -MP -MF .deps/regcomp.Tpo -c regcomp.c -o regcomp.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regtrav.lo -MD -MP -MF .deps/regtrav.Tpo -c regtrav.c -o regtrav.o >/dev/null 2>&1
+~mv -f .deps/regtrav.Tpo .deps/regtrav.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regversion.lo -MD -MP -MF .deps/regversion.Tpo -c -o regversion.lo regversion.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regversion.lo -MD -MP -MF .deps/regversion.Tpo -c regversion.c  -fPIC -DPIC -o .libs/regversion.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regexec.lo -MD -MP -MF .deps/regexec.Tpo -c regexec.c -o regexec.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regversion.lo -MD -MP -MF .deps/regversion.Tpo -c regversion.c -o regversion.o >/dev/null 2>&1
+~mv -f .deps/regversion.Tpo .deps/regversion.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT st.lo -MD -MP -MF .deps/st.Tpo -c -o st.lo st.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT st.lo -MD -MP -MF .deps/st.Tpo -c st.c  -fPIC -DPIC -o .libs/st.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT st.lo -MD -MP -MF .deps/st.Tpo -c st.c -o st.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT regparse.lo -MD -MP -MF .deps/regparse.Tpo -c regparse.c -o regparse.o >/dev/null 2>&1
+~mv -f .deps/st.Tpo .deps/st.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT reggnu.lo -MD -MP -MF .deps/reggnu.Tpo -c -o reggnu.lo reggnu.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT reggnu.lo -MD -MP -MF .deps/reggnu.Tpo -c reggnu.c  -fPIC -DPIC -o .libs/reggnu.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT reggnu.lo -MD -MP -MF .deps/reggnu.Tpo -c reggnu.c -o reggnu.o >/dev/null 2>&1
+~mv -f .deps/reggnu.Tpo .deps/reggnu.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode.lo -MD -MP -MF .deps/unicode.Tpo -c -o unicode.lo unicode.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode.lo -MD -MP -MF .deps/unicode.Tpo -c unicode.c  -fPIC -DPIC -o .libs/unicode.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode.lo -MD -MP -MF .deps/unicode.Tpo -c unicode.c -o unicode.o >/dev/null 2>&1
+~mv -f .deps/unicode.Tpo .deps/unicode.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_unfold_key.lo -MD -MP -MF .deps/unicode_unfold_key.Tpo -c -o unicode_unfold_key.lo unicode_unfold_key.c
+~mv -f .deps/regcomp.Tpo .deps/regcomp.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_fold1_key.lo -MD -MP -MF .deps/unicode_fold1_key.Tpo -c -o unicode_fold1_key.lo unicode_fold1_key.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_unfold_key.lo -MD -MP -MF .deps/unicode_unfold_key.Tpo -c unicode_unfold_key.c  -fPIC -DPIC -o .libs/unicode_unfold_key.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_unfold_key.lo -MD -MP -MF .deps/unicode_unfold_key.Tpo -c unicode_unfold_key.c -o unicode_unfold_key.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_fold1_key.lo -MD -MP -MF .deps/unicode_fold1_key.Tpo -c unicode_fold1_key.c  -fPIC -DPIC -o .libs/unicode_fold1_key.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_fold1_key.lo -MD -MP -MF .deps/unicode_fold1_key.Tpo -c unicode_fold1_key.c -o unicode_fold1_key.o >/dev/null 2>&1
+~mv -f .deps/unicode_unfold_key.Tpo .deps/unicode_unfold_key.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_fold2_key.lo -MD -MP -MF .deps/unicode_fold2_key.Tpo -c -o unicode_fold2_key.lo unicode_fold2_key.c
+~mv -f .deps/unicode_fold1_key.Tpo .deps/unicode_fold1_key.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_fold3_key.lo -MD -MP -MF .deps/unicode_fold3_key.Tpo -c -o unicode_fold3_key.lo unicode_fold3_key.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_fold2_key.lo -MD -MP -MF .deps/unicode_fold2_key.Tpo -c unicode_fold2_key.c  -fPIC -DPIC -o .libs/unicode_fold2_key.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_fold3_key.lo -MD -MP -MF .deps/unicode_fold3_key.Tpo -c unicode_fold3_key.c  -fPIC -DPIC -o .libs/unicode_fold3_key.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_fold2_key.lo -MD -MP -MF .deps/unicode_fold2_key.Tpo -c unicode_fold2_key.c -o unicode_fold2_key.o >/dev/null 2>&1
+~mv -f .deps/unicode_fold2_key.Tpo .deps/unicode_fold2_key.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT ascii.lo -MD -MP -MF .deps/ascii.Tpo -c -o ascii.lo ascii.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT ascii.lo -MD -MP -MF .deps/ascii.Tpo -c ascii.c  -fPIC -DPIC -o .libs/ascii.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT unicode_fold3_key.lo -MD -MP -MF .deps/unicode_fold3_key.Tpo -c unicode_fold3_key.c -o unicode_fold3_key.o >/dev/null 2>&1
+~mv -f .deps/unicode_fold3_key.Tpo .deps/unicode_fold3_key.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf8.lo -MD -MP -MF .deps/utf8.Tpo -c -o utf8.lo utf8.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT ascii.lo -MD -MP -MF .deps/ascii.Tpo -c ascii.c -o ascii.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf8.lo -MD -MP -MF .deps/utf8.Tpo -c utf8.c  -fPIC -DPIC -o .libs/utf8.o
+~mv -f .deps/ascii.Tpo .deps/ascii.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf16_be.lo -MD -MP -MF .deps/utf16_be.Tpo -c -o utf16_be.lo utf16_be.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf8.lo -MD -MP -MF .deps/utf8.Tpo -c utf8.c -o utf8.o >/dev/null 2>&1
+~mv -f .deps/regexec.Tpo .deps/regexec.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf16_le.lo -MD -MP -MF .deps/utf16_le.Tpo -c -o utf16_le.lo utf16_le.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf16_le.lo -MD -MP -MF .deps/utf16_le.Tpo -c utf16_le.c  -fPIC -DPIC -o .libs/utf16_le.o
+~mv -f .deps/utf8.Tpo .deps/utf8.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf32_be.lo -MD -MP -MF .deps/utf32_be.Tpo -c -o utf32_be.lo utf32_be.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf16_be.lo -MD -MP -MF .deps/utf16_be.Tpo -c utf16_be.c  -fPIC -DPIC -o .libs/utf16_be.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf32_be.lo -MD -MP -MF .deps/utf32_be.Tpo -c utf32_be.c  -fPIC -DPIC -o .libs/utf32_be.o
+~mv -f .deps/regparse.Tpo .deps/regparse.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf32_le.lo -MD -MP -MF .deps/utf32_le.Tpo -c -o utf32_le.lo utf32_le.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf32_le.lo -MD -MP -MF .deps/utf32_le.Tpo -c utf32_le.c  -fPIC -DPIC -o .libs/utf32_le.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf16_be.lo -MD -MP -MF .deps/utf16_be.Tpo -c utf16_be.c -o utf16_be.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf32_be.lo -MD -MP -MF .deps/utf32_be.Tpo -c utf32_be.c -o utf32_be.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf16_le.lo -MD -MP -MF .deps/utf16_le.Tpo -c utf16_le.c -o utf16_le.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT utf32_le.lo -MD -MP -MF .deps/utf32_le.Tpo -c utf32_le.c -o utf32_le.o >/dev/null 2>&1
+~mv -f .deps/utf32_be.Tpo .deps/utf32_be.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_jp.lo -MD -MP -MF .deps/euc_jp.Tpo -c -o euc_jp.lo euc_jp.c
+~mv -f .deps/utf16_be.Tpo .deps/utf16_be.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_jp_prop.lo -MD -MP -MF .deps/euc_jp_prop.Tpo -c -o euc_jp_prop.lo euc_jp_prop.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_jp.lo -MD -MP -MF .deps/euc_jp.Tpo -c euc_jp.c  -fPIC -DPIC -o .libs/euc_jp.o
+~mv -f .deps/utf32_le.Tpo .deps/utf32_le.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT sjis.lo -MD -MP -MF .deps/sjis.Tpo -c -o sjis.lo sjis.c
+~mv -f .deps/utf16_le.Tpo .deps/utf16_le.Plo
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT sjis.lo -MD -MP -MF .deps/sjis.Tpo -c sjis.c  -fPIC -DPIC -o .libs/sjis.o
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT sjis_prop.lo -MD -MP -MF .deps/sjis_prop.Tpo -c -o sjis_prop.lo sjis_prop.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_jp_prop.lo -MD -MP -MF .deps/euc_jp_prop.Tpo -c euc_jp_prop.c  -fPIC -DPIC -o .libs/euc_jp_prop.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_jp_prop.lo -MD -MP -MF .deps/euc_jp_prop.Tpo -c euc_jp_prop.c -o euc_jp_prop.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT sjis_prop.lo -MD -MP -MF .deps/sjis_prop.Tpo -c sjis_prop.c  -fPIC -DPIC -o .libs/sjis_prop.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_jp.lo -MD -MP -MF .deps/euc_jp.Tpo -c euc_jp.c -o euc_jp.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT sjis.lo -MD -MP -MF .deps/sjis.Tpo -c sjis.c -o sjis.o >/dev/null 2>&1
+~mv -f .deps/euc_jp_prop.Tpo .deps/euc_jp_prop.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_1.lo -MD -MP -MF .deps/iso8859_1.Tpo -c -o iso8859_1.lo iso8859_1.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_1.lo -MD -MP -MF .deps/iso8859_1.Tpo -c iso8859_1.c  -fPIC -DPIC -o .libs/iso8859_1.o
+~mv -f .deps/sjis.Tpo .deps/sjis.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_2.lo -MD -MP -MF .deps/iso8859_2.Tpo -c -o iso8859_2.lo iso8859_2.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT sjis_prop.lo -MD -MP -MF .deps/sjis_prop.Tpo -c sjis_prop.c -o sjis_prop.o >/dev/null 2>&1
+~mv -f .deps/euc_jp.Tpo .deps/euc_jp.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_3.lo -MD -MP -MF .deps/iso8859_3.Tpo -c -o iso8859_3.lo iso8859_3.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_2.lo -MD -MP -MF .deps/iso8859_2.Tpo -c iso8859_2.c  -fPIC -DPIC -o .libs/iso8859_2.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_3.lo -MD -MP -MF .deps/iso8859_3.Tpo -c iso8859_3.c  -fPIC -DPIC -o .libs/iso8859_3.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_1.lo -MD -MP -MF .deps/iso8859_1.Tpo -c iso8859_1.c -o iso8859_1.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_2.lo -MD -MP -MF .deps/iso8859_2.Tpo -c iso8859_2.c -o iso8859_2.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_3.lo -MD -MP -MF .deps/iso8859_3.Tpo -c iso8859_3.c -o iso8859_3.o >/dev/null 2>&1
+~mv -f .deps/iso8859_1.Tpo .deps/iso8859_1.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_4.lo -MD -MP -MF .deps/iso8859_4.Tpo -c -o iso8859_4.lo iso8859_4.c
+~mv -f .deps/sjis_prop.Tpo .deps/sjis_prop.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_5.lo -MD -MP -MF .deps/iso8859_5.Tpo -c -o iso8859_5.lo iso8859_5.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_5.lo -MD -MP -MF .deps/iso8859_5.Tpo -c iso8859_5.c  -fPIC -DPIC -o .libs/iso8859_5.o
+~mv -f .deps/iso8859_2.Tpo .deps/iso8859_2.Plo
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_4.lo -MD -MP -MF .deps/iso8859_4.Tpo -c iso8859_4.c  -fPIC -DPIC -o .libs/iso8859_4.o
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_6.lo -MD -MP -MF .deps/iso8859_6.Tpo -c -o iso8859_6.lo iso8859_6.c
+~mv -f .deps/iso8859_3.Tpo .deps/iso8859_3.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_7.lo -MD -MP -MF .deps/iso8859_7.Tpo -c -o iso8859_7.lo iso8859_7.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_6.lo -MD -MP -MF .deps/iso8859_6.Tpo -c iso8859_6.c  -fPIC -DPIC -o .libs/iso8859_6.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_4.lo -MD -MP -MF .deps/iso8859_4.Tpo -c iso8859_4.c -o iso8859_4.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_5.lo -MD -MP -MF .deps/iso8859_5.Tpo -c iso8859_5.c -o iso8859_5.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_7.lo -MD -MP -MF .deps/iso8859_7.Tpo -c iso8859_7.c  -fPIC -DPIC -o .libs/iso8859_7.o
+~mv -f .deps/iso8859_4.Tpo .deps/iso8859_4.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_8.lo -MD -MP -MF .deps/iso8859_8.Tpo -c -o iso8859_8.lo iso8859_8.c
+~mv -f .deps/iso8859_5.Tpo .deps/iso8859_5.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_9.lo -MD -MP -MF .deps/iso8859_9.Tpo -c -o iso8859_9.lo iso8859_9.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_7.lo -MD -MP -MF .deps/iso8859_7.Tpo -c iso8859_7.c -o iso8859_7.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_6.lo -MD -MP -MF .deps/iso8859_6.Tpo -c iso8859_6.c -o iso8859_6.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_8.lo -MD -MP -MF .deps/iso8859_8.Tpo -c iso8859_8.c  -fPIC -DPIC -o .libs/iso8859_8.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_9.lo -MD -MP -MF .deps/iso8859_9.Tpo -c iso8859_9.c  -fPIC -DPIC -o .libs/iso8859_9.o
+~mv -f .deps/iso8859_7.Tpo .deps/iso8859_7.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_10.lo -MD -MP -MF .deps/iso8859_10.Tpo -c -o iso8859_10.lo iso8859_10.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_8.lo -MD -MP -MF .deps/iso8859_8.Tpo -c iso8859_8.c -o iso8859_8.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_9.lo -MD -MP -MF .deps/iso8859_9.Tpo -c iso8859_9.c -o iso8859_9.o >/dev/null 2>&1
+~mv -f .deps/iso8859_6.Tpo .deps/iso8859_6.Plo
+~mv -f .deps/iso8859_8.Tpo .deps/iso8859_8.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_11.lo -MD -MP -MF .deps/iso8859_11.Tpo -c -o iso8859_11.lo iso8859_11.c
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_13.lo -MD -MP -MF .deps/iso8859_13.Tpo -c -o iso8859_13.lo iso8859_13.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_10.lo -MD -MP -MF .deps/iso8859_10.Tpo -c iso8859_10.c  -fPIC -DPIC -o .libs/iso8859_10.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_13.lo -MD -MP -MF .deps/iso8859_13.Tpo -c iso8859_13.c  -fPIC -DPIC -o .libs/iso8859_13.o
+~mv -f .deps/iso8859_9.Tpo .deps/iso8859_9.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_14.lo -MD -MP -MF .deps/iso8859_14.Tpo -c -o iso8859_14.lo iso8859_14.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_11.lo -MD -MP -MF .deps/iso8859_11.Tpo -c iso8859_11.c  -fPIC -DPIC -o .libs/iso8859_11.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_10.lo -MD -MP -MF .deps/iso8859_10.Tpo -c iso8859_10.c -o iso8859_10.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_14.lo -MD -MP -MF .deps/iso8859_14.Tpo -c iso8859_14.c  -fPIC -DPIC -o .libs/iso8859_14.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_11.lo -MD -MP -MF .deps/iso8859_11.Tpo -c iso8859_11.c -o iso8859_11.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_13.lo -MD -MP -MF .deps/iso8859_13.Tpo -c iso8859_13.c -o iso8859_13.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_14.lo -MD -MP -MF .deps/iso8859_14.Tpo -c iso8859_14.c -o iso8859_14.o >/dev/null 2>&1
+~mv -f .deps/iso8859_10.Tpo .deps/iso8859_10.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_15.lo -MD -MP -MF .deps/iso8859_15.Tpo -c -o iso8859_15.lo iso8859_15.c
+~mv -f .deps/iso8859_11.Tpo .deps/iso8859_11.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_16.lo -MD -MP -MF .deps/iso8859_16.Tpo -c -o iso8859_16.lo iso8859_16.c
+~mv -f .deps/iso8859_13.Tpo .deps/iso8859_13.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_tw.lo -MD -MP -MF .deps/euc_tw.Tpo -c -o euc_tw.lo euc_tw.c
+~mv -f .deps/iso8859_14.Tpo .deps/iso8859_14.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_kr.lo -MD -MP -MF .deps/euc_kr.Tpo -c -o euc_kr.lo euc_kr.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_15.lo -MD -MP -MF .deps/iso8859_15.Tpo -c iso8859_15.c  -fPIC -DPIC -o .libs/iso8859_15.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_tw.lo -MD -MP -MF .deps/euc_tw.Tpo -c euc_tw.c  -fPIC -DPIC -o .libs/euc_tw.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_16.lo -MD -MP -MF .deps/iso8859_16.Tpo -c iso8859_16.c  -fPIC -DPIC -o .libs/iso8859_16.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_kr.lo -MD -MP -MF .deps/euc_kr.Tpo -c euc_kr.c  -fPIC -DPIC -o .libs/euc_kr.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_16.lo -MD -MP -MF .deps/iso8859_16.Tpo -c iso8859_16.c -o iso8859_16.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_kr.lo -MD -MP -MF .deps/euc_kr.Tpo -c euc_kr.c -o euc_kr.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT euc_tw.lo -MD -MP -MF .deps/euc_tw.Tpo -c euc_tw.c -o euc_tw.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT iso8859_15.lo -MD -MP -MF .deps/iso8859_15.Tpo -c iso8859_15.c -o iso8859_15.o >/dev/null 2>&1
+~mv -f .deps/iso8859_16.Tpo .deps/iso8859_16.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT big5.lo -MD -MP -MF .deps/big5.Tpo -c -o big5.lo big5.c
+~mv -f .deps/euc_kr.Tpo .deps/euc_kr.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT gb18030.lo -MD -MP -MF .deps/gb18030.Tpo -c -o gb18030.lo gb18030.c
+~mv -f .deps/euc_tw.Tpo .deps/euc_tw.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT koi8_r.lo -MD -MP -MF .deps/koi8_r.Tpo -c -o koi8_r.lo koi8_r.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT big5.lo -MD -MP -MF .deps/big5.Tpo -c big5.c  -fPIC -DPIC -o .libs/big5.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT gb18030.lo -MD -MP -MF .deps/gb18030.Tpo -c gb18030.c  -fPIC -DPIC -o .libs/gb18030.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT koi8_r.lo -MD -MP -MF .deps/koi8_r.Tpo -c koi8_r.c  -fPIC -DPIC -o .libs/koi8_r.o
+~mv -f .deps/iso8859_15.Tpo .deps/iso8859_15.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT cp1251.lo -MD -MP -MF .deps/cp1251.Tpo -c -o cp1251.lo cp1251.c
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT cp1251.lo -MD -MP -MF .deps/cp1251.Tpo -c cp1251.c  -fPIC -DPIC -o .libs/cp1251.o
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT koi8_r.lo -MD -MP -MF .deps/koi8_r.Tpo -c koi8_r.c -o koi8_r.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT big5.lo -MD -MP -MF .deps/big5.Tpo -c big5.c -o big5.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT gb18030.lo -MD -MP -MF .deps/gb18030.Tpo -c gb18030.c -o gb18030.o >/dev/null 2>&1
+~mv -f .deps/koi8_r.Tpo .deps/koi8_r.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=compile cc -DHAVE_CONFIG_H -I.  -I..  -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT onig_init.lo -MD -MP -MF .deps/onig_init.Tpo -c -o onig_init.lo onig_init.c
+~mv -f .deps/big5.Tpo .deps/big5.Plo
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT cp1251.lo -MD -MP -MF .deps/cp1251.Tpo -c cp1251.c -o cp1251.o >/dev/null 2>&1
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT onig_init.lo -MD -MP -MF .deps/onig_init.Tpo -c onig_init.c  -fPIC -DPIC -o .libs/onig_init.o
+~mv -f .deps/gb18030.Tpo .deps/gb18030.Plo
+~mv -f .deps/cp1251.Tpo .deps/cp1251.Plo
+~libtool: compile:  cc -DHAVE_CONFIG_H -I. -I.. -Wall -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe -ffile-prefix-map=/builddir/oniguruma-6.9.9=. -MT onig_init.lo -MD -MP -MF .deps/onig_init.Tpo -c onig_init.c -o onig_init.o >/dev/null 2>&1
+~mv -f .deps/onig_init.Tpo .deps/onig_init.Plo
+~/bin/sh ../libtool  --tag=CC   --mode=link cc -Wall   -fstack-clash-protection -D_FORTIFY_SOURCE=2 -mtune=generic -O2 -pipe    -ffile-prefix-map=/builddir/oniguruma-6.9.9=.  -version-info 9:0:4  -Wl,-z,relro -Wl,-z,now -Wl,--as-needed     -o libonig.la -rpath /usr/lib64 regparse.lo regcomp.lo regexec.lo regenc.lo regerror.lo regext.lo regsyntax.lo regtrav.lo regversion.lo st.lo reggnu.lo  unicode.lo unicode_unfold_key.lo unicode_fold1_key.lo unicode_fold2_key.lo unicode_fold3_key.lo ascii.lo utf8.lo utf16_be.lo utf16_le.lo utf32_be.lo utf32_le.lo euc_jp.lo euc_jp_prop.lo sjis.lo sjis_prop.lo iso8859_1.lo iso8859_2.lo iso8859_3.lo iso8859_4.lo iso8859_5.lo iso8859_6.lo iso8859_7.lo iso8859_8.lo iso8859_9.lo iso8859_10.lo iso8859_11.lo iso8859_13.lo iso8859_14.lo iso8859_15.lo iso8859_16.lo euc_tw.lo euc_kr.lo big5.lo gb18030.lo koi8_r.lo cp1251.lo onig_init.lo  
+~libtool: link: cc -shared -Wl,--as-needed  -fPIC -DPIC  .libs/regparse.o .libs/regcomp.o .libs/regexec.o .libs/regenc.o .libs/regerror.o .libs/regext.o .libs/regsyntax.o .libs/regtrav.o .libs/regversion.o .libs/st.o .libs/reggnu.o .libs/unicode.o .libs/unicode_unfold_key.o .libs/unicode_fold1_key.o .libs/unicode_fold2_key.o .libs/unicode_fold3_key.o .libs/ascii.o .libs/utf8.o .libs/utf16_be.o .libs/utf16_le.o .libs/utf32_be.o .libs/utf32_le.o .libs/euc_jp.o .libs/euc_jp_prop.o .libs/sjis.o .libs/sjis_prop.o .libs/iso8859_1.o .libs/iso8859_2.o .libs/iso8859_3.o .libs/iso8859_4.o .libs/iso8859_5.o .libs/iso8859_6.o .libs/iso8859_7.o .libs/iso8859_8.o .libs/iso8859_9.o .libs/iso8859_10.o .libs/iso8859_11.o .libs/iso8859_13.o .libs/iso8859_14.o .libs/iso8859_15.o .libs/iso8859_16.o .libs/euc_tw.o .libs/euc_kr.o .libs/big5.o .libs/gb18030.o .libs/koi8_r.o .libs/cp1251.o .libs/onig_init.o    -mtune=generic -O2 -Wl,-z -Wl,relro -Wl,-z -Wl,now -Wl,--as-needed   -Wl,-soname -Wl,libonig.so.5 -o .libs/libonig.so.5.4.0
+~libtool: link: (cd ".libs" && rm -f "libonig.so.5" && ln -s "libonig.so.5.4.0" "libonig.so.5")
+~libtool: link: (cd ".libs" && rm -f "libonig.so" && ln -s "libonig.so.5.4.0" "libonig.so")
+~libtool: link: ar cr .libs/libonig.a  regparse.o regcomp.o regexec.o regenc.o regerror.o regext.o regsyntax.o regtrav.o regversion.o st.o reggnu.o unicode.o unicode_unfold_key.o unicode_fold1_key.o unicode_fold2_key.o unicode_fold3_key.o ascii.o utf8.o utf16_be.o utf16_le.o utf32_be.o utf32_le.o euc_jp.o euc_jp_prop.o sjis.o sjis_prop.o iso8859_1.o iso8859_2.o iso8859_3.o iso8859_4.o iso8859_5.o iso8859_6.o iso8859_7.o iso8859_8.o iso8859_9.o iso8859_10.o iso8859_11.o iso8859_13.o iso8859_14.o iso8859_15.o iso8859_16.o euc_tw.o euc_kr.o big5.o gb18030.o koi8_r.o cp1251.o onig_init.o
+~libtool: link: ranlib .libs/libonig.a
+~libtool: link: ( cd ".libs" && rm -f "libonig.la" && ln -s "../libonig.la" "libonig.la" )
+~make[2]: Leaving directory '/builddir/oniguruma-6.9.9/src'
+~make[1]: Leaving directory '/builddir/oniguruma-6.9.9/src'
+~Making all in test
+~make[1]: Entering directory '/builddir/oniguruma-6.9.9/test'
+~make[1]: Nothing to be done for 'all'.
+~make[1]: Leaving directory '/builddir/oniguruma-6.9.9/test'
+~Making all in sample
+~make[1]: Entering directory '/builddir/oniguruma-6.9.9/sample'
+~make[1]: Nothing to be done for 'all'.
+~make[1]: Leaving directory '/builddir/oniguruma-6.9.9/sample'
+~make[1]: Entering directory '/builddir/oniguruma-6.9.9'
+~sed -e 's,[@]datadir[@],/usr/share,g' -e 's,[@]datarootdir[@],/usr/share,g' -e 's,[@]PACKAGE_VERSION[@],6.9.9,g' -e 's,[@]prefix[@],/usr,g' -e 's,[@]exec_prefix[@],/usr,g' -e 's,[@]libdir[@],/usr/lib64,g' -e 's,[@]includedir[@],/usr/include,g' < ./oniguruma.pc.in > oniguruma.pc
+~make[1]: Leaving directory '/builddir/oniguruma-6.9.9'
+~=> oniguruma-6.9.9_1: skipping check (XBPS_CHECK_PKGS is disabled) ...
+~=> oniguruma-6.9.9_1: running pre-install hook: 00-libdir ...
+~=> oniguruma-6.9.9_1: running pre-install hook: 02-script-wrapper ...
+~=> oniguruma-6.9.9_1: running pre-install hook: 98-fixup-gir-path ...
+~=> oniguruma-6.9.9_1: running do_install ...
+~Making install in src
+~make[1]: Entering directory '/builddir/oniguruma-6.9.9/src'
+~make[2]: Entering directory '/builddir/oniguruma-6.9.9/src'
+~ /usr/bin/mkdir -p '/destdir//oniguruma-6.9.9/usr/lib64'
+~ /bin/sh ../libtool   --mode=install /builddir/.xbps-oniguruma/wrappers/install -c   libonig.la '/destdir//oniguruma-6.9.9/usr/lib64'
+~libtool: install: /builddir/.xbps-oniguruma/wrappers/install -c .libs/libonig.so.5.4.0 /destdir//oniguruma-6.9.9/usr/lib64/libonig.so.5.4.0
+~libtool: install: (cd /destdir//oniguruma-6.9.9/usr/lib64 && { ln -s -f libonig.so.5.4.0 libonig.so.5 || { rm -f libonig.so.5 && ln -s libonig.so.5.4.0 libonig.so.5; }; })
+~libtool: install: (cd /destdir//oniguruma-6.9.9/usr/lib64 && { ln -s -f libonig.so.5.4.0 libonig.so || { rm -f libonig.so && ln -s libonig.so.5.4.0 libonig.so; }; })
+~libtool: install: /builddir/.xbps-oniguruma/wrappers/install -c .libs/libonig.lai /destdir//oniguruma-6.9.9/usr/lib64/libonig.la
+~libtool: install: /builddir/.xbps-oniguruma/wrappers/install -c .libs/libonig.a /destdir//oniguruma-6.9.9/usr/lib64/libonig.a
+~libtool: install: chmod 644 /destdir//oniguruma-6.9.9/usr/lib64/libonig.a
+~libtool: install: ranlib /destdir//oniguruma-6.9.9/usr/lib64/libonig.a
+~libtool: warning: remember to run 'libtool --finish /usr/lib64'
+~ /usr/bin/mkdir -p '/destdir//oniguruma-6.9.9/usr/include'
+~ /builddir/.xbps-oniguruma/wrappers/install -c -m 644 oniguruma.h oniggnu.h '/destdir//oniguruma-6.9.9/usr/include'
+~make  install-data-hook
+~make[3]: Entering directory '/builddir/oniguruma-6.9.9/src'
+~make[3]: Nothing to be done for 'install-data-hook'.
+~make[3]: Leaving directory '/builddir/oniguruma-6.9.9/src'
+~make[2]: Leaving directory '/builddir/oniguruma-6.9.9/src'
+~make[1]: Leaving directory '/builddir/oniguruma-6.9.9/src'
+~Making install in test
+~make[1]: Entering directory '/builddir/oniguruma-6.9.9/test'
+~make[2]: Entering directory '/builddir/oniguruma-6.9.9/test'
+~make[2]: Nothing to be done for 'install-exec-am'.
+~make[2]: Nothing to be done for 'install-data-am'.
+~make[2]: Leaving directory '/builddir/oniguruma-6.9.9/test'
+~make[1]: Leaving directory '/builddir/oniguruma-6.9.9/test'
+~Making install in sample
+~make[1]: Entering directory '/builddir/oniguruma-6.9.9/sample'
+~make[2]: Entering directory '/builddir/oniguruma-6.9.9/sample'
+~make[2]: Nothing to be done for 'install-exec-am'.
+~make[2]: Nothing to be done for 'install-data-am'.
+~make[2]: Leaving directory '/builddir/oniguruma-6.9.9/sample'
+~make[1]: Leaving directory '/builddir/oniguruma-6.9.9/sample'
+~make[1]: Entering directory '/builddir/oniguruma-6.9.9'
+~make[2]: Entering directory '/builddir/oniguruma-6.9.9'
+~ /usr/bin/mkdir -p '/destdir//oniguruma-6.9.9/usr/bin'
+~ /builddir/.xbps-oniguruma/wrappers/install -c onig-config '/destdir//oniguruma-6.9.9/usr/bin'
+~ /usr/bin/mkdir -p '/destdir//oniguruma-6.9.9/usr/lib64/pkgconfig'
+~ /builddir/.xbps-oniguruma/wrappers/install -c -m 644 oniguruma.pc '/destdir//oniguruma-6.9.9/usr/lib64/pkgconfig'
+~make[2]: Leaving directory '/builddir/oniguruma-6.9.9'
+~make[1]: Leaving directory '/builddir/oniguruma-6.9.9'
+~=> oniguruma-devel-6.9.9_1: running pre-install hook: 00-libdir ...
+=> oniguruma-devel-6.9.9_1: running pre-install hook: 02-script-wrapper ...
+=> oniguruma-devel-6.9.9_1: running pre-install hook: 98-fixup-gir-path ...
+=> oniguruma-devel-6.9.9_1: running pkg_install ...
+mv: cannot stat '/destdir//oniguruma-6.9.9/usr/share/man/man3': No such file or directory
+=> ERROR: oniguruma-devel-6.9.9_1: pkg_install: 'mv ${DESTDIR}/$files ${PKGDESTDIR}/${_targetdir}' exited with 1
+=> ERROR:   in _vmove() at common/environment/setup/install.sh:228
+=> ERROR:   in _noglob_helper() at common/environment/setup/install.sh:12
+=> ERROR:   in pkg_install() at srcpkgs/oniguruma-devel/template:20

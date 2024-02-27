@@ -1,0 +1,17 @@
+[book]
+authors = ["meator"]
+language = "en"
+multilingual = false
+title = "(work in progress) xbps-src tutorials"
+
+[output.html]
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
+curly-quotes = true
+git-repository-url = "https://github.com/meator/xbps-src-tutorials"
+
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]
+
+#[output.linkcheck]

@@ -1,0 +1,193 @@
+~=> xbps-src: updating repositories for host (x86_64)...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/bootstrap/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/nonfree/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/debug/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/bootstrap/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/nonfree/x86_64-repodata' ...
+~=> xbps-src: updating software in / masterdir...
+~=> xbps-src: cleaning up / masterdir...
+~=> bat-0.24.0_1: removing autodeps, please wait...
+~=> bat-0.24.0_1: building with [cargo] [rust] for x86_64...
+~   [host] pkg-config-0.29.2_3: found (https://repo-default.voidlinux.org/current)
+~   [host] cargo-1.75.0_1: found (https://repo-default.voidlinux.org/current)
+~   [host] cargo-auditable-0.6.1_2: found (https://repo-default.voidlinux.org/current)
+~   [target] oniguruma-devel-6.9.9_1: found (/host/binpkgs)
+~=> bat-0.24.0_1: installing host dependencies: pkg-config-0.29.2_3 cargo-1.75.0_1 cargo-auditable-0.6.1_2 ...
+~=> bat-0.24.0_1: installing target dependencies: oniguruma-devel-6.9.9_1 ...
+~=> bat-0.24.0_1: running do-fetch hook: 00-distfiles ...
+~=> bat-0.24.0_1: running do-extract hook: 00-distfiles ...
+~=> bat-0.24.0_1: extracting distfile(s), please wait...
+~=> bat-0.24.0_1: running do-patch hook: 00-patches ...
+~=> bat-0.24.0_1: running pre-configure hook: 00-gnu-configure-asneeded ...
+~=> bat-0.24.0_1: running pre-configure hook: 01-override-config ...
+~=> bat-0.24.0_1: running pre-configure hook: 02-script-wrapper ...
+~=> bat-0.24.0_1: running pre-build hook: 02-script-wrapper ...
+~=> bat-0.24.0_1: running do_build ...
+~   Compiling libc v0.2.147
+~   Compiling proc-macro2 v1.0.66
+~   Compiling quote v1.0.26
+~   Compiling unicode-ident v1.0.4
+~   Compiling rustix v0.38.11
+~   Compiling memchr v2.5.0
+~   Compiling pkg-config v0.3.25
+~   Compiling syn v2.0.12
+~   Compiling jobserver v0.1.25
+~   Compiling cc v1.0.73
+~   Compiling cfg-if v1.0.0
+~   Compiling serde v1.0.163
+~   Compiling linux-raw-sys v0.4.5
+~   Compiling bitflags v2.4.0
+~   Compiling utf8parse v0.2.1
+~   Compiling anstyle-parse v0.2.0
+~   Compiling proc-macro-hack v0.5.19
+~   Compiling tinyvec_macros v0.1.0
+~   Compiling itoa v1.0.3
+~   Compiling anstyle v1.0.0
+~   Compiling libz-sys v1.1.8
+~   Compiling log v0.4.17
+~   Compiling autocfg v1.1.0
+~   Compiling colorchoice v1.0.0
+~   Compiling syn v1.0.104
+~   Compiling anstyle-query v1.0.0
+~   Compiling anstream v0.6.4
+~   Compiling indexmap v1.9.1
+~   Compiling onig_sys v69.8.1
+~   Compiling sys-info v0.9.1
+~   Compiling tinyvec v1.6.0
+~   Compiling terminal_size v0.3.0
+~   Compiling strsim v0.10.0
+~   Compiling crc32fast v1.3.2
+~   Compiling clap_lex v0.5.0
+~   Compiling unicode-normalization v0.1.22
+~   Compiling serde_derive v1.0.163
+~   Compiling clap_builder v4.4.6
+~   Compiling libgit2-sys v0.16.1+1.7.1
+~   Compiling aho-corasick v1.0.1
+~   Compiling hashbrown v0.12.3
+~   Compiling regex-syntax v0.7.2
+~   Compiling fnv v1.0.7
+~   Compiling regex-automata v0.3.7
+~   Compiling serde_json v1.0.85
+~   Compiling percent-encoding v2.2.0
+~   Compiling unicode-bidi v0.3.8
+~   Compiling thiserror v1.0.40
+~   Compiling adler v1.0.2
+~   Compiling same-file v1.0.6
+~   Compiling safemem v0.3.3
+~   Compiling num_threads v0.1.6
+~   Compiling lazy_static v1.4.0
+~   Compiling ryu v1.0.11
+~   Compiling time v0.3.14
+~   Compiling line-wrap v0.1.1
+~   Compiling miniz_oxide v0.7.1
+~   Compiling idna v0.3.0
+~   Compiling form_urlencoded v1.1.0
+~   Compiling regex v1.8.3
+~   Compiling bstr v1.6.0
+~   Compiling git-version-macro v0.3.5
+~   Compiling clap v4.4.6
+~   Compiling thiserror-impl v1.0.40
+~   Compiling quick-xml v0.28.1
+~   Compiling aho-corasick v0.7.19
+~   Compiling equivalent v1.0.1
+~   Compiling linked-hash-map v0.5.6
+~   Compiling hashbrown v0.14.1
+~   Compiling bytemuck v1.12.1
+~   Compiling once_cell v1.18.0
+~   Compiling base64 v0.21.0
+~   Compiling semver v1.0.17
+~   Compiling bugreport v0.5.0
+~   Compiling bitflags v1.3.2
+~   Compiling onig v6.4.0
+~   Compiling plist v1.4.3
+~   Compiling indexmap v2.0.2
+~   Compiling rgb v0.8.34
+~   Compiling yaml-rust v0.4.5
+~   Compiling globset v0.4.10
+~   Compiling git-version v0.3.5
+~   Compiling flate2 v1.0.27
+~   Compiling bat v0.24.0 (/builddir/bat-0.24.0)
+~   Compiling url v2.3.1
+~   Compiling walkdir v2.3.3
+~   Compiling bincode v1.3.3
+~   Compiling unicode-width v0.1.10
+~   Compiling shell-escape v0.1.5
+~   Compiling unsafe-libyaml v0.2.9
+~   Compiling std_prelude v0.2.12
+~   Compiling termcolor v1.1.3
+~   Compiling regex-syntax v0.6.27
+~   Compiling home v0.5.5
+~   Compiling etcetera v0.8.0
+~   Compiling serde_yaml v0.9.25
+~   Compiling syntect v5.0.0
+~   Compiling grep-cli v0.1.9
+~   Compiling path_abs v0.5.1
+~   Compiling console v0.15.5
+~   Compiling ansi_colours v1.2.1
+~   Compiling clircle v0.4.0
+~   Compiling encoding_rs v0.8.33
+~   Compiling content_inspector v0.2.4
+~   Compiling wild v2.1.0
+~   Compiling shell-words v1.1.0
+~   Compiling nu-ansi-term v0.49.0
+~   Compiling bytesize v1.3.0
+~   Compiling git2 v0.18.0
+~    Finished release [optimized] target(s) in 4m 32s
+~=> bat-0.24.0_1: skipping check (XBPS_CHECK_PKGS is disabled) ...
+~=> bat-0.24.0_1: running pre-install hook: 00-libdir ...
+~=> bat-0.24.0_1: running pre-install hook: 02-script-wrapper ...
+~=> bat-0.24.0_1: running pre-install hook: 98-fixup-gir-path ...
+~=> bat-0.24.0_1: running do_install ...
+~  Installing bat v0.24.0 (/builddir/bat-0.24.0)
+~   Compiling rustix v0.38.11
+~   Compiling syn v2.0.12
+~   Compiling terminal_size v0.3.0
+~   Compiling clap_builder v4.4.6
+~   Compiling serde_derive v1.0.163
+~   Compiling thiserror-impl v1.0.40
+~   Compiling clap v4.4.6
+~   Compiling thiserror v1.0.40
+~   Compiling bat v0.24.0 (/builddir/bat-0.24.0)
+~   Compiling serde v1.0.163
+~   Compiling plist v1.4.3
+~   Compiling serde_json v1.0.85
+~   Compiling bincode v1.3.3
+~   Compiling clircle v0.4.0
+~   Compiling serde_yaml v0.9.25
+~   Compiling syntect v5.0.0
+~    Finished release [optimized] target(s) in 2m 35s
+~  Installing /destdir//bat-0.24.0/usr/bin/bat
+~   Installed package `bat v0.24.0 (/builddir/bat-0.24.0)` (executable `bat`)
+~warning: be sure to add `/destdir//bat-0.24.0/usr/bin` to your PATH to be able to run the installed binaries
+~=> bat-0.24.0_1: running post_install ...
+~=> bat-0.24.0_1: running post-install hook: 00-compress-info-files ...
+~=> bat-0.24.0_1: running post-install hook: 00-fixup-gir-path ...
+~=> bat-0.24.0_1: running post-install hook: 00-libdir ...
+~=> bat-0.24.0_1: running post-install hook: 00-uncompress-manpages ...
+~=> bat-0.24.0_1: running post-install hook: 01-remove-misc ...
+~=> bat-0.24.0_1: running post-install hook: 02-remove-libtool-archives ...
+~=> bat-0.24.0_1: running post-install hook: 02-remove-perl-files ...
+~=> bat-0.24.0_1: running post-install hook: 02-remove-python-bytecode-files ...
+~=> bat-0.24.0_1: running post-install hook: 03-remove-empty-dirs ...
+~=> WARNING: bat-0.24.0_1: removed empty dir: /usr/lib
+~=> bat-0.24.0_1: running post-install hook: 04-create-xbps-metadata-scripts ...
+~=> bat-0.24.0_1: running post-install hook: 05-generate-gitrevs ...
+~=> bat-0.24.0_1: running post-install hook: 06-strip-and-debug-pkgs ...
+~   Stripped position-independent executable: /usr/bin/bat
+~=> bat-0.24.0_1: running post-install hook: 10-pkglint-devel-paths ...
+~=> bat-0.24.0_1: running post-install hook: 11-pkglint-elf-in-usrshare ...
+~=> bat-0.24.0_1: running post-install hook: 12-rename-python3-c-bindings ...
+~=> bat-0.24.0_1: running post-install hook: 13-pkg-config-clean-xbps-cross-base-ref ...
+~=> bat-0.24.0_1: running post-install hook: 14-fix-permissions ...
+~=> bat-0.24.0_1: running post-install hook: 80-prepare-32bit ...
+~=> bat-0.24.0_1: running post-install hook: 98-shlib-provides ...
+=> bat-0.24.0_1: running post-install hook: 99-pkglint-warn-cross-cruft ...
+=> bat-0.24.0_1: running pre-pkg hook: 03-rewrite-python-shebang ...
+=> bat-0.24.0_1: running pre-pkg hook: 04-generate-runtime-deps ...
+   SONAME: libonig.so.5 <-> UNKNOWN PKG PLEASE FIX!
+   SONAME: libgcc_s.so.1 <-> libgcc>=4.4.0_1
+   SONAME: libm.so.6 <-> glibc>=2.38_1
+   SONAME: libc.so.6 <-> glibc>=2.38_1
+=> ERROR: bat-0.24.0_1: cannot guess required shlibs, aborting!

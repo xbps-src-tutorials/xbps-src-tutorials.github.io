@@ -1,0 +1,15 @@
+# Summary
+
+- [Xbps-src packaging tutorial](./xbps-src-packaging-tutorial.md)
+   - [Packaging j4-dmenu-desktop](./packaging-j4-dmenu-desktop.md)
+   - [Packaging bat](./packaging-bat.md)
+   - [Packaging oniguruma](./packaging-oniguruma.md)
+   - [Contributing](./contributing.md)
+- [Package update tutorial](./package-update-tutorial.md)
+- [PR testing tutorial](./pr-testing-tutorial.md)
+- [Mini-tutorials]()
+   - [How to add completions?](how-to-add-completions.md)
+   - [How to fetch git submodules?](how-to-fetch-git-submodules.md)
+- [Troubleshooting](./troubleshooting.md)
+- [Tips and tricks](./tips_and_tricks.md)
+- [Feedback](./feedback.md)

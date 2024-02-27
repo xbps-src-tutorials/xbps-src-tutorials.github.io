@@ -1,0 +1,11 @@
+git clone https://github.com/enkore/j4-dmenu-desktop.git
+cd j4-dmenu-desktop
+# Setup a builddir (this is CMake specific stuff)
+mkdir build
+cd build
+# Configure j4-dmenu-desktop
+cmake ..
+# Build
+make
+# Install j4-dmenu-desktop to system directories
+sudo make install

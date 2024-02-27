@@ -1,0 +1,15 @@
+  thread 'main' panicked at /host/cargo/registry/src/index.crates.io-6f17d22bba15001f/onig_sys-69.8.1/build.rs:253:17:
+  Unable to find oniguruma in pkg-config, and RUSTONIG_SYSTEM_LIBONIG is set: `PKG_CONFIG_ALLOW_SYSTEM_CFLAGS="1" PKG_CONFIG_ALLOW_SYSTEM_LIBS="1" "pkg-config" "--libs" "--cflags" "oniguruma" "oniguruma >= 6.9.3"` did not exit successfully: exit status: 1
+  error: could not find system library 'oniguruma' required by the 'onig_sys' crate
+
+  --- stderr
+  Package oniguruma was not found in the pkg-config search path.
+  Perhaps you should add the directory containing `oniguruma.pc'
+  to the PKG_CONFIG_PATH environment variable
+  No package 'oniguruma' found
+  Package oniguruma was not found in the pkg-config search path.
+  Perhaps you should add the directory containing `oniguruma.pc'
+  to the PKG_CONFIG_PATH environment variable
+  No package 'oniguruma' found
+
+  note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
