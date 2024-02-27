@@ -114,7 +114,9 @@ Here are the results of benchmarks on my computer:
 | treeless clone | `git clone --filter=tree:0 "git@github.com:void-linux/void-packages.git"` | 0m43.785s | 148M |
 | shallow clone | `git clone --depth=1 "git@github.com:void-linux/void-packages.git"` | 0m12.161s | 98M |
 
-The benchmarks have been done using the XXX script.
+The benchmarks have been done using the
+[`git-clone-benchmark.sh`](https://github.com/meator/xbps-src-tutorials/blob/main/resources/git-clone-benchmark.sh)
+script.
 
 The full clone is the "safe bet". Everything will work. I recommend doing a full
 clone if you plan to make multiple contributions or use
