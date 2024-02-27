@@ -13,7 +13,7 @@ provides completions:
 
 <!-- toc -->
 
-## Build system automatically installs completions.
+## Build system automatically installs completions
 This is the simplest of scenarios. You literally have to do nothing to get
 completions, they are installed automatically.
 
