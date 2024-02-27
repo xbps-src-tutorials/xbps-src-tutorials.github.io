@@ -380,7 +380,7 @@ This shows us that we don't have to add every library SONAME to `common/shlibs`,
 but we have to add every SONAME REQUIRES.
 
 Note that if the build of `bat` wouldn't have failed, it would **not** have
-`oniguruma` in it's runtime dependencies.
+`oniguruma` in its runtime dependencies.
 
 If a library is a dependency of another package, we **should** add the SHLIB to
 `common/shlibs`, but it isn't mandatory otherwise (but libraries are usually

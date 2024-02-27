@@ -259,7 +259,7 @@ If the cross compiled version of a program can't be executed, the host version
 of it can be.
 
 The cross compiled package can also "borrow" files from the native package and
-copy them into it's destdir.
+copy them into its destdir.
 
 <div class="warning">
 
@@ -269,7 +269,7 @@ package targetted for one architecture and use it in another!
 
 </div>
 
-The trick is to _add the package to it's own `hostmakedepends`_ if
+The trick is to _add the package to its own `hostmakedepends`_ if
 `$CROSS_BUILD` is set. This might not make sense at first, it looks like a
 package depends on itself which would create an infinite loop, but that isn't
 the case.

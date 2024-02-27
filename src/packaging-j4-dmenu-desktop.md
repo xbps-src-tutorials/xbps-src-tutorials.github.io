@@ -38,7 +38,7 @@ wandering around with `sudo rm` in your system directories isn't the best idea.
 One typo, one poorly thought out glob and you've bricked your system.
 
 Let's consider another scenario. You've tried `j4-dmenu-desktop` and you were
-awestruck by it's features, so you didn't even think about uninstalling it. But
+awestruck by its features, so you didn't even think about uninstalling it. But
 a new version has been released. You don't hesitate and clone the newer version
 and redo the download, build and install process above.
 
@@ -80,7 +80,7 @@ running
 sudo xbps-remove j4-dmenu-desktop
 ```
 
-Because the package _owns_ it's files, it can verify their state. Let's say that
+Because the package _owns_ its files, it can verify their state. Let's say that
 you have modified some `j4-dmenu-desktop` files by accident. If you have noticed
 it, you can uninstall it and reinstall it. But you might have not even noticed.
 
@@ -96,7 +96,7 @@ You can see which files a package provides with `xbps-query -f`:
 ```
 
 Another very important aspect of package management that I have partly
-overlooked until now are dependencies. Each package maintains a list of it's
+overlooked until now are dependencies. Each package maintains a list of its
 dependencies. You can query then with `xbps-query -x`:
 ```sh
 > xbps-query -Rx j4-dmenu-desktop
@@ -159,7 +159,7 @@ for more info.
 A collection of packages is a repository. Official repositories are described
 [here](https://docs.voidlinux.org/xbps/repositories/index.html).
 
-A repository is characterised by it's `repodata` file. It is named
+A repository is characterised by its `repodata` file. It is named
 `<architecture>-repodata`. Repodata files are saved to `/var/db/xbps/` locally.
 They contain metadata for all packages in the repository.
 
@@ -493,7 +493,7 @@ explanation:
                 packages have it
 
   If the project has a `CHANGELOG` or `CHANGELOG.md` (or something similar) in
-  it's repository, you should link to it in `changelog`, but you should link to
+  its repository, you should link to it in `changelog`, but you should link to
   a plaintext version. GitHub has a button for that:
 
   ![changelog raw button](images/j4-dmenu-desktop/changelog_raw_button.png)
@@ -510,7 +510,7 @@ package it.
 We will be packaging the latest release `2.18` of `j4-dmenu-desktop`. Its
 `short_desc` is `Fast desktop menu`, `maintainer` is prefilled,
 `j4-dmenu-desktop`'s license is `GPL-3.0-or-later`, its homepage is
-<https://github.com/enkore/j4-dmenu-desktop> and it's changelog is
+<https://github.com/enkore/j4-dmenu-desktop> and its changelog is
 <https://raw.githubusercontent.com/enkore/j4-dmenu-desktop/develop/CHANGELOG>.
 This is all we need for now.
 
@@ -1254,7 +1254,7 @@ checksum=77c5605d0c1291bcf1e13b186ea3b32ddf4753de0d0e39127b4a7d2098393e25
 
 ### Checks
 When describing [build steps](#build-steps), you might have noticed a `check`
-step. It's purpose it so run package check if the package has any checks or unit
+step. Its purpose it so run package check if the package has any checks or unit
 tests.
 
 The `check` phase should ideally verify whether the package has been installed

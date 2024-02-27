@@ -26,7 +26,7 @@ This tutorial assumes no prior knowledge of packaging systems.
 
 ## Introduction
 `xbps-src` is a simple but capable build system. It is one of Void Linux's major
-strengths, but it's official documentation can be difficult to understand for
+strengths, but its official documentation can be difficult to understand for
 those who do not have experience with build systems. This tutorial aims to
 bridge that gap.
 

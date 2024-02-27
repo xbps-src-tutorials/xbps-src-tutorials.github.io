@@ -166,7 +166,7 @@ because `xbps-src` is smart.
 _This is described in [Packaging oniguruma](packaging-oniguruma.md) in detail._
 
 To compile the `bat` package which depends on library `oniguruma`, `bat` must
-have `oniguruma-devel` in it's `hostmakedepends`. But `oniguruma` must be
+have `oniguruma-devel` in its `hostmakedepends`. But `oniguruma` must be
 installed alongside `bat` for `bat` to work, because `oniguruma` provides
 dynamic libraries `bat` needs.
 

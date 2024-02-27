@@ -21,7 +21,7 @@ This is used in
 [`xmirror`](https://github.com/void-linux/void-packages/blob/3ddc63b10ff4f7a574996a3a43952c39c732101f/srcpkgs/xmirror/template)
 for example.
 
-You can see that [it's Makefile installs completion in the `install`
+You can see that [its Makefile installs completion in the `install`
 target.](https://github.com/void-linux/xmirror/blob/64d5abfadc38628ae20d42b1d6999d4ce5c1d181/Makefile#L24-L26)
 
 ## Plain completions are in the repo
