@@ -824,7 +824,7 @@ to build a template.
 
 We use
 ```
-sudo xi -f install j4-dmenu-desktop
+sudo xi -f j4-dmenu-desktop
 ```
 to install a template.
 
@@ -1480,7 +1480,7 @@ to build a template.
 
 We use
 ```
-sudo xi -f install j4-dmenu-desktop
+sudo xi -f j4-dmenu-desktop
 ```
 to install a template.
 
