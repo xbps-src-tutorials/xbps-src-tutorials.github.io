@@ -165,7 +165,7 @@ This requires the `xtools` package.
 
 Run
 ```
-xi <package>
+xi -f <package>
 ```
 
 here it would be

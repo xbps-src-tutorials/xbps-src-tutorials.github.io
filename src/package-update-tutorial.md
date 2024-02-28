@@ -100,7 +100,7 @@ You can now build packages in
 
 You can install built packages with
 ```
-sudo xi <package>
+sudo xi -f <package>
 ```
 
 (The `xi` utility is provided by the `xtools` package.)
