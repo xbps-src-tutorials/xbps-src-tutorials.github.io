@@ -80,33 +80,32 @@ GitHub has a handy button for that:
 should select `void-linux/void-packages`.
 
 #### git
-You will have to figure out repository URL and the branch like in [You want to
-try out a singe PR and never touch void-packages
-again](#you-want-to-try-out-a-singe-pr-and-never-touch-void-packages-again).
+You'll have to figure out the pull request number. You can find it here:
+
+![pr number](images/pr_testing/pr_number.png)
 
 The generic process looks like this[^1]:
 ```
-git remote add <remote> <link>
-git fetch <remote> pull/<number>/head:<branch-name>
-git checkout <branch-name>
+git fetch upstream pull/<number>/head:<some branch name>
+git checkout <some branch name>
 ```
 
 I will showcase it on the pull request mentioned above.
 
-You first have to add the repo as a remote:
+You first have to add the upstream repo as a remote (if you don't have it
+already):
 ```sh
-# Replace this!          vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
-git remote add my_remote https://github.com/meator/void-packages.git
+git remote add upstream git@github.com:void-linux/void-packages.git
+# Or with HTTPS:
+#git remote add upstream https://github.com/void-linux/void-packages.git
 ```
 
-You can choose some other name than `my_remote`.
-
-Then you have to fetch the PR and check out to it. Here I assume that the branch
-is named `mdBook-completions` with PR number `48934`:
+Then you have to fetch the PR and check out to it. In the following sample, I'm
+cloning PR number `48934` to branch `mdbook-compl`:
 
 ```
-git fetch my_remote pull/48934/head:mdBook-completions
-git checkout mdBook-completions
+git fetch upstream pull/48934/head:mdbook-compl
+git checkout mdbook-compl
 ```
 
 ## Updating
