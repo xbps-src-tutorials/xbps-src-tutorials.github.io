@@ -90,10 +90,24 @@ The channel consists mainly of volunteers. Do not expect people there to package
 complicated programs for you at your will.
 
 When asking there, do **not** paste error logs or templates directly to the
-channel. You will likely be temporarily banned for this. Use a paste site
-instead. You can use <https://bpa.st/>, <https://0x0.st/>,
-<https://termbin.com/> or some other paste site. Use of <https://pastebin.com/>
-specifically is discouraged.
+channel. You will likely be kicked for this. Use a paste site instead. You can
+use <https://bpa.st/>, <https://0x0.st/>, <https://termbin.com/> or some other
+paste site.
+
+It is often useful to pipe the output of a command directly to a paste site.
+Some paste sites like <https://0x0.st/> and <https://termbin.com/> support it.
+
+To paste a file to 0x0, run this:
+
+```
+curl -F'file=@yourfile.png' https://0x0.st
+```
+
+To paste the output of a command to 0x0, run this:
+
+```
+command | curl -F'file=@-' https://0x0.st
+```
 
 ### Disclaimer
 I, [meator](https://github.com/meator), am not a Void Linux member. I don't
