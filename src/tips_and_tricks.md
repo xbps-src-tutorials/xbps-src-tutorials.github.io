@@ -25,6 +25,18 @@ XBPS_CCACHE=yes
 ```
 to `etc/conf`.
 
+## Show dependency install progress
+Some packages may have large dependencies that take a long time to download.
+`xbps-src` shows no progress monitor whatsoever for installing dependency
+packages to the masterdir, but it is still available if you know where to look.
+You can query this info with
+
+```
+tail -f masterdir-x86_64/builddir/.xbps-*/*_bdep_*.log
+```
+
+Change `masterdir-x86_64` to your chosen masterdir if appropriate.
+
 ## Setting environmental variables
 The preferred way to set environmental variables is through variables provided
 by the build style. But if that isn't possible, you can just export them in the
