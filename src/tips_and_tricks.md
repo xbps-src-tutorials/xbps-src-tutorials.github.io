@@ -37,6 +37,61 @@ tail -f masterdir-x86_64/builddir/.xbps-*/*_bdep_*.log
 
 Change `masterdir-x86_64` to your chosen masterdir if appropriate.
 
+You should also consider reading [the following
+tip](#speeding-up-dependency-fetching).
+
+## Speed up dependency fetching
+`xbps-src` uses your computer's XBPS mirror by default[^foreign]. If the
+dependency fetching is slow, you should consider [changing your
+mirror](https://docs.voidlinux.org/xbps/repositories/mirrors/changing.html).
+
+If you want to only change
+[`void-packages`](https://github.com/void-linux/void-packages)' mirror, you can
+set [the
+`XBPS_MIRROR`](https://github.com/void-linux/void-packages/blob/master/etc/defaults.conf#L17-L21)
+option in `etc/conf`:
+
+```
+[OPTIONAL]
+Use an alternative mirror for remote repositories. This is more
+convenient than modifying etc/xbps.d/repos-remote*.conf.
+
+XBPS_MIRROR=https://repo-us.voidlinux.org/current
+```
+
+[`void-packages`](https://github.com/void-linux/void-packages)' repocache is
+separate from your computer's repocache. If downloading the dependencies is
+taking time, you can reuse your computer's repocache to speed things up.
+
+Because a large part of `xbps-src` is run in masterdir chrooot, you can't just
+point `xbps-src` to your repocache, because it doesn't exist within the chroot.
+There are two ways to bypass this: use a custom remote repository or copy the
+files to `void-package`' repocache. The first approach is complicated and it's
+beyond the scope of this article.
+
+To copy all your cached packages to `xbps-src`'s repocache, run this:
+
+```
+cp -r /var/cache/xbps/* hostdir/repocache-x86_64
+```
+
+This will be slow & it will take up space. You should consider copying only the
+needed packages for the build to `void-packages`' repocache (this is the
+advantage of custom remote repo, XBPS will cherry pick what to download with
+it).
+
+Copying all your cached packages to `void-packages`' repocache may be slower
+than downloading the dependencies.
+
+If you are using a filesystem which supports Copy on Write (like `btrfs` or
+`xfs`; `ext4` doesn't support it) and your `/var/cache/xbps` resides on the same
+partition as your `void-packages` clone (i.e. you don't have separate `/home`
+partition)[^fs], this approach can be almost instant with reflinks enabled:
+
+```
+cp -r --reflink=always /var/cache/xbps/* hostdir/repocache-x86_64
+```
+
 ## Setting environmental variables
 The preferred way to set environmental variables is through variables provided
 by the build style. But if that isn't possible, you can just export them in the
@@ -336,6 +391,11 @@ But if you want to build the package yourself, `xbps-src` will build the package
 twice (if you tell it to or if you have increased the version or revision of the
 package[^pkgrebuild]).
 
+[^foreign]: This is true if the host system is using XBPS. This isn't true when
+            [using xbps-src in a foreign Linux
+            distribution](https://github.com/void-linux/void-packages/blob/master/README.md#foreign)
+[^fs]: If you have more exotic configurations, reflink copying the packages may
+       or may not work. The best way to find out is to try running the command.
 [^badqemu]: These build systems can still fail to use QEMU to execute things if
             they are poorly configured. If that is the case, the build
             definitions should be fixed and [upstream should be
