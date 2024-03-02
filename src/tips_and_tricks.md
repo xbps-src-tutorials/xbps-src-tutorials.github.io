@@ -75,8 +75,6 @@ To copy all your cached packages to `xbps-src`'s repocache, run this:
 cp /var/cache/xbps/* hostdir/repocache-$(xbps-uhelper arch)
 ```
 
-Change `repocache-x86_64` to your chosen repocache if appropriate.
-
 This will be slow & it will take up space. You should consider copying only the
 needed packages for the build to `void-packages`' repocache (this is the
 advantage of custom remote repo, XBPS will cherry pick what to download with
