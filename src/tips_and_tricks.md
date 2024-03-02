@@ -72,8 +72,10 @@ beyond the scope of this article.
 To copy all your cached packages to `xbps-src`'s repocache, run this:
 
 ```
-cp /var/cache/xbps/* hostdir/repocache-x86_64
+cp /var/cache/xbps/* hostdir/repocache-$(xbps-uhelper arch)
 ```
+
+Change `repocache-x86_64` to your chosen repocache if appropriate.
 
 This will be slow & it will take up space. You should consider copying only the
 needed packages for the build to `void-packages`' repocache (this is the
@@ -89,7 +91,7 @@ partition as your `void-packages` clone (i.e. you don't have separate `/home`
 partition)[^fs], this approach can be almost instant with reflinks enabled:
 
 ```
-cp --reflink=always /var/cache/xbps/* hostdir/repocache-x86_64
+cp --reflink=always /var/cache/xbps/* hostdir/repocache-$(xbps-uhelper arch)
 ```
 
 ## Setting environmental variables
