@@ -105,7 +105,7 @@ libgcc>=4.4.0_1
 glibc>=2.32_1
 ```
 
-You can't[^1] install a package without its dependencies, so breakage can not
+You can't[^youcan] install a package without its dependencies, so breakage can not
 occur.
 
 ## What is a package, anyway?
@@ -208,7 +208,7 @@ First, you need to clone the
 git clone https://github.com/void-linux/void-packages.git
 ```
 
-It contains everything needed to build a XBPS package[^2] and a collection of
+It contains everything needed to build a XBPS package[^deps] and a collection of
 templates for packages in the official repositories.
 
 If you have experience with other package managers, I should note that
@@ -278,11 +278,11 @@ The resulting `.xbps` packages will end up in `hostdir/binpkgs` or in
 
 But the most important directory is `masterdir-<arch>` (I will from now on
 assume that your computer is x86_64 and refer to this directory as
-`masterdir-x86_64` like on the diagram above[^3]).  The package is built in it. It
+`masterdir-x86_64` like on the diagram above[^uname]).  The package is built in it. It
 is isolated from the rest of the computer. It contains a small Void Linux
 install suitable for chrooting (no kernel included, no firmware included, no
-user utilities). It has the `base-chroot` base package[^4] installed (normal
-Void Linux systems have `base-system` installed).
+user utilities). It has the `base-chroot` base package[^basechroot] installed
+(normal Void Linux systems have `base-system` installed).
 
 The source of the package will be extracted (or put by other means) to
 `masterdir-x86_64/builddir/<package name>-<version>/` and it will install the
@@ -350,7 +350,7 @@ You may remember the build steps from before:
 {{#include ../data/j4_build_instructions.txt}}
 ```
 
-We just have to put it into a template and we're done[^5].
+We just have to put it into a template and we're done[^ornot].
 
 A template contains metadata of the package and instructions for `xbps-src` to
 build the package.
@@ -1536,12 +1536,13 @@ packaging another program, [`bat`](https://github.com/sharkdp/bat):
 [Packaging bat](packaging-bat.md)
 
 ---
-[^1]: I'm sure there's a way you can install a package without its dependencies,
-but you'll have to try pretty hard to do that.
-[^2]: You also of course need XBPS and some very basic dependencies mentioned in
-      [README's
-      Requirements](https://github.com/void-linux/void-packages/blob/master/README.md#requirements)
-[^3]: You can check with `uname -m`
-[^4]: The `base-chroot` package isn't present in normal repositories.
-      void-packages masterdirs access a special repository called `bootstrap`.
-[^5]: Or not!
+[^youcan]: I'm sure there's a way you can install a package without its
+           dependencies, but you'll have to try pretty hard to do that.
+[^deps]: You also of course need XBPS and some very basic dependencies mentioned
+         in [README's
+         Requirements](https://github.com/void-linux/void-packages/blob/master/README.md#requirements)
+[^uname]: You can check with `uname -m`
+[^basechroot]: The `base-chroot` package isn't present in normal repositories.
+               void-packages masterdirs access a special repository called
+               `bootstrap`.
+[^ornot]: Or not!

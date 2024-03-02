@@ -238,7 +238,7 @@ manually.
 Since they are data files and they do not have to be compiled, installing them
 is very simple. They just have to be copied to `$DESTDIR`.
 
-`bat` provides a manpage, but it is generated during the build process[^1]. It get's
+`bat` provides a manpage, but it is generated during the build process[^batspecific]. It get's
 put into
 
 ```
@@ -249,7 +249,7 @@ on my computer which is impractical. The directory name is very long and it
 contains a UID (here `4df82ff77e13ab15`).
 
 If you inspect `bat`'s build system closely, you might stumble upon [pull
-request #2515](https://github.com/sharkdp/bat/pull/2515)[^2] and
+request #2515](https://github.com/sharkdp/bat/pull/2515)[^tranzystorekk] and
 [`BAT_ASSETS_GEN_DIR` detection code in `bat's` build
 system](https://github.com/sharkdp/bat/blob/master/build/application.rs#L30).
 This shows us that `bat` provides a way to override the directory by setting the
@@ -463,12 +463,13 @@ while packaging a library. The next part of this tutorial packages
 
 [Packaging oniguruma](packaging-oniguruma.md)
 
-[^1]: This is a `bat` specific thing. Other projects might have their data files
-      in the repository without need of generation. The packaging process is the
-      same, you just `vman` or `vcompletion` the files.
-[^2]: This pull request was made by
-      [tranzystorekk](https://github.com/tranzystorekk), a Void Linux
-      contributor at the time of writing this tutorial. It's nice to see a
-      fellow Voider improving the projects they're packaging. You should take
-      inspiration from this if you have the know how (and if upstream needs
-      fixing).
+[^batspecific]: This is a `bat` specific thing. Other projects might have their
+                data files in the repository without need of generation. The
+                packaging process is the same, you just `vman` or `vcompletion`
+                the files.
+[^tranzystorekk]: This pull request was made by
+                  [tranzystorekk](https://github.com/tranzystorekk), a Void
+                  Linux contributor at the time of writing this tutorial. It's
+                  nice to see a fellow Voider improving the projects they're
+                  packaging. You should take inspiration from this if you have
+                  the know how (and if upstream needs fixing).

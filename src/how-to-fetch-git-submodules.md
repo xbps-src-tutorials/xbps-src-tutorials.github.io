@@ -241,7 +241,7 @@ extracted. "This must match the basename of any url defined in `${distfiles}`"
 says the `Manual`.
 
 Setting this allows us to extract the archive manually into our desired location
-and it simplifies `wrksrc`[^1].
+and it simplifies `wrksrc`[^wrksrc].
 
 You can use the `vsrcextract` helper to extract the archive.
 
@@ -292,9 +292,10 @@ Manual](https://github.com/void-linux/void-packages/blob/master/Manual.md#option
 to change the name of the downloaded archive. They are then put into
 `skip_extraction` and extracted in `post_extract`.
 
-[^1]: When there are multiple distfiles in a template, they are extracted into
-      the builddir and `wrksrc` is set to the builddir and not to a specific
-      distfile's directory. This can be annoying to work with. `build_wrksrc`
-      can be used to tell `xbps-src` which of the extracted directories should
-      be treated as the primary one. [CWD is set to `build_wrksrc` in some build
-      steps.](packaging-j4-dmenu-desktop.md#cwd)
+[^wrksrc]: When there are multiple distfiles in a template, they are extracted
+           into the builddir and `wrksrc` is set to the builddir and not to a
+           specific distfile's directory. This can be annoying to work with.
+           `build_wrksrc` can be used to tell `xbps-src` which of the extracted
+           directories should be treated as the primary one. [CWD is set to
+           `build_wrksrc` in some build
+           steps.](packaging-j4-dmenu-desktop.md#cwd)

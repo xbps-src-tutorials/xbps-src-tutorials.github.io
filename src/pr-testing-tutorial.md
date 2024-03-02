@@ -84,7 +84,7 @@ You'll have to figure out the pull request number. You can find it here:
 
 ![pr number](images/pr_testing/pr_number.png)
 
-The generic process looks like this[^1]:
+The generic process looks like this[^source]:
 ```
 git fetch upstream pull/<number>/head:<some branch name>
 git checkout <some branch name>
@@ -187,4 +187,5 @@ You should comment on the original pull request and share your experiences with
 the package. If you have encountered any problems with it, you should report
 them.
 
-[^1]: Taken from [here](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md#testing-pull-requests).
+[^source]: Taken from
+           [here](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md#testing-pull-requests).

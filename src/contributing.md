@@ -116,7 +116,7 @@ git checkout upstream/master -b <a-descriptive-name>
 ```
 
 to really make sure the branch is [up to
-date](troubleshooting.md#being-up-to-date).[^1]
+date](troubleshooting.md#being-up-to-date).[^uptodate]
 
 ## Making the commits
 The most important requirement (apart from quality requirements) are commit
@@ -150,7 +150,7 @@ it won't get accepted. You will be asked to put all these changes into a single
 commit.
 
 Each commit should be tied to a package. A single commit can't update two
-separate packages for example.[^2]
+separate packages for example.[^singlecommit]
 
 ## Making the pull request
 You will have to fill out the pull request template. At the time of writing this
@@ -401,6 +401,6 @@ branch 'bat' set up to track 'origin/bat'.
 
 You can then follow the link provided by git to create the pull request.
 
-[^1]: Using this won't guarantee that the branch is up to date!
-[^2]: Like all rules, this rule has exceptions where such behaviour is
-      acceptable. But this commit separation should be preferred.
+[^uptodate]: Using this won't guarantee that the branch is up to date!
+[^singlecommit]: Like all rules, this rule has exceptions where such behaviour
+                 is acceptable. But this commit separation should be preferred.

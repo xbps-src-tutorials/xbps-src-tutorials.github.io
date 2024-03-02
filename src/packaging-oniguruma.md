@@ -452,8 +452,8 @@ put into `oniguruma-doc`. What a coincidence. It's almost like this is a part of
 a carefully crafted packaging tutorial or something.
 
 The documentation doesn't get installed to `$DESTDIR` by default, it just lies
-in `doc/` subdirectory of source. Their build system doesn't install it.[^1] But
-the documentation doesn't need to be generated ([unlike the manpage and
+in `doc/` subdirectory of source. Their build system doesn't install it.[^cmake]
+But the documentation doesn't need to be generated ([unlike the manpage and
 completions in `bat`](packaging-bat.md#installing-supplementary-files)), we can
 just copy the files to `$DESTDIR`.
 
@@ -838,8 +838,8 @@ yes, continue reading:
 
 [Contributing](contributing.md)
 
-[^1]: As I mentioned in the very beginning of page, `oniguruma` has multiple
-      build systems. I wasn't able to find anything related to documentation in
-      their configure script, but their `CMakeLists.txt` [has an option for
-      installing
-      documentation](https://github.com/kkos/oniguruma/blob/e62a8e5ec123bb91651d297e6f72c84d53e3cff8/CMakeLists.txt#L211-L222).
+[^cmake]: As I mentioned in the very beginning of page, `oniguruma` has multiple
+          build systems. I wasn't able to find anything related to documentation
+          in their configure script, but their `CMakeLists.txt` [has an option
+          for installing
+          documentation](https://github.com/kkos/oniguruma/blob/e62a8e5ec123bb91651d297e6f72c84d53e3cff8/CMakeLists.txt#L211-L222).

@@ -229,8 +229,8 @@ build_helper=qemu
 to it.
 
 It tells the build styles which supports it to run executables with QEMU
-(currently `cmake` and `meson`[^1]) and it provides a `vtargetrun` helper. You can
-run it like this:
+(currently `cmake` and `meson`[^badqemu]) and it provides a `vtargetrun` helper.
+You can run it like this:
 
 ```
 vtargetrun ${DESTDIR}/usr/bin/gum man
@@ -245,8 +245,8 @@ Running a program with QEMU emulation is slower than running it natively. But
 hungry.
 
 If upstream's build system wants to execute things (and it isn't `cmake` nor
-`meson`[^1]), you will have to convince it to use QEMU. You'll probably have to
-[make patches to the build
+`meson`[^badqemu]), you will have to convince it to use QEMU. You'll probably
+have to [make patches to the build
 system](packaging-j4-dmenu-desktop.md#when-their-build-system-is-broken). This
 can be difficult
 sometimes. You should consider [notifying upstream about
@@ -334,13 +334,13 @@ package for all supported architectures anyway so "nothing will be wasted".
 
 But if you want to build the package yourself, `xbps-src` will build the package
 twice (if you tell it to or if you have increased the version or revision of the
-package[^2]).
+package[^pkgrebuild]).
 
-[^1]: These build systems can still fail to use QEMU to execute things if they
-      are poorly configured. If that is the case, the build definitions should
-      be fixed and [upstream should be
-      notified](troubleshooting.md#notifying-upstream).
-[^2]: If you don't that and you modify the template, `xbps-src` will pull the
-      host version of the package from the repos and the cross compiled version
-      will come from your modified template. This difference can lead to
-      problems!
+[^badqemu]: These build systems can still fail to use QEMU to execute things if
+            they are poorly configured. If that is the case, the build
+            definitions should be fixed and [upstream should be
+            notified](troubleshooting.md#notifying-upstream).
+[^pkgrebuild]: If you don't that and you modify the template, `xbps-src` will
+               pull the host version of the package from the repos and the cross
+               compiled version will come from your modified template. This
+               difference can lead to problems!
