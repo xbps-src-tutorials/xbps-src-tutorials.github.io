@@ -4,6 +4,7 @@
    - [Packaging j4-dmenu-desktop](./packaging-j4-dmenu-desktop.md)
    - [Packaging bat](./packaging-bat.md)
    - [Packaging oniguruma](./packaging-oniguruma.md)
+   - [Packaging rofimoji](./packaging-rofimoji.md)
    - [Contributing](./contributing.md)
 - [Package update tutorial](./package-update-tutorial.md)
 - [PR testing tutorial](./pr-testing-tutorial.md)
