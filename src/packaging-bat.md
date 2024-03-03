@@ -468,7 +468,7 @@ It also includes a patch to make the XBPS version of `libgit2` work in `bat`.
 ## What now?
 You might be wondering how the SHLIB detection works. This is best explained
 while packaging a library. The next part of this tutorial packages
-[`oniguruma`](https://github.com/kkos/oniguruma) a dependency of `bat`:
+[`oniguruma`](https://github.com/kkos/oniguruma), a dependency of `bat`:
 
 [Packaging oniguruma](packaging-oniguruma.md)
 
