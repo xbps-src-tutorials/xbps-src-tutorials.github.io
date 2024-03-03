@@ -9,6 +9,7 @@ default-theme = "ayu"
 preferred-dark-theme = "ayu"
 curly-quotes = true
 git-repository-url = "https://github.com/meator/xbps-src-tutorials"
+site-url = "/xbps-src-tutorials/"
 
 [preprocessor.toc]
 command = "mdbook-toc"
