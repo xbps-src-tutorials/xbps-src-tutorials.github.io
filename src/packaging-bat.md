@@ -32,9 +32,14 @@ of it is in their repository: <https://github.com/sharkdp/bat>
 
    Remember that plaintext changelogs are preferred:
 
-   Bad: `changelog=https://github.com/sharkdp/bat/blob/master/CHANGELOG.md`
+   ~~~admonish failure title="Bad"
+  `changelog=https://github.com/sharkdp/bat/blob/master/CHANGELOG.md`
+   ~~~
 
-   Good: `https://raw.githubusercontent.com/sharkdp/bat/master/CHANGELOG.md`
+   ~~~admonish success title="Good"
+  `changelog=https://raw.githubusercontent.com/sharkdp/bat/master/CHANGELOG.md`
+   ~~~
+
 - `distfiles`: `bat`'s release has a lot of files in it:
 
    ![bat release](images/bat/release.png)
@@ -45,9 +50,13 @@ of it is in their repository: <https://github.com/sharkdp/bat>
 
    Don't forget to replace the version with `${version}`:
 
-   Bad: `https://github.com/sharkdp/bat/archive/refs/tags/v0.24.0.tar.gz`
+   ~~~admonish failure title="Bad"
+  `https://github.com/sharkdp/bat/archive/refs/tags/v0.24.0.tar.gz`
+   ~~~
 
-   Good: `https://github.com/sharkdp/bat/archive/refs/tags/v${version}.tar.gz`
+   ~~~admonish success title="Good"
+  `https://github.com/sharkdp/bat/archive/refs/tags/v${version}.tar.gz`
+   ~~~
 
 ## Creating the template
 
@@ -459,7 +468,7 @@ It also includes a patch to make the XBPS version of `libgit2` work in `bat`.
 ## What now?
 You might be wondering how the SHLIB detection works. This is best explained
 while packaging a library. The next part of this tutorial packages
-[`oiguruma`](https://github.com/kkos/oniguruma) a dependency of `bat`:
+[`oniguruma`](https://github.com/kkos/oniguruma) a dependency of `bat`:
 
 [Packaging oniguruma](packaging-oniguruma.md)
 

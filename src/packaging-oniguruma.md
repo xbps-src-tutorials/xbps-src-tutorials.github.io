@@ -30,11 +30,13 @@ sed -i /oniguruma/d common/shlibs
 
   This link includes `${version}` twice, so it has to be substituted twice:
 
-  Bad:
+  ~~~admonish failure title="Bad"
   `distfiles="https://github.com/kkos/oniguruma/releases/download/v6.9.9/onig-${version}.tar.gz"`
+  ~~~
 
-  Good:
+  ~~~admonish success title="Good"
   `distfiles="https://github.com/kkos/oniguruma/releases/download/v${version}/onig-${version}.tar.gz"`
+  ~~~
 
 ## A word about subpackages
 A package can have

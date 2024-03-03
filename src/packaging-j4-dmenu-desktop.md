@@ -187,7 +187,7 @@ CONTRIBUTING](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTI
 
 Namely **<span style="color:red"><ins>software without a release or tag</ins></span>,
 cryptocurrency packages, browser forks, simple shell scripts, themes, prebuilt
-packages** and more won't likely get accepted. I recommend you to read the
+packages** and more won't likely get accepted. I recommend you read the
 requirements in full linked above.
 
 ### Has it been packaged already?
@@ -420,13 +420,18 @@ explanation:
 
    The version shouldn't contain unnecessary characters:
 
-   Bad: `version=r2.18`
+   ~~~admonish failure title="Bad"
+  `version=r2.18`
+  or
+  `version=v0.24.0`
+   ~~~
 
-   Good: `version=2.18`
+   ~~~admonish success title="Good"
+  `version=2.18`
+  or
+  `version=0.24.0`
+   ~~~
 
-   Bad: `version=v0.24.0`
-
-   Good: `version=0.24.0`
 - `revision` = revision of the package; it can sometimes happen that the package
                has to be changed without updating it to for example fix some
                problem with the currently packaged version; `revision` is used
@@ -444,13 +449,15 @@ explanation:
                  characters, it mustn't start with an article and it should
                  start with an uppercase letter:
 
-   Bad: `short_desc="A desktop menu"`
+   ~~~admonish failure title="Bad"
+  `short_desc="A desktop menu"`
+  or
+  `short_desc="desktop menu"`
+   ~~~
 
-   Good: `short_desc="Desktop menu"`
-
-   Bad: `short_desc="desktop menu"`
-
-   Good: `short_desc="Desktop menu"`
+   ~~~admonish success title="Good"
+  `short_desc="Desktop menu"`
+   ~~~
 
    A good choice for `short_desc` is the GitHub short description (if the
    packaged project has one):
@@ -500,9 +507,13 @@ explanation:
 
   You can then copy the link.
 
-  Bad: `https://github.com/enkore/j4-dmenu-desktop/blob/develop/CHANGELOG`
+  ~~~admonish failure title="Bad"
+  `https://github.com/enkore/j4-dmenu-desktop/blob/develop/CHANGELOG`
+  ~~~
 
-  Good: `https://raw.githubusercontent.com/enkore/j4-dmenu-desktop/develop/CHANGELOG`
+  ~~~admonish success title="Good"
+  `https://raw.githubusercontent.com/enkore/j4-dmenu-desktop/develop/CHANGELOG`
+  ~~~
 
 We need to gather all of this information about `j4-dmenu-desktop` to be able to
 package it.
