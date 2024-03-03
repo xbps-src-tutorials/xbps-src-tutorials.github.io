@@ -251,7 +251,7 @@ oniguruma-devel_package() {
 ```
 
 ## Shlib dependencies
-Only the `-devel` package is usually seen as a dependency of a program. It is
+Only the `-devel` package is usually seen as a dependency of a template. It is
 usually specified in `makedepends`. But if you look at the `bat` package, you'll
 see this:
 
