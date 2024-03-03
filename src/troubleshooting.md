@@ -36,7 +36,7 @@ everything itself. This can be slow.
 
 You can update the branch you are on with
 ```
-git pull --rebase upstream
+git pull --rebase upstream master
 ```
 
 You have to have the `upstream` remote properly set up. You can use
