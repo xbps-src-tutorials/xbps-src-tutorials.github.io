@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: classabbyamp/treeless-checkout-action@v1
-      - name: Download latest mdbook and mdbook-toc
+      - name: Download latest mdbook, mdbook-toc and mdbook-admonish
         run: |
           MDBOOK_VERSION="$(basename $(curl -Ls -o /dev/null -w %{url_effective} https://github.com/rust-lang/mdBook/releases/latest))"
 
@@ -39,11 +39,15 @@ jobs:
           MDBOOK_TOC_VERSION="$(basename $(curl -Ls -o /dev/null -w %{url_effective} https://github.com/badboy/mdbook-toc/releases/latest))"
 
           wget -q -O- "https://github.com/badboy/mdbook-toc/releases/download/${MDBOOK_TOC_VERSION}/mdbook-toc-${MDBOOK_TOC_VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar -xzf - -C .
+
+          MDBOOK_ADMONISH_VERSION="$(basename $(curl -Ls -o /dev/null -w %{url_effective} https://github.com/tommilligan/mdbook-admonish/releases/latest))"
+
+          wget -q -O- "https://github.com/tommilligan/mdbook-admonish/releases/download/${MDBOOK_ADMONISH_VERSION}/mdbook-admonish-${MDBOOK_ADMONISH_VERSION}-x86_64-unknown-linux-gnu.tar.gz" | tar -xzf - -C .
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
       - name: Build with mdBook
-        run: PATH="$GITHUB_WORKSPACE:$PATH" mdbook build
+        run: PATH="$GITHUB_WORKSPACE:$PATH" ./book.sh build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
