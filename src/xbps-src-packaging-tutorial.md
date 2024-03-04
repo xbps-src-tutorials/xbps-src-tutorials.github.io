@@ -82,6 +82,21 @@ The [Manual](https://github.com/void-linux/void-packages/blob/master/Manual.md)
 is more akin to a reference manual, but the first few sections briefly explain
 the basics of `xbps-src`.
 
+### Obsolescence of this tutorial
+I chose to package the latest versions of the programs I'm showcasing at the
+time of writing this tutorial. But `j4-dmenu-desktop`, `bat`, `oniguruma` and
+`rofimoji` might have newer versions available by the time you read this,
+rendering the packages I'm showcasing obsolete.
+
+There's nothing wrong with packaging an older version of a package, although
+outdated packages are unlikely to be accepted into the official Void
+repositories. If any of these packages have a version greater than that
+mentioned in the tutorial, it is left as an exercise for the reader to update
+them. The process is the same.
+
+The tutorial focuses on the process of packaging, the packaged programs and
+libraries themselves "aren't that important" here.
+
 ### IRC
 If you are unsure about some aspect of `xbps-src` or your template is failing
 and you do not know why, you can ask around in `#voidlinux` or `#xbps` Libera
