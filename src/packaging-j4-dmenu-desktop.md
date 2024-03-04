@@ -482,7 +482,9 @@ explanation:
   look up the licenses online. `spdx-licenses-list` is a dependency of `xtools`,
   so you will already have that installed.
 
-  _Exercise for the reader: Where does `spdx-licenses-list` put the license list?_
+  ~~~admonish question title="Exercise for the reader"
+  Where does `spdx-licenses-list` put the license list?
+
   <details>
     <summary>Answer</summary>
 
@@ -493,6 +495,8 @@ explanation:
 
     See [the better way](#the-better-way).
   </details>
+
+  ~~~
 
   A project can have multiple licenses. They have to be all specified in
   `license` delimited by ", " (comma and space).
@@ -1345,7 +1349,7 @@ When 1. happens, you can do nothing about it. You can use the `nocross` or
 `archs` variables accompanied by a comment that gives a very good reason why it
 is impossible to support cross building or other architectures.
 
-<div class="warning">
+```admonish warning
 Void Linux tries really hard to support all its official architectures and you
 should too.
 
@@ -1353,7 +1357,7 @@ Using `nocross` or `archs` because you didn't care to test the package in these
 conditions will likely lead to package rejection in official repos. Testing for
 all architectures is made simple by [GitHub PR
 checks](contributing.md#solving-check-errors).
-</div>
+```
 
 When 2. happens, you should try to fix it or at least notify upstream
 developers (by creating an issue in the repository for example). They may or may

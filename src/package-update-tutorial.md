@@ -20,16 +20,14 @@ This tutorial will guide you through updating an already existing package using
 This tutorial assumes no prior knowledge of packaging systems.
   -->
 
-<div class="warning">
-
+```admonish warning
 This tutorial described the simple procedure of changing the `version` and
 `checksum` of a template. Some updates have breaking changes that have to be
 accounted for. There is no universal way to fix it, you have to figure it out.
 
 This tutorial is aimed at simpler packages. You likely won't be able to update
 browsers, kernels, DEs and other stuff without a great amount of work.
-
-</div>
+```
 
 ---
 

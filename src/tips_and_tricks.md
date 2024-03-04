@@ -496,13 +496,11 @@ of it can be.
 The cross compiled package can also "borrow" files from the native package and
 copy them into its destdir.
 
-<div class="warning">
-
+```admonish warning
 This applies **if and only if** the files are architecture independent! You
 can't take executables, libraries and other architecture dependent things from a
 package targetted for one architecture and use it in another!
-
-</div>
+```
 
 The trick is to _add the package to its own `hostmakedepends`_ if
 `$CROSS_BUILD` is set. This might not make sense at first, it looks like a
