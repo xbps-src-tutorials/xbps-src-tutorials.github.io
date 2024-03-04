@@ -128,7 +128,7 @@ Now, we can build:
 
 ```hidelines=~
 > ./xbps-src pkg rofimoji
-{{#include ../data/rofimoji_error1.txt}}
+{{#include ../../data/rofimoji_error1.txt}}
 ```
 
 `ModuleNotFoundError: No module named 'poetry'` `poetry` is missing.

@@ -107,7 +107,7 @@ We can now try to build it:
 The following error arises:
 
 ```hidelines=~
-{{#include ../data/bat_error1.txt}}
+{{#include ../../data/bat_error1.txt}}
 ```
 
 This is a pretty nice error message. It clearly explains that it didn't find
@@ -133,7 +133,7 @@ checksum=907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
 The following error arises:
 
 ```hidelines=~
-{{#include ../data/bat_error2.txt}}
+{{#include ../../data/bat_error2.txt}}
 ```
 
 It's missing the `oniguruma` dependency. It's a library, so it belongs to
@@ -456,7 +456,7 @@ post_install() {
 
 with the following patch:
 ```patch
-{{#include ../data/downgrade-git2.patch}}
+{{#include ../../data/downgrade-git2.patch}}
 ```
 
 The templates are similar, which is good. The official one tries to override a

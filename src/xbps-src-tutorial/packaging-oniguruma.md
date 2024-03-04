@@ -178,7 +178,7 @@ oniguruma-devel_package() {
 Let's try building it:
 
 ```hidelines=~
-{{#include ../data/oniguruma_error.txt}}
+{{#include ../../data/oniguruma_error.txt}}
 ```
 
 The package doesn't have any `man3` manpages, so we need to remove the
@@ -219,7 +219,7 @@ oniguruma-devel_package() {
 It builds now, but there's a warning:
 
 ```hidelines=~
-{{#include ../data/oniguruma_warning.txt}}
+{{#include ../../data/oniguruma_warning.txt}}
 ```
 
 That's an easy fix:
@@ -380,7 +380,7 @@ Let's build `oniguruma` and then `bat`:
 
 `oniguruma` builds without issues, but the same cannot be said about `bat`:
 ```hidelines=~
-{{#include ../data/oniguruma-bat-error.txt}}
+{{#include ../../data/oniguruma-bat-error.txt}}
 ```
 
 This shows us that we don't have to add every library SONAME to `common/shlibs`,

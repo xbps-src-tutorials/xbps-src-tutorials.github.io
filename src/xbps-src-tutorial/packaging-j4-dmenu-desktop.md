@@ -12,7 +12,7 @@ which uses `dmenu` and you want to try it out. To do so, you have to:
 You read their README and come up with the following process to do this:
 
 ```sh
-{{#include ../data/j4_build_instructions.txt}}
+{{#include ../../data/j4_build_instructions.txt}}
 ```
 
 All is well, everything works. But this approach has some disadvantages.
@@ -353,7 +353,7 @@ Let's package j4-dmenu-desktop.
 
 You may remember the build steps from before:
 ```sh
-{{#include ../data/j4_build_instructions.txt}}
+{{#include ../../data/j4_build_instructions.txt}}
 ```
 
 We just have to put it into a template and we're done[^ornot].
@@ -617,7 +617,7 @@ and
 #### Some progress
 These are the original build steps:
 ```sh
-{{#include ../data/j4_build_instructions.txt}}
+{{#include ../../data/j4_build_instructions.txt}}
 ```
 
 Now, we incorporate them into the template:
@@ -1410,7 +1410,7 @@ When you try to build the template provided above, you will notice that it fails
 on the `do_build()` step. Here is the error message:
 
 ```hidelines=~
-{{#include ../data/header_error.txt}}
+{{#include ../../data/header_error.txt}}
 ```
 
 Note that this error isn't even caused by cross compilation or compilation on
