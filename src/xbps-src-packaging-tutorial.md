@@ -51,12 +51,12 @@ Contributing the packages to
 [`void-packages`](https://github.com/void-linux/void-packages) is described in
 [Contributing](contributing.md).
 
-## Paths
+### Paths
 If not said otherwise, relative paths are relative to the directory the
 [`void-packages`](https://github.com/void-linux/void-packages) repository
 resides in.
 
-## Tabs
+### Tabs
 `mdBook` [automatically converts tabs to spaces in code
 blocks](https://github.com/rust-lang/mdBook/issues/1686). `xbps-src` indents
 templates with tabs. You'll have to convert 4 spaces to tabs manually when
