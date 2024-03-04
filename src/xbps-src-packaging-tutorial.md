@@ -57,9 +57,10 @@ If not said otherwise, relative paths are relative to the directory the
 resides in.
 
 ## Tabs
-`mdBook` automatically converts tabs to spaces in code blocks. `xbps-src`
-indents templates with tabs. You'll have to convert 4 spaces to tabs manually
-when copying from code blocks in this tutorial.
+`mdBook` [automatically converts tabs to spaces in code
+blocks](https://github.com/rust-lang/mdBook/issues/1686). `xbps-src` indents
+templates with tabs. You'll have to convert 4 spaces to tabs manually when
+copying from code blocks in this tutorial.
 
 ### Official documentation
 I will try to update this tutorial as appropriate, but the official
