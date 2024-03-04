@@ -167,6 +167,174 @@ Here's `x86_64-musl->aarch64-musl` setup:
 The advantage of testing locally is that you can examine the `builddir` and
 `destdir` after the build fails.
 
+## Runtime dependency checking with Docker
+It can be hard to check for runtime dependencies. Your computer probably has a
+lot of packages installed so the dependencies of the template you're testing can
+be satisfied by chance. This means that testing whether the package runs on your
+computer by installing it and running it can be unreliable. Some runtime
+dependencies may be overlooked.
+
+When that happens, the package may fail for someone who has a more
+minimal Void install or someone who simply doesn't happen to have the dependency
+installed.
+
+The best way to check that you have identified all the needed runtime
+dependencies of the template is to try to use the package on a minimal Void
+install. One of the most practical ways to achieve this is using Docker.
+
+_I assume you know Docker._
+
+Void Linux provides it's containers at
+<https://github.com/orgs/void-linux/packages?repo_name=void-containers>
+
+```admonish warning
+**Don't** use the [DocherHub Void Linux
+containers](https://hub.docker.com/r/voidlinux/voidlinux)! They are three years
+old! Void Linux switched from DockerHub to GHCR, DockerHub images are no longer
+maintained.
+```
+
+The `void-<libc>-full` container is usually minimal enough (no need for
+`void-<libc>` or the miniscule `void-<libc>-busybox`).
+
+The process usually looks like this:
+
+1. Build the package using `xbps-src`
+2. Run
+
+   ```
+   docker run -ti --rm ghcr.io/void-linux/void-<arch>-full
+   ```
+3. Copy `hostdir/binpkgs` (or `hostdir/binpkgs/<branch>` if you're on a branch)
+   to the container:
+
+   ```
+   > docker ps
+   CONTAINER ID   IMAGE                           COMMAND     CREATED         STATUS         PORTS     NAMES
+   a0b1ceddec17   ghcr.io/void-linux/void-glibc   "/bin/sh"   5 seconds ago   Up 3 seconds             recursing_archimedes
+   ```
+
+   We can use either the id `a0b1ceddec17` or the name `recursing_archimedes`
+   (these will be different for your container).
+
+   ```
+   docker cp hostdir/binpkgs a0b1ceddec17:/repo/
+   ```
+4. Install the package (in the container)
+
+   ```
+   xbps-install --repository /repo <pkg>
+   ```
+5. Run the package
+
+The `ghcr.io/void-linux/void-<arch>-full` image is very minimal. If you want
+something more practical, you can use one of my Dockerfiles (replace `glibc`
+with your arch if necessary):
+
+```
+# A minimal Void image
+# vi: ft=dockerfile
+FROM ghcr.io/void-linux/void-glibc-full:latest
+
+# Install packages
+RUN <<EOF
+# This might be unnecessary, but it's useful to have nontheless.
+# docker buildx can bind mount /etc/hosts. This means that this file can't be
+# overwritten while building the image. xbps-install may want to modify it.
+# If so, it will fail.
+echo noextract=/etc/hosts > /etc/xbps.d/hosts.conf
+
+xbps-install -ySu xbps && xbps-install -ySu
+xbps-install -y bash
+rm /etc/xbps.d/hosts.conf
+EOF
+
+RUN echo output width 169 >> /etc/man.conf
+CMD ["/usr/bin/bash"]
+```
+
+```
+# Void image with batteries included
+# vi: ft=dockerfile
+FROM ghcr.io/void-linux/void-glibc-full:latest
+
+# Install packages
+RUN <<EOF
+# This might be unnecessary, but it's useful to have nonetheless.
+# docker buildx can bind mount /etc/hosts. This means that this file can't be
+# overwritten while building the image. xbps-install may want to modify it.
+# If so, it will fail.
+echo noextract=/etc/hosts > /etc/xbps.d/hosts.conf
+
+xbps-install -ySu xbps && xbps-install -ySu
+xbps-install -y grml-zsh-config alacritty-terminfo st-terminfo zsh gcc make mdocml ncurses-term neovim file tree patch
+rm /etc/xbps.d/hosts.conf
+
+# Enable vi mode
+sed -i 's/bindkey -e/bindkey -v' /etc/zsh/zshrc
+EOF
+
+RUN echo output width 169 >> /etc/man.conf
+CMD ["/usr/bin/zsh"]
+```
+
+Testing graphical programs can be more difficult. Continue reading for more
+info.
+
+### Runtime dependency checking for X.org
+I have a handy [`compose.yaml`](https://docs.docker.com/compose/) file for this:
+
+```yaml
+services:
+  void-xorg:
+    image: <one of the two images mentioned above or the official one>
+    tty: true
+    volumes:
+      # Share the X.org socket
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+      # Share XBPS cache (this speeds up xbps-install)
+      - "/var/cache/xbps:/var/cache/xbps"
+    environment:
+      - DISPLAY=${DISPLAY}
+    build:
+      network: host
+```
+
+You'll have to put it into a directory and call
+
+```
+docker compose run void-xorg
+```
+
+from that directory to use it.
+
+This will require running
+
+```
+xhost +local:docker
+```
+
+on host.
+
+```admonish warning
+This is insecure! The container will get raw access to your X.org with this.
+```
+
+You can test this by running these command in the container:
+```
+xbps-install -Sy xclock
+xclock
+```
+
+If you're getting
+```
+Authorization required, but no authorization protocol specified
+
+Error: Can't open display: :0
+```
+
+You must run the `xhost` command mentioned above.
+
 ## Different ways of cloning
 Cloning the entirety of
 [`void-packages`](https://github.com/void-linux/void-packages) can be slow. git
