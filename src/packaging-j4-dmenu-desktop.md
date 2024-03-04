@@ -321,6 +321,11 @@ sudo xi -f <package>
 ```
 (The `xi` utility is provided by the `xtools` package.)
 
+```admonish info
+When `xi` is run as a normal user, it elevates itself using `sudo`, `doas` or
+`su` (in this order). This means that you can omit `sudo` above.
+```
+
 If a package build fails, the files are still kept in place for inspection. You
 should run
 ```
