@@ -6,10 +6,12 @@ them.
 <!-- toc -->
 
 ## Proper setup
-_Note: If you've been following the [xbps-src packaging
+```admonish
+If you've been following the [xbps-src packaging
 tutorial](xbps-src-packaging-tutorial.md), you will have `void-packages` already
 set up in a certain way. I provide instructions on how to fix the setup in [a
-later section](#contributing-bat-and-oniguruma)._
+later section](#contributing-bat-and-oniguruma).
+```
 
 You should have a GitHub account and know how to use it (this is one of the
 prerequisites of this tutorial).
@@ -152,6 +154,9 @@ commit.
 Each commit should be tied to a package. A single commit can't update two
 separate packages for example.[^singlecommit]
 
+See [applying fixes to pull requests](#applying-fixes-to-pull-requests) for
+methods of enforcing this.
+
 ## Making the pull request
 You will have to fill out the pull request template. At the time of writing this
 tutorial, it looks like this:
@@ -228,8 +233,21 @@ package. This means that you can't just add a fixup commit, you will have to
 modify the original commit and add the fix to it. This is described in
 [CONTRIBUTING](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md#review).
 
+To summarize it, you can use
+
+```
+git commit --amend
+```
+
+to add staged changes into the latest commit without creating a new one.
+
+There's also an alternative more advanced method for editing history: `git
+rebase -i`.  Explaining it is beyond the scope of this tutorial and it can be
+difficult to understand for beginners, but it is a very useful tool for
+manipulating git history.
+
 ## Contributing `bat` and `oniguruma`
-_Note: Do not actually contribute `bat` and `oniguruma`! They are already packaged._
+_Do not actually contribute `bat` and `oniguruma`! They are already packaged._
 
 Your repo should look something like this if you have been following [Packaging
 bat](packaging-bat.md) and [Packaging oniguruma](packaging-oniguruma.md):
@@ -252,12 +270,12 @@ no changes added to commit (use "git add" and/or "git commit -a")
 You should be doing this on a separate branch and not on `master`. I'm using
 branch `bat` here.
 
-<details>
+```admonish
+It might not look like that if you have been following this tutorial completely.
+If that is the case, you'll have to follow these instructions (expand them):
+```
 
-<summary>It might not look like that if you have been following this tutorial
-completely. If that is the case, you'll have to some setup. Click here for
-instructions.</summary>
-
+~~~admonish info title="Instructions" collapsible=true
 ```sh
 # If your git remote -v looks like this:
 ## origin	git@github.com:void-linux/void-packages.git (fetch)
@@ -284,9 +302,9 @@ git stash
 git checkout -b bat upstream/master
 git stash pop
 ```
+~~~
 
-</details>
-
+~~~admonish info
 I will showcase preparing `bat` and `oniguruma` for pull request. Because they
 are already packaged, we'll have to cheat a little and pretend that we have just
 made them. We'll first make a commit that removes the original packages. _You
@@ -302,6 +320,7 @@ git commit -m "DONOTMERGE"
 tar -xf files.tar
 rm files.tar
 ```
+~~~
 
 The repo should look like this now (this is the state in which a new package
 should be in the beginning):
@@ -400,6 +419,17 @@ branch 'bat' set up to track 'origin/bat'.
 ```
 
 You can then follow the link provided by git to create the pull request.
+
+## That's all folks!
+This is the end of xbps-src packaging tutorial. Thank you for taking the time to
+read this tutorial! Feel free to share your [feedback](feedback.md) if you'd
+like to.
+
+If you want to continue reading, you can look at
+[troubleshooting](troubleshooting.md) and [tips and tricks](tips_and_tricks.md)
+for more useful info about `xbps-src`.
+
+---
 
 [^uptodate]: Using this won't guarantee that the branch is up to date!
 [^singlecommit]: Like all rules, this rule has exceptions where such behaviour

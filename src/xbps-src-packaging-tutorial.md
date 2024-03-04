@@ -1,6 +1,6 @@
 # Xbps-src packaging tutorial
 
-**This tutorial is up to date as of February 27, 2024**
+**This tutorial is up to date as of March 4, 2024**
 
 This tutorial will guide you through packaging using `xbps-src` for inclusion
 in [void-packages](https://github.com/void-linux/void-packages) repository or
@@ -33,19 +33,16 @@ bridge that gap.
 I try to cover the basics. Feel free to skip some sections. But don't skip too
 much. This tutorial is written to be read from beginning to the end.
 
-This tutorial is divided into three sections: packaging
-[`j4-dmenu-desktop`](packaging-j4-dmenu-desktop.md), [`bat`](packaging-bat.md)
-and [`oniguruma`](packaging-oniguruma.md). Packaging
-[`j4-dmenu-desktop`](packaging-j4-dmenu-desktop.md) showcases basic concepts of
-`xbps-src` and [`bat`](packaging-bat.md) and
-[`oniguruma`](packaging-oniguruma.md) show additional concepts that couldn't be
-shown on `j4-dmenu-desktop`.
+This tutorial is divided into four sections: packaging
+[`j4-dmenu-desktop`](packaging-j4-dmenu-desktop.md), [`bat`](packaging-bat.md),
+[`oniguruma`](packaging-oniguruma.md) and [`rofimoji`](packaging-rofimoji.md).
+Packaging [`j4-dmenu-desktop`](packaging-j4-dmenu-desktop.md) showcases basic
+concepts of `xbps-src` and [`bat`](packaging-bat.md),
+[`oniguruma`](packaging-oniguruma.md) and [`rofimoji`](packaging-rofimoji.md)
+show additional concepts that couldn't be shown on `j4-dmenu-desktop`.
 
-All three of these are already packaged in Void Linux. They are also all
-compiled. You should still be able to follow this tutorial for programs &
-libraries which aren't compiled, but you should pay less attention to sections
-discussing cross compilation and the difference between `hostmakedepends` and
-`makedepends`.
+All four of these are already packaged in Void Linux. The first three are
+compiled programs, [`rofimoji`](packaging-rofimoji.md) is not.
 
 Contributing the packages to
 [`void-packages`](https://github.com/void-linux/void-packages) is described in
@@ -61,6 +58,21 @@ resides in.
 blocks](https://github.com/rust-lang/mdBook/issues/1686). `xbps-src` indents
 templates with tabs. You'll have to convert 4 spaces to tabs manually when
 copying from code blocks in this tutorial.
+
+### Extended logs
+Some logs in this tutorial are cut. You can expand them by clicking on the eye
+icon on the upper right corner of a code sample. The button will appear when
+you'll hover over the code block.
+
+```hidelines=~
+~content
+~content
+~content
+This isn't everything in the log!
+~content
+~content
+~content
+```
 
 ### Official documentation
 I will try to update this tutorial as appropriate, but the official

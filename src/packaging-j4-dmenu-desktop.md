@@ -18,8 +18,8 @@ You read their README and come up with the following process to do this:
 All is well, everything works. But this approach has some disadvantages.
 
 ### Why do we care about package management?
-`sudo make install` can do a lot of things. It can install the executable
-(that's why we're running it), it can install some libraries needed for
+`sudo make install` can do a lot of things. It can install the executable to the
+system (that's why we're running it), it can install some libraries needed for
 `j4-dmenu-desktop`, it can install configuration files, documentation, shell
 completions, examples etc. All these files are just installed to the system and
 you have to keep track of them.
@@ -29,9 +29,9 @@ Why do you have to keep track of them? Let's say that you have tried
 to uninstall it. You will have to `sudo rm` each file that has been installed.
 If you don't care much about a clean uninstall, you might choose to just `rm`
 the executable. The rest of `j4-dmenu-desktop`'s files will just sit there. They
-will still be installed, but not unused. This can waste your storage if for
-example `j4-dmenu-desktop` includes a large pregenerated documentation
-collection like some programs do.
+will still be installed, but unused. This can waste your storage if for example
+`j4-dmenu-desktop` includes a large pregenerated documentation collection like
+some programs do.
 
 But let's say you've been diligent and you know which files to remove. Still,
 wandering around with `sudo rm` in your system directories isn't the best idea.
@@ -113,12 +113,12 @@ _You don't necessarily have to know the internals of XBPS to be able to package,
 but it's interesting to know nonetheless. Feel free to skip this section._
 
 A XBPS package is a file usually ending with `.xbps`. They are managed by the
-`xbps-*` utilities, mainly `xbps-install`. Packages are located in
+`xbps-*` utilities, mainly `xbps-install`. Packages are downloaded to
 `/var/cache/xbps`.
 
-Official package are signed to prevent tampering and to verify authenticity. The
-signature is usually contained in a file with the same name as the package with
-`.sig` or the newer `.sig2` added to the end.
+Packages are signed and checksumed to prevent tampering and to verify
+authenticity. The signature is usually contained in a file with the same name as
+the package with `.sig` or the newer `.sig2` added to the end of the filename.
 
 A `.xbps` file (like most other "complicated" file formats) is just a disguised
 archive. At the time of writing this tutorial, mainly tar zstd archives are
@@ -151,8 +151,8 @@ If you want to examine individual files of a package, you don't have to extract 
 xbps-query -R --cat /usr/share/man/man1/j4-dmenu-desktop.1 j4-dmenu-desktop
 ```
 
-The archive can include additional files like `INSTALL` and `REMOVE`. I won't
-cover them, read the
+The archive can include additional special files like `INSTALL` and `REMOVE`. I
+won't cover them, read the
 [Manual](https://github.com/void-linux/void-packages/blob/master/Manual.md#install_remove_files)
 for more info.
 
@@ -222,7 +222,7 @@ history at the time of writing. That's a lot of commits.
 At the time of writing this tutorial, cloning the repo took me 15 minutes on my
 notebook. It had 626 MB.
 
-[There are alternative ways to clone, but this way should be
+[There are faster ways to clone, but this way should be
 preferred.](tips_and_tricks.md#different-ways-of-cloning)
 
 While you wait for it to clone, you can learn more about
@@ -289,14 +289,15 @@ The source of the package will be extracted (or put by other means) to
 built executable and supplementary files to
 `masterdir-x86_64/builddir/destdir/<package name>-<version>` as if it was
 installing to `/`.  This is called **"fake destdir"** and it is supported by
-most major build systems. For example if a program would be normally installed
+most major build systems. For instance, if a program would be normally installed
 to `/usr/bin/j4-dmenu-desktop`, it will be installed to
-`masterdir-x86_64/builddir/destdir/j4-dmenu-desktop-2.18/usr/bin/j4-dmenu-desktop`.
+`builddir/destdir/j4-dmenu-desktop-2.18/usr/bin/j4-dmenu-desktop` instead
+(relative to `masterdir-x86_64/`).
 
 `xbps-src` requires the installed files to be in the masterdir to know which
 files belong to the package.
 
-This is a lot of information. The best way to take it all in is by practise
+This is a lot of information. The best way to take it all in is by practising
 writing templates. But first, we need to know how to actually build a package:
 
 ### Basic usage of xbps-src
@@ -505,8 +506,8 @@ explanation:
                website)
 - `distfiles` = project source; [_we'll come back to this later_](#distfiles)
 - `checksum` = sha256sum of `distfiles`
-- `changelog` = a (preferably plaintext) changelog of the project; not all
-                packages have it
+- `changelog` = a (preferably plaintext) changelog of the project; it is
+                optional, not all packages have it
 
   If the project has a `CHANGELOG` or `CHANGELOG.md` (or something similar) in
   its repository, you should link to it in `changelog`, but you should link to
@@ -752,9 +753,9 @@ do_install() {
 }
 ```
 
-But wait, why didn't we have to install `make`? Because `make` is one of the
-basic dependencies of `base-chroot`, so `make` is automatically installed in
-every `masterdir`.
+But wait, why didn't we have to install `make`? We don't have to add `make` to
+dependencies because is one of the basic dependencies of `base-chroot`, so
+`make` is automatically installed in every `masterdir`.
 
 Now, there are only two issues that are preventing `j4-dmenu-desktop` from
 building:
@@ -763,8 +764,10 @@ building:
 
 Remember when I mentioned "fake destdir"? All files must be installed to fake
 destdir and not to `/`. The current template installs it to `/` (because it's
-the default location for CMake). The current template doesn't install it to your
-computer's root, but to `masterdir`'s root, because `masterdir` is isolated.
+the default location for CMake).
+
+The current template doesn't install it to your computer's root, but to
+`masterdir`'s root, because `masterdir` is isolated.
 
 Installing things to `masterdir` is not tolerable in templates. It pollutes the
 `masterdir` and it can no longer be safely used afterwards.
@@ -871,6 +874,17 @@ Stages are usually executed in `$wrksrc`.
 
 ## Improving the template
 ### What is cross compilation?
+```admonish
+Concepts described here hold true for **compiled** packages and libraries. They
+do not apply for packages which aren't compiled (like Python
+packages[^bytecompiled]). This is further described in [packaging
+rofimoji](packaging-rofimoji.md).
+
+If you intent to package non-compiled packages, you should still read the
+following sections, but you can pay less attention to them.
+```
+
+
 Cross compilation is compilation of code using a cross compiler.
 
 What is a cross compiler? Let's ask [Wikipedia](https://en.wikipedia.org/wiki/Cross_compiler):
@@ -886,8 +900,7 @@ development host.
 Normally, when you compile on `x86_64` architecture, you run the program on
 `x86_64`. But Void Linux supports more than `x86_64`, it supports a lot of
 architectures and even two libc implementations, glibc and musl. All of there
-are incompatible with each other ([there are ways to run software compiled for a
-different architecture](tips_and_tricks.md#qemu), but it isn't possible by default).
+are incompatible with each other by default.
 
 How does Void Linux support all of these? Does it have a dedicated build server
 for each architecture?
@@ -917,7 +930,7 @@ do it differently, but as you will soon learn, it doesn't actually matter in
 
 Cross compilation works pretty much the same as normal compilation, but a cross
 compiler must be used instead of a normal one. Void linux provides many cross
-compilers. They are named `cross-*`.
+compilers in the `cross-*` packages.
 
 You might wonder how can you modify the `j4-dmenu-desktop` template to support
 these `cross-` packages. But you do not have to, `xbps-src` does it for you if
@@ -952,15 +965,16 @@ Manual](https://github.com/void-linux/void-packages/blob/master/Manual.md#build_
 If that isn't enough, you can alway override `pre_<phase>()` and
 `post_<phase>()` functions. If you choose to define your own `do_<phase>()`
 functions that would conflict with the ones provided by the build style,
-functions defined your template take precedence.
+functions defined in your template take precedence.
 
 These build styles do much more than `cmake ..`. They handle the aforementioned
 `/usr` prefix and they even handle cross compilation. Then there are some Void
 specific things that you thanks to build styles don't even have to know nor care
 about, because the build styles handle it for you.
 
-Build styles also add necessary dependencies for them to function. This means
-that we can remove `cmake` from `hostmakedepends`.
+Build styles also add necessary dependencies for them to
+function[^buildstyledeps]. This means that we can remove `cmake` from
+`hostmakedepends`.
 
 ### How to cross compile?
 Instead of
@@ -975,6 +989,16 @@ you run
 This will download a `cross-*` cross compiler if appropriate and it will set
 some `xbps-src` configuration variables. The build style will then adapt to
 them.
+
+If you want to be extra diligent, you should not only test whether your template
+compiles with `./xbps-src pkg <package>`, but you should also test whether it
+cross compiles by for example running `./xbps-src pkg -a aarch64 <pkg>`. Testing
+cross compiling for a single target is usually enough. If the template cross
+compiles to one target, it will likely cross compile to all of them (but it
+depends).
+
+Testing for all architectures in a pull request is made simple by [GitHub PR
+checks](contributing.md#solving-check-errors).
 
 #### Some progress
 This is the old template:
@@ -1064,12 +1088,12 @@ An advantage of using distfiles over downloading the archive manually in
 They are automatically **downloaded** and **extracted** to `$wrksrc`.
 
 `xbps-src` keeps distfiles in `hostdir/sources`. This means that if you build
-the package several times, distfiles will be downloaded once.
+the package several times, the distfile(s) will be downloaded once.
 
-Another feature of distfiles is their checksum checking. It doesn't happen often
-on GitHub, but self hosted releases can change from time to time. This shouldn't
-happen, a versioned release should always be the same, but this can happen by
-accident.
+Another feature of distfiles is checksum checking using `checksum` template
+variable. It doesn't happen often on GitHub, but self hosted releases can be
+retroactively changed . This shouldn't happen, a versioned release should always
+be the same, but this can happen by accident.
 
 The less likely scenario is that the distfile has been changed maliciously and
 some unwanted code has been added.
@@ -1130,7 +1154,6 @@ repos. If the dependencies aren't there, `xbps-src` will build them using
 templates in `srcpkgs`.
 
 #### Some progress
-
 Both `git` and `cmake` needed to run on the host machine, so `hostmakedepends`
 was appropriate. `j4-dmenu-desktop` has another dependency that has been
 forgotten: `dmenu` itself. `dmenu` is not needed for compilation, so it belongs
@@ -1243,14 +1266,15 @@ checksum=77c5605d0c1291bcf1e13b186ea3b32ddf4753de0d0e39127b4a7d2098393e25
 ```
 
 ### `version` and `distfiles`
-A package update procedure usually consists of two things:
+A package update procedure ([which by the way has it's own tutorial
+here](package-update-tutorial.md)) usually consists of two things:
 
 1. changing `version`
 2. updating `checksum`
 
 `distfiles` should depend on `version` so that when `version` is updated,
 `distfiles` is updated too. With this method, it is much harder to have a
-package whose `version` doesn't match the real version of the package.
+package whose `version` doesn't match the real version of the distfile.
 
 Here is the modified template:
 ```bash
@@ -1359,9 +1383,9 @@ all architectures is made simple by [GitHub PR
 checks](contributing.md#solving-check-errors).
 ```
 
-When 2. happens, you should try to fix it or at least notify upstream
-developers (by creating an issue in the repository for example). They may or may
-not be willing to fix it.
+When 2. happens, you should try to fix it or at least [notify upstream
+developers](troubleshooting.md#notifying-upstream) (by creating an issue in the
+repository for example). They may or may not be willing to fix it.
 
 There are two mechanisms commonly used to fix things manually: patches and
 `vsed`.
@@ -1385,10 +1409,8 @@ for more info.
 When you try to build the template provided above, you will notice that it fails
 on the `do_build()` step. Here is the error message:
 
-```
-...
+```hidelines=~
 {{#include ../data/header_error.txt}}
-...
 ```
 
 Note that this error isn't even caused by cross compilation or compilation on
@@ -1402,8 +1424,8 @@ is not a sign of good C++ code. Thankfully the solution is pretty simple.
 If you do not have experience with C or C++, you'll have to [ask for
 help](xbps-src-packaging-tutorial.md#irc) or try to look for a patch
 elsewhere. Sometimes the fix has been already implemented in master. You can
-then get this patch and respectfully ask upstream to make a newer release
-including the fix.
+then get this patch and [respectfully ask upstream to make a newer release
+including the fix](troubleshooting.md#notifying-upstream).
 
 Or you can get "inspired" by other repositories like the [official Arch
 repo](https://archlinux.org/packages/), [the AUR](https://aur.archlinux.org/),
@@ -1463,7 +1485,6 @@ Here is the **final** template:
 pkgname=j4-dmenu-desktop
 version=2.18
 revision=1
-# Tests depend on archaic Catch1
 configure_args="-DWITH_TESTS=NO"
 build_style=cmake
 depends=dmenu
@@ -1491,12 +1512,22 @@ Fixes failing build on missing header file. Fixed in master.
  #include "LocaleSuffixes.hh"
 ```
 
+It should build successfully with or without checks and it should cross compile
+well. If that isn't the case, consider [cleaning the
+masterdir](troubleshooting.md#having-clean-masterdir).
+
 ### Summary
 We use
 ```
 ./xbps-src pkg j4-dmenu-desktop
 ```
 to build a template.
+
+We use
+```
+./xbps-src -a <arch> pkg j4-dmenu-desktop
+```
+to build a template for a different architecture using cross compilation.
 
 We use
 ```
@@ -1556,13 +1587,17 @@ packaging another program, [`bat`](https://github.com/sharkdp/bat):
 [Packaging bat](packaging-bat.md)
 
 ---
-[^youcan]: I'm sure there's a way you can install a package without its
-           dependencies, but you'll have to try pretty hard to do that.
+[^youcan]: I'm sure there's a way to install a package without its dependencies,
+           but you'll have to try pretty hard to do that.
 [^deps]: You also of course need XBPS and some very basic dependencies mentioned
          in [README's
-         Requirements](https://github.com/void-linux/void-packages/blob/master/README.md#requirements)
+         Requirements](https://github.com/void-linux/void-packages/blob/master/README.md#requirements),
+         which you probably already have installed.
 [^uname]: You can check with `uname -m`
 [^basechroot]: The `base-chroot` package isn't present in normal repositories.
                void-packages masterdirs access a special repository called
                `bootstrap`.
 [^ornot]: Or not!
+[^bytecompiled]: Python packages are _byte compiled_ on Void, but that is
+                 something different.
+[^buildstyledeps]: Not all build styles do that.

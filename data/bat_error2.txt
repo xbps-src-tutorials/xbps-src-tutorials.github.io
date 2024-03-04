@@ -1,3 +1,96 @@
+~=> xbps-src: updating repositories for host (x86_64)...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/bootstrap/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/nonfree/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/debug/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/bootstrap/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/nonfree/x86_64-repodata' ...
+~=> xbps-src: updating software in / masterdir...
+~=> xbps-src: cleaning up / masterdir...
+~=> bat-0.24.0_1: removing autodeps, please wait...
+~=> bat-0.24.0_1: building with [cargo] [rust] for x86_64...
+~   [host] pkg-config-0.29.2_3: found (https://repo-default.voidlinux.org/current)
+~   [host] cargo-1.76.0_1: found (https://repo-default.voidlinux.org/current)
+~   [host] cargo-auditable-0.6.2_1: found (https://repo-default.voidlinux.org/current)
+~=> bat-0.24.0_1: installing host dependencies: pkg-config-0.29.2_3 cargo-1.76.0_1 cargo-auditable-0.6.2_1 ...
+~=> bat-0.24.0_1: running do-fetch hook: 00-distfiles ...
+~=> bat-0.24.0_1: running do-extract hook: 00-distfiles ...
+~=> bat-0.24.0_1: extracting distfile(s), please wait...
+~=> bat-0.24.0_1: running do-patch hook: 00-patches ...
+~=> bat-0.24.0_1: running pre-configure hook: 00-gnu-configure-asneeded ...
+~=> bat-0.24.0_1: running pre-configure hook: 01-override-config ...
+~=> bat-0.24.0_1: running pre-configure hook: 02-script-wrapper ...
+~=> bat-0.24.0_1: running pre-build hook: 02-script-wrapper ...
+~=> bat-0.24.0_1: running do_build ...
+~   Compiling libc v0.2.147
+~   Compiling proc-macro2 v1.0.66
+~   Compiling quote v1.0.26
+~   Compiling unicode-ident v1.0.4
+~   Compiling rustix v0.38.11
+~   Compiling memchr v2.5.0
+~   Compiling pkg-config v0.3.25
+~   Compiling syn v2.0.12
+~   Compiling jobserver v0.1.25
+~   Compiling cc v1.0.73
+~   Compiling cfg-if v1.0.0
+~   Compiling serde v1.0.163
+~   Compiling bitflags v2.4.0
+~   Compiling linux-raw-sys v0.4.5
+~   Compiling utf8parse v0.2.1
+~   Compiling anstyle-parse v0.2.0
+~   Compiling log v0.4.17
+~   Compiling autocfg v1.1.0
+~   Compiling colorchoice v1.0.0
+~   Compiling proc-macro-hack v0.5.19
+~   Compiling libz-sys v1.1.8
+~   Compiling anstyle-query v1.0.0
+~   Compiling tinyvec_macros v0.1.0
+~   Compiling anstyle v1.0.0
+~   Compiling syn v1.0.104
+~   Compiling itoa v1.0.3
+~   Compiling anstream v0.6.4
+~   Compiling tinyvec v1.6.0
+~   Compiling sys-info v0.9.1
+~   Compiling onig_sys v69.8.1
+~   Compiling indexmap v1.9.1
+~   Compiling strsim v0.10.0
+~   Compiling terminal_size v0.3.0
+~   Compiling clap_lex v0.5.0
+~   Compiling crc32fast v1.3.2
+~   Compiling clap_builder v4.4.6
+~   Compiling unicode-normalization v0.1.22
+~error: failed to run custom build command for `onig_sys v69.8.1`
+~
+~Caused by:
+~  process didn't exit successfully: `/builddir/bat-0.24.0/target/release/build/onig_sys-87cb5ba460ba7160/build-script-build` (exit status: 101)
+~  --- stdout
+~  cargo:rerun-if-env-changed=RUSTONIG_DYNAMIC_LIBONIG
+~  cargo:rerun-if-env-changed=RUSTONIG_STATIC_LIBONIG
+~  cargo:rerun-if-env-changed=RUSTONIG_SYSTEM_LIBONIG
+~  cargo:rerun-if-env-changed=ONIGURUMA_NO_PKG_CONFIG
+~  cargo:rerun-if-env-changed=PKG_CONFIG_x86_64-unknown-linux-gnu
+~  cargo:rerun-if-env-changed=PKG_CONFIG_x86_64_unknown_linux_gnu
+~  cargo:rerun-if-env-changed=HOST_PKG_CONFIG
+~  cargo:rerun-if-env-changed=PKG_CONFIG
+~  cargo:rerun-if-env-changed=ONIGURUMA_STATIC
+~  cargo:rerun-if-env-changed=ONIGURUMA_DYNAMIC
+~  cargo:rerun-if-env-changed=PKG_CONFIG_ALL_STATIC
+~  cargo:rerun-if-env-changed=PKG_CONFIG_ALL_DYNAMIC
+~  cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64-unknown-linux-gnu
+~  cargo:rerun-if-env-changed=PKG_CONFIG_PATH_x86_64_unknown_linux_gnu
+~  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_PATH
+~  cargo:rerun-if-env-changed=PKG_CONFIG_PATH
+~  cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64-unknown-linux-gnu
+~  cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR_x86_64_unknown_linux_gnu
+~  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_LIBDIR
+~  cargo:rerun-if-env-changed=PKG_CONFIG_LIBDIR
+~  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64-unknown-linux-gnu
+~  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR_x86_64_unknown_linux_gnu
+~  cargo:rerun-if-env-changed=HOST_PKG_CONFIG_SYSROOT_DIR
+~  cargo:rerun-if-env-changed=PKG_CONFIG_SYSROOT_DIR
+~
+~  --- stderr
   thread 'main' panicked at /host/cargo/registry/src/index.crates.io-6f17d22bba15001f/onig_sys-69.8.1/build.rs:253:17:
   Unable to find oniguruma in pkg-config, and RUSTONIG_SYSTEM_LIBONIG is set: `PKG_CONFIG_ALLOW_SYSTEM_CFLAGS="1" PKG_CONFIG_ALLOW_SYSTEM_LIBS="1" "pkg-config" "--libs" "--cflags" "oniguruma" "oniguruma >= 6.9.3"` did not exit successfully: exit status: 1
   error: could not find system library 'oniguruma' required by the 'onig_sys' crate
@@ -13,3 +106,6 @@
   No package 'oniguruma' found
 
   note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+warning: build failed, waiting for other jobs to finish...
+=> ERROR: bat-0.24.0_1: do_build: '${make_cmd} build --release --locked --target ${RUST_TARGET} ${configure_args}' exited with 101
+=> ERROR:   in do_build() at common/build-style/cargo.sh:8

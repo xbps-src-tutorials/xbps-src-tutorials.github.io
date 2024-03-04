@@ -1,6 +1,6 @@
 # PR testing tutorial
 
-**This tutorial is up to date as of February 27, 2024**
+**This tutorial is up to date as of March 4, 2024**
 
 This tutorial will guide you through testing changes made in an open pull
 request in [`void-packages`](https://github.com/void-linux/void-packages).
@@ -13,10 +13,17 @@ request in [`void-packages`](https://github.com/void-linux/void-packages).
 
 <!-- toc -->
 
+## Cloning
 The steps to follow differ depending on whether you already have a
 [`void-packages`](https://github.com/void-linux/void-packages) clone.
 
-## Cloning
+- [You don’t have a `void-packages` clone](#you-dont-have-a-void-packages-clone)
+   - [You want to try out a singe PR and never touch `void-packages`
+   again](#you-want-to-try-out-a-singe-pr-and-never-touch-void-packages-again)
+   - [You want to have `void-packages` for future
+   use](#you-want-to-have-void-packages-for-future-use)
+- [You have a `void-packages` clone](#you-have-a-void-packages-clone)
+
 ### You don't have a `void-packages` clone
 #### You want to try out a singe PR and never touch `void-packages` again
 You should go to the pull request you want to test:
@@ -44,7 +51,7 @@ git clone --depth 1 --single-branch --branch=mdBook-completions https://github.c
 
 You must replace the branch and the link with yours.
 
-You can now continue with [Updating](#updating).
+You can now continue with [Setting up the builddir](#setting-up-the-builddir).
 
 #### You want to have `void-packages` for future use
 You can clone the repository with
@@ -109,16 +116,32 @@ git checkout mdbook-compl
 ```
 
 ## Updating
+```admonish warning
+Skip this section if you have followed [You want to try out a singe PR and never
+touch `void-packages`
+again](#you-want-to-try-out-a-singe-pr-and-never-touch-void-packages-again).
+```
+
 The pull request might be a bit out of date when compared to
 [`void-packages`](https://github.com/void-linux/void-packages). This can result
 in problems. To update it, you must have the `upstream` remote. Your `git remote
--v` should look like this:
+-v` should look like this (with the target fork instead of
+`meator/void-packages.git`):
 
 ```
 origin	git@github.com:meator/void-packages.git (fetch)
 origin	git@github.com:meator/void-packages.git (push)
 upstream	git@github.com:void-linux/void-packages.git (fetch)
 upstream	git@github.com:void-linux/void-packages.git (push)
+```
+
+or like this for HTTPS:
+
+```
+origin	https://github.com/meator/void-packages.git (fetch)
+origin	https://github.com/meator/void-packages.git (push)
+upstream	https://github.com/void-linux/void-packages.git (fetch)
+upstream	https://github.com/void-linux/void-packages.git (push)
 ```
 
 If you have followed the [git](#git) route, you will also have two entries for
@@ -131,7 +154,7 @@ git remote add upstream https://github.com/void-linux/void-packages.git
 #git remote add upstream git@github.com:void-linux/void-packages.git
 ```
 
-If you have `remote`, you can update the branch using it:
+If you have the `upstream` entry, you can update the branch using it:
 ```
 git pull --rebase upstream master
 ```
@@ -165,12 +188,12 @@ This requires the `xtools` package.
 
 Run
 ```
-xi -f <package>
+sudo xi -f <package>
 ```
 
 here it would be
 ```
-xi mdBook
+sudo xi mdBook
 ```
 
 And that's it. If you don't want to build any more packages, you can run

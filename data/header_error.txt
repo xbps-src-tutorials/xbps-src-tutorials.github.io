@@ -1,3 +1,62 @@
+~=> xbps-src: updating repositories for host (x86_64)...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/bootstrap/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/nonfree/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/debug/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/bootstrap/x86_64-repodata' ...
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/x86_64-repodata' ...
+~x86_64-repodata: [681KB 0%] 58MB/s ETA: 00m00s
+~x86_64-repodata: [681KB 54%] 399KB/s ETA: 00m00s
+~x86_64-repodata: 681KB [avg rate: 739KB/s]
+~[*] Updating repository `https://repo-default.voidlinux.org/current/multilib/nonfree/x86_64-repodata' ...
+~=> xbps-src: updating software in / masterdir...
+~=> xbps-src: cleaning up / masterdir...
+~=> j4-dmenu-desktop-2.18_1: removing autodeps, please wait...
+~=> j4-dmenu-desktop-2.18_1: building with [cmake] for x86_64...
+~   [host] cmake-bootstrap-3.27.6_2: found (https://repo-default.voidlinux.org/current/bootstrap)
+~   [host] ninja-1.11.1_4: found (https://repo-default.voidlinux.org/current)
+~   [runtime] dmenu-5.2_1: found (https://repo-default.voidlinux.org/current)
+~=> j4-dmenu-desktop-2.18_1: installing host dependencies: cmake-bootstrap-3.27.6_2 ninja-1.11.1_4 ...
+~=> j4-dmenu-desktop-2.18_1: running do-fetch hook: 00-distfiles ...
+~=> j4-dmenu-desktop-2.18_1: running do-extract hook: 00-distfiles ...
+~=> j4-dmenu-desktop-2.18_1: extracting distfile(s), please wait...
+~=> j4-dmenu-desktop-2.18_1: running do-patch hook: 00-patches ...
+~=> j4-dmenu-desktop-2.18_1: running pre-configure hook: 00-gnu-configure-asneeded ...
+~=> j4-dmenu-desktop-2.18_1: running pre-configure hook: 01-override-config ...
+~=> j4-dmenu-desktop-2.18_1: running pre-configure hook: 02-script-wrapper ...
+~=> j4-dmenu-desktop-2.18_1: running do_configure ...
+~CMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+~  Compatibility with CMake < 3.5 will be removed from a future version of
+~  CMake.
+~
+~  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+~  CMake that the project does not need compatibility with older versions.
+~
+~
+~-- The C compiler identification is GNU 13.2.0
+~-- The CXX compiler identification is GNU 13.2.0
+~-- Detecting C compiler ABI info
+~-- Detecting C compiler ABI info - done
+~-- Check for working C compiler: /usr/lib/ccache/bin/cc - skipped
+~-- Detecting C compile features
+~-- Detecting C compile features - done
+~-- Detecting CXX compiler ABI info
+~-- Detecting CXX compiler ABI info - done
+~-- Check for working CXX compiler: /usr/lib/ccache/bin/g++ - skipped
+~-- Detecting CXX compile features
+~-- Detecting CXX compile features - done
+~-- Configuring done (1.9s)
+~-- Generating done (0.0s)
+~CMake Warning:
+~  Manually-specified variables were not used by the project:
+~
+~    CMAKE_INSTALL_LIBDIR
+~    CMAKE_INSTALL_SBINDIR
+~    CMAKE_INSTALL_SYSCONFDIR
+~
+~
+~-- Build files have been written to: /builddir/j4-dmenu-desktop-2.18/build
+~=> j4-dmenu-desktop-2.18_1: running pre-build hook: 02-script-wrapper ...
 => j4-dmenu-desktop-2.18_1: running do_build ...
 [1/2] Building CXX object CMakeFiles/j4-dmenu-desktop.dir/src/main.cc.o
 FAILED: CMakeFiles/j4-dmenu-desktop.dir/src/main.cc.o
@@ -16,3 +75,39 @@ In file included from ../src/Main.hh:16,
       |           ^~~~~~~~
 ../src/Application.hh:36:11: note: 'uint32_t' is defined in header '<cstdint>'; did you forget to '#include <cstdint>'?
 ../src/Application.hh: In member function 'bool Application::read(const char*, char**, size_t*)':
+~../src/Application.hh:142:24: error: 'make_istring' was not declared in this scope
+~  142 |                 switch(make_istring(key)) {
+~      |                        ^~~~~~~~~~~~
+~../src/Application.hh:143:22: error: unable to find string literal operator 'operator""_istr' with 'const char [5]', 'long unsigned int' arguments
+~  143 |                 case "Name"_istr:
+~      |                      ^~~~~~~~~~~
+~../src/Application.hh:146:22: error: unable to find string literal operator 'operator""_istr' with 'const char [12]', 'long unsigned int' arguments
+~  146 |                 case "GenericName"_istr:
+~      |                      ^~~~~~~~~~~~~~~~~~
+~../src/Application.hh:149:22: error: unable to find string literal operator 'operator""_istr' with 'const char [5]', 'long unsigned int' arguments
+~  149 |                 case "Exec"_istr:
+~      |                      ^~~~~~~~~~~
+~../src/Application.hh:152:22: error: unable to find string literal operator 'operator""_istr' with 'const char [5]', 'long unsigned int' arguments
+~  152 |                 case "Path"_istr:
+~      |                      ^~~~~~~~~~~
+~../src/Application.hh:155:22: error: unable to find string literal operator 'operator""_istr' with 'const char [11]', 'long unsigned int' arguments
+~  155 |                 case "OnlyShowIn"_istr:
+~      |                      ^~~~~~~~~~~~~~~~~
+~../src/Application.hh:167:22: error: unable to find string literal operator 'operator""_istr' with 'const char [10]', 'long unsigned int' arguments
+~  167 |                 case "NotShowIn"_istr:
+~      |                      ^~~~~~~~~~~~~~~~
+~../src/Application.hh:179:22: error: unable to find string literal operator 'operator""_istr' with 'const char [7]', 'long unsigned int' arguments
+~  179 |                 case "Hidden"_istr:
+~      |                      ^~~~~~~~~~~~~
+~../src/Application.hh:180:22: error: unable to find string literal operator 'operator""_istr' with 'const char [10]', 'long unsigned int' arguments
+~  180 |                 case "NoDisplay"_istr:
+~      |                      ^~~~~~~~~~~~~~~~
+~../src/Application.hh:188:22: error: unable to find string literal operator 'operator""_istr' with 'const char [9]', 'long unsigned int' arguments
+~  188 |                 case "Terminal"_istr:
+~      |                      ^~~~~~~~~~~~~~~
+~../src/Application.hh:189:61: error: unable to find string literal operator 'operator""_istr' with 'const char [5]', 'long unsigned int' arguments
+~  189 |                     this->terminal = make_istring(value) == "true"_istr;
+~      |                                                             ^~~~~~~~~~~
+~ninja: build stopped: subcommand failed.
+~=> ERROR: j4-dmenu-desktop-2.18_1: do_build: '${make_cmd} ${makejobs} ${make_build_args} ${make_build_target}' exited with 1
+~=> ERROR:   in do_build() at common/build-style/cmake.sh:95

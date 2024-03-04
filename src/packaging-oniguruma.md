@@ -12,6 +12,9 @@ sed -i /oniguruma/d common/shlibs
 <!-- toc -->
 
 ## Gathering info
+The following information is taken from `oniguruma`'s GitHub repo:
+<https://github.com/kkos/oniguruma>
+
 - latest `version`: `6.9.9`
 
   ![oniguruma version](images/oniguruma/version.png)
@@ -285,10 +288,10 @@ meator ~/git/xbps-src-tutorial/src/images>% objdump -p /usr/bin/bat | grep NEEDE
   NEEDED               libc.so.6
 ```
 
-(`libgcc_s`, `libm` and `libc` are core libraries on which many programs depend
-on. All of these are transitive or direct dependencies of `base-system`, so they
-should be installed on every Void Linux computer & we don't have to put them to
-`depends`.)
+(`libgcc_s`, `libm` and `libc` are core libraries upon which many programs
+depend. All of these are transitive or direct dependencies of `base-system`, so
+they should be installed on every Void Linux computer[^minimal] & we don't have
+to put them to `depends`.)
 
 We see that `oniguruma` provides SONAME `libonig.so.5` and bat needs SONAME
 `libonig.so.5`.
@@ -298,7 +301,7 @@ SONAME to the correct package. This is the purpose of the
 [`common/shlibs`](https://github.com/void-linux/void-packages/blob/master/common/shlibs)
 file.
 
-I have largely overlooked the `common` directory. It contains `xbps-src`
+I have largely overlooked the `common/` directory. It contains `xbps-src`
 internal scripts, definitions of build styles and more. But it also contains the
 SONAME to package mapping.
 
@@ -364,8 +367,10 @@ post_install() {
 }
 ```
 
-_Instructions mentioned at the very beginning of this page must have been
-followed for this to (not) work._
+```admonish warning
+Instructions mentioned at the very beginning of this page must have been
+followed for this to (not) work.
+```
 
 Let's build `oniguruma` and then `bat`:
 ```
@@ -389,7 +394,8 @@ If a library is a dependency of another package, we **should** add the SHLIB to
 packaged because they are the dependency of the target executable which the
 packager wants, standalone libraries aren't usually packaged and one could even
 argue that it wouldn't be accepted because of [packaging
-requirements](packaging-j4-dmenu-desktop.md#quality-requirements)).
+requirements](packaging-j4-dmenu-desktop.md#quality-requirements), but it
+depends).
 
 ### How to add a shlib dependency?
 The error message emitted by by `./xbps-src pkg bat` already shows the SONAME
@@ -405,23 +411,22 @@ which is causing trouble:
 
 It is `libonig.so.5`. The header of `common/shlibs` describes it best, so I'll
 include it here:
-```
-This file represents a map between shared libraries and packages
-in XBPS. Every shared library installed by a package must be
-listed here and mapped to a binary package.
 
-The first field lists the exact SONAME embedded in binaries.
-
-The second field lists the package/version tuple containing the SONAME.
-The version component is used as greater than or equal to that version
-in resulting binary package.
-
-The third field (optional) specifies that shared library should not be used
-to perform checks of soname bumps.
-
-PLEASE NOTE: when multiple packages provide the same SONAME, the first
-one (order top->bottom) is preferred over the next ones.
-```
+> This file represents a map between shared libraries and packages in XBPS.
+  Every shared library installed by a package must be listed here and mapped to
+  a binary package.
+>
+> The first field lists the exact SONAME embedded in binaries.
+>
+> The second field lists the package/version tuple containing the SONAME.  The
+  version component is used as greater than or equal to that version in
+  resulting binary package.
+>
+> The third field (optional) specifies that shared library should not be used to
+  perform checks of soname bumps.
+>
+> PLEASE NOTE: when multiple packages provide the same SONAME, the first one
+  (order top->bottom) is preferred over the next ones.
 
 So the correct shlib entry is
 ```
@@ -819,27 +824,15 @@ The official template uses `${sourcepkg}` in some places. Excessive use of
 `${sourcepkg}` or `$pkgname` isn't good. Package names don't change often, so
 handling the name dynamically serves no practical purpose.
 
-## The end?
-Well, you've made it. This is the end of the practical part of this tutorial.
-You should now be able to package your own programs, libraries or other things
-using `xbps-src`. You now know the many helpful features of `xbps-src` that
-should simplify packaging.
+## What now?
+I'm sure you're pretty tired of `bat` now. Let's package something completely
+different: [`rofimoji`](https://github.com/fdw/rofimoji):
 
-This tutorial doesn't cover the entirety of `xbps-src` and it doesn't try to do
-so. Look in the
-[Manual](https://github.com/void-linux/void-packages/blob/master/Manual.md) for
-that. Now that you know the basics, you should be able to comprehend it well.
+[Packaging rofimoji](packaging-rofimoji.md)
 
-Knowing the basics is also good when [asking for
-help](xbps-src-packaging-tutorial.md#irc). I have often seen people in
-`#voidlinux` trying to solve some problem with their template while not knowing
-the basics of `xbps-src`. This can complicate troubleshooting for both parties.
-
-You should now have working package(s). You might want to contribute them. If
-yes, continue reading:
-
-[Contributing](contributing.md)
-
+[^minimal]: Some people (although they are a minority) use an alternative
+            `base-` package instead of `base-system` for their system. But these
+            dependencies are so basic that even these people should have them.
 [^cmake]: As I mentioned in the very beginning of page, `oniguruma` has multiple
           build systems. I wasn't able to find anything related to documentation
           in their configure script, but their `CMakeLists.txt` [has an option

@@ -316,7 +316,7 @@ xhost +local:docker
 
 on host.
 
-```admonish warning
+```admonish danger
 This is insecure! The container will get raw access to your X.org with this.
 ```
 
@@ -401,10 +401,12 @@ If the project is on GitHub, you can subscribe to new releases:
 
 ## Cross compilation
 ### Build packages for 32bit or musl without cross compiling { #nocross }
-_Note: not only is this approach more convenient (it is more likely to work than
-cross compiling), it is also the **recommended** method when compiling
-`x86_64->i686` or `x86_64->x86_64-musl`. Cross compiling in these two scenarios
-instead of using separate builddirs described below may lead to failed builds._
+```admonish
+Not only is this approach more convenient (it is more likely to work than cross
+compiling), it is also the **recommended** method when compiling `x86_64->i686`
+or `x86_64->x86_64-musl`. Cross compiling in these two scenarios instead of
+using separate builddirs described below may lead to failed builds.
+```
 
 Linux can chroot to systems which differ considerably from the host under
 specific conditions. These conditions are met when host is `x86_64` and the
@@ -476,7 +478,9 @@ sometimes. You should consider [notifying upstream about
 it](troubleshooting.md#notifying-upstream).
 
 ### Using the native package
-_This is an advanced technique. Beware!_
+```admonish warning
+This is an advanced technique. Beware!
+```
 
 Sometimes, there are things that can only be done natively. You can determine
 the logic in the template using

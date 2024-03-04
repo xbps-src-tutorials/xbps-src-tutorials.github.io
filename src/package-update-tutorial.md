@@ -1,6 +1,6 @@
 # Package update tutorial
 
-**This tutorial is up to date as of February 27, 2024**
+**This tutorial is up to date as of March 4, 2024**
 
 This tutorial will guide you through updating an already existing package using
 `xbps-src`.
@@ -10,20 +10,16 @@ This tutorial will guide you through updating an already existing package using
 - basic knowledge of GitHub for contributing (have an account, know how to make
   a pull request)
 - basics of CLI
-<!---- knowledge of the build system of the packaged program is preferable
-- knowledge of libraries (what's a static/dynamic library, why are they
-  important etc.) is useful
-- knowing what is a patch, how to make one and how to apply one is preferable
-  (they are used in this article, but shouldn't be necessary in more normal use)
-
-### Non-prerequisites
-This tutorial assumes no prior knowledge of packaging systems.
-  -->
 
 ```admonish warning
 This tutorial described the simple procedure of changing the `version` and
 `checksum` of a template. Some updates have breaking changes that have to be
 accounted for. There is no universal way to fix it, you have to figure it out.
+
+If a simple `version` update won't cut it, you'll have to make changes to the
+template. You can read the [xbps-src packaging
+tutorial](xbps-src-packaging-tutorial.md) for an in-depth explanation of
+templates.
 
 This tutorial is aimed at simpler packages. You likely won't be able to update
 browsers, kernels, DEs and other stuff without a great amount of work.
@@ -56,14 +52,16 @@ is necessary for updating the repo and it's useful for contributing.
 
 If you want to use
 [`void-packages`](https://github.com/void-linux/void-packages) in the future,
-you should do a full clone (you should have SSH keys set up with git):
+you should do a full clone (`void-packages`'
+[CONTRIBUTING](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md#creating-updating-and-modifying-packages-in-void-by-yourself)
+recommends using SSH):
 ```sh
 git clone git@github.com:void-linux/void-packages.git
 # Or this with HTTPS if you do not want to set up SSH keys:
 #git clone https://github.com/void-linux/void-packages.git
 ```
 
-A full clone takes about 15 minutes on my computer and it occupies 626M.
+A full clone takes about 15 minutes on my computer and it occupies 626M[^clone].
 
 If you want to contribute, you should have a fork of
 [`void-packages`](https://github.com/void-linux/void-packages) set up. You should then clone it:
@@ -75,10 +73,12 @@ git clone git@github.com:meator/void-packages.git
 #git clone https://github.com/meator/void-packages.git
 ```
 
-You should also have [remotes set up](contributing.md#remotes).
-
-More options are described in [different ways of
-cloning](tips_and_tricks.md#different-ways-of-cloning).
+You should also set up the `upstream` remote[^remotes]:
+```sh
+git remote add upstream git@github.com:void-linux/void-packages.git
+# Or this with HTTPS if you do not want to set up SSH keys:
+#git remote add upstream https://github.com/void-linux/void-packages.git
+```
 
 After cloning it, you must set up a masterdir. This can be done with the
 following command (after you `cd` into the repository):
@@ -252,9 +252,8 @@ post_install() {
 }
 ```
 
-The package won't build now because the source archive has changed, but
-`xbps-src` checksums it with the checksum of the old source archive which will
-fail.
+The package won't build now because the source archive has changed. `xbps-src`
+checksums the source archive. Because it has changed, the check will fail.
 
 The `xtools` package includes a handy helper for calculating the checksums:
 `xgensum`. You just have to run:
@@ -299,7 +298,7 @@ the project has one.
 
 It might be necessary to modify the template to fix the build. There is no
 universal way to fix these problems, but general understanding of `xbps-src` is
-helpful in these situations. I recommend you reading the [Xbps-src packaging
+helpful in these situations. I recommend you reading the [xbps-src packaging
 tutorial](xbps-src-packaging-tutorial.md).
 
 ## `xlint`
@@ -374,3 +373,11 @@ git push -u origin khal
 ```
 
 It will output a link that will open the pull request.
+
+---
+
+[^clone]: There are alternative ways of cloning. They are described at
+          [different ways of cloning](tips_and_tricks.md#different-ways-of-cloning).
+[^remotes]: This is briefly described in the [remotes section of contributing
+            (of this tutorial, not void-packages'
+            CONTRIBUTING)](contributing.md#remotes)

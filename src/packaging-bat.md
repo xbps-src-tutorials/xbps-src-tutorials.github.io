@@ -14,7 +14,7 @@ rm -r srcpkgs/bat
 To package `bat`, we first need to gather metadata needed in the template. Most
 of it is in their repository: <https://github.com/sharkdp/bat>
 
-- latest `version`: `0.24.0`
+- latest `version`: `0.24.0` (not `v0.24.0`)
 - `build_style`: the Cargo build system is used (this is common for Rust
   projects) so `cargo` is appropriate
 - `short_desc`: `Cat(1) clone with syntax highlighting and Git integration`
@@ -106,8 +106,7 @@ We can now try to build it:
 
 The following error arises:
 
-```
-...
+```hidelines=~
 {{#include ../data/bat_error1.txt}}
 ```
 
@@ -133,7 +132,7 @@ checksum=907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
 
 The following error arises:
 
-```
+```hidelines=~
 {{#include ../data/bat_error2.txt}}
 ```
 
@@ -181,9 +180,7 @@ dynamic libraries `bat` needs.
 
 When a program is linked against a static library, the program "remembers" which
 library it has been linked to. It marks the SONAME of the library in the
-executable. The details of this process are beyond the scope of this tutorial
-(and you should preferably know this already, knowledge of libraries is listed
-as a prerequisite of this tutorial).
+executable. The details of this process are beyond the scope of this tutorial.
 
 `xbps-src` reads the SONAMEs of the executables and libraries in `$DESTDIR`. It
 can detect runtime dependencies (like `oniguruma`) based on this information.
@@ -192,9 +189,12 @@ This means that you don't usually have to specify libraries in `depends`. Only
 "external" runtime dependencies like some other programs are usually specified
 there.
 
+```admonish warning
 Interpreted programming languages like Python can not have shlib dependency
 detection due to the way they work. You have to specify all `depends`
-dependencies for them.
+dependencies for them. This is further described later in [packaging
+rofimoji](packaging-rofimoji.md#dependencies-for-interpreted-packages).
+```
 
 ### Some progress
 The template works. But it could be improved.
@@ -214,7 +214,7 @@ require the license to be installed alongside the program to make user aware of
 it.
 
 Licenses are installed in `/usr/share/licenses`. `xbps-src` includes a helper
-called `vlicense` that install the file it is supplied with to
+function called `vlicense` that install the file it is supplied with to
 `usr/share/licenses/<pkgname>`. This is what the `xlint` warning is referring
 to. It is usually called in `post_install()`
 
@@ -356,7 +356,7 @@ post_install() {
 }
 ```
 
-`bat` also provides shell completions. They are also generated, but the path has
+`bat` also provides shell completions. They are generated too, but the path has
 been fixed already, so they'll end up in `assets/completions/bat.fish`,
 `assets/completions/bat.zsh` and `assets/completions/bat.bash`. Now that you
 know that `xbps-src` has helpers for this, you don't even have to know where
@@ -471,6 +471,8 @@ while packaging a library. The next part of this tutorial packages
 [`oniguruma`](https://github.com/kkos/oniguruma), a dependency of `bat`:
 
 [Packaging oniguruma](packaging-oniguruma.md)
+
+---
 
 [^batspecific]: This is a `bat` specific thing. Other projects might have their
                 data files in the repository without need of generation. The

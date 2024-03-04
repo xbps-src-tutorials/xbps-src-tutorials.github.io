@@ -142,8 +142,9 @@ Now, we can build:
 This is our dependency. But I should talk about dependencies more.
 
 ## Dependencies for interpreted packages
-As I've mentioned at the very beginning of this tutorial, cross compilation
-isn't really a thing for interpreted languages like Python.
+As I've mentioned in [the cross compilation section of packaging
+j4-dmenu-desktop](packaging-j4-dmenu-desktop.md#what-is-cross-compilation),
+cross compilation isn't really a thing for interpreted languages like Python.
 
 ```admonish
 This is true for
@@ -333,3 +334,24 @@ These two templates are almost identical, which is a good sign.
 
 Official template's `short_desc` is more concise than ours. It also installs the
 manpage, which is useful.
+
+## The end?
+Well, you've made it. This is the end of the practical part of this tutorial.
+You should now be able to package your own programs, libraries or other things
+using `xbps-src`. You now know the many helpful features of `xbps-src` that
+should simplify packaging.
+
+This tutorial doesn't cover the entirety of `xbps-src` and it doesn't try to do
+so. Look in the
+[Manual](https://github.com/void-linux/void-packages/blob/master/Manual.md) for
+that. Now that you know the basics, you should be able to comprehend it well.
+
+Knowing the basics is also good when [asking for
+help](xbps-src-packaging-tutorial.md#irc). I have often seen people in
+`#voidlinux` trying to solve some problem with their template while not knowing
+the basics of `xbps-src`. This can complicate troubleshooting for both parties.
+
+You should now have working package(s). You might want to contribute them. If
+yes, continue reading:
+
+[Contributing](contributing.md)
