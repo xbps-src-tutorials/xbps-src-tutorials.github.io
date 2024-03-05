@@ -2,7 +2,7 @@
 authors = ["meator"]
 language = "en"
 multilingual = false
-title = "(work in progress) xbps-src tutorials"
+title = "xbps-src tutorials"
 
 [output.html]
 default-theme = "ayu"
