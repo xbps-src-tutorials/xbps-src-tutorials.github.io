@@ -475,6 +475,13 @@ explanation:
                  have to change it
 - `license` = this has to be a [SPDX identifier](https://spdx.org/licenses/)
 
+  ```admonish tip
+  Identifying license(s) can be difficult sometimes. There are some programs
+  which specialise in identifying licenses of projects. Some of them can return
+  SPDX identifiers. You can find a list at
+  <https://github.com/todogroup/awesome-ospo/blob/main/README.md#licensing>
+  ```
+
   `j4-dmenu-desktop` is licensed under the GNU General Public License version 3
   or later, which corresponds to the `GPL-3.0-or-later` SPDX identifier
 
