@@ -1,0 +1,10 @@
+Raw build logs and error logs used in the website.
+
+Some logs may have some of their lines prepended with ~. These files are usually
+included with
+
+```hidelines=~
+{{#include <FILE>}}
+```
+
+Lines which begin with ~ don't get shown by default.
