@@ -17,14 +17,14 @@ The following information is taken from `oniguruma`'s GitHub repo:
 
 - latest `version`: `6.9.9`
 
-  ![oniguruma version](images/oniguruma/version.png)
+  ![oniguruma version](../images/oniguruma/version.png)
 - `build_style`: `gnu-configure`
 - `short_desc`: `Multi-charset regular expressions library`
 - `license`: `BSD-2-Clause`
 - `homepage`: <https://github.com/kkos/oniguruma>
 - `distfiles`: `oniguruma` provides custom archives, but they are not prebuilt:
 
-  ![oniguruma archive](images/oniguruma/archive.png)
+  ![oniguruma archive](../images/oniguruma/archive.png)
 
   When that happens, the custom archives should be preferred.
 

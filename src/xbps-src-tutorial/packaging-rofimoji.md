@@ -17,9 +17,9 @@ Repository used for gathering the info: <https://github.com/fdw/rofimoji>
 
 - latest `version`: `6.2.0`
 
-  ![release](images/rofimoji/homepage_release.png)
+  ![release](../images/rofimoji/homepage_release.png)
 
-  ![release tag](images/rofimoji/release_tag.png)
+  ![release tag](../images/rofimoji/release_tag.png)
 - `build style`: `python3-pep517` (described below)
 - `short_desc`: `Emoji, unicode and general character picker for rofi and
   rofi-likes` (taken from GitHub description, something more concise could be
@@ -116,7 +116,7 @@ distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/6.2.0.tar.gz"
 checksum=21da8e6879ac16d774f3ce6dfcd1783cec891ad172617eead2c10597f477d9a9
 ```
 
-Let's do [some housekeeping](troubleshooting.md#check-these-first) for good
+Let's do [some housekeeping](../troubleshooting.md#check-these-first) for good
 measure:
 
 ```
@@ -347,7 +347,7 @@ so. Look in the
 that. Now that you know the basics, you should be able to comprehend it well.
 
 Knowing the basics is also good when [asking for
-help](xbps-src-packaging-tutorial.md#irc). I have often seen people in
+help](index.md#irc). I have often seen people in
 `#voidlinux` trying to solve some problem with their template while not knowing
 the basics of `xbps-src`. This can complicate troubleshooting for both parties.
 

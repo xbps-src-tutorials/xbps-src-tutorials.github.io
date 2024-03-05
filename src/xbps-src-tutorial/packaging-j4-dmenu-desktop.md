@@ -223,7 +223,7 @@ At the time of writing this tutorial, cloning the repo took me 15 minutes on my
 notebook. It had 626 MB.
 
 [There are faster ways to clone, but this way should be
-preferred.](tips_and_tricks.md#different-ways-of-cloning)
+preferred.](../tips_and_tricks.md#different-ways-of-cloning)
 
 While you wait for it to clone, you can learn more about
 [void-packages](https://github.com/void-linux/void-packages):
@@ -257,7 +257,7 @@ of [void-packages](https://github.com/void-linux/void-packages):
 
 Here is a more graphic and simplified version of it showing `j4-dmenu-desktop`,
 `bat` and `oniguruma` packages:
-![void-packages structure](images/directory_structure.svg)
+![void-packages structure](../images/directory_structure.svg)
 
 The most important is `xbps-src`. It is a Bash script which uses XBPS to
 build and package programs.
@@ -335,7 +335,7 @@ should run
 to clean `builddir`, `destdir` and to remove installed dependencies from
 masterdir.
 
-As noted in the [troubleshooting page](troubleshooting.md), you should run
+As noted in the [troubleshooting page](../troubleshooting.md), you should run
 `./xbps-src clean` often when debugging a failing build.
 
 ### Introduction to templates (aka the return of j4-dmenu-desktop)
@@ -468,7 +468,7 @@ explanation:
    A good choice for `short_desc` is the GitHub short description (if the
    packaged project has one):
 
-   ![GitHub description](images/j4-dmenu-desktop/github_description.png)
+   ![GitHub description](../images/j4-dmenu-desktop/github_description.png)
 
    (The "A" article has to be removed here.)
 - `maintainer` = you; `xnew` prefills this field using git, you therefore don't
@@ -513,7 +513,7 @@ explanation:
   its repository, you should link to it in `changelog`, but you should link to
   a plaintext version. GitHub has a button for that:
 
-  ![changelog raw button](images/j4-dmenu-desktop/changelog_raw_button.png)
+  ![changelog raw button](../images/j4-dmenu-desktop/changelog_raw_button.png)
 
   You can then copy the link.
 
@@ -588,14 +588,14 @@ For that, we will need build phases.
 ### Build phases
 A `xbps-src` build has 10 phases:
 
-![xbps-src phases](images/j4-dmenu-desktop/simple_stages.svg)
+![xbps-src phases](../images/j4-dmenu-desktop/simple_stages.svg)
 (Phases in italic are less important for writing templates.)
 
 Almost all phases have a `pre_<phase>()` and a `post_<phase>()` functions. These
 get executed before and after said phase. The phase itself is the function
 `do_<phase>()`. Here are all phases that can be overridden in a template:
 
-![all xbps-src phases](images/j4-dmenu-desktop/all_stages.svg)
+![all xbps-src phases](../images/j4-dmenu-desktop/all_stages.svg)
 
 Only the **`do_install()`** function is mandatory, all other functions are
 optional.
@@ -908,12 +908,12 @@ for each architecture?
 No! It has just `x86_64` and it cross compiles to all other architectures.
 
 [Note that there are some specific architectures for which you don't have to
-(and you shouldn't) cross compile.](tips_and_tricks.md#nocross)
+(and you shouldn't) cross compile.](../tips_and_tricks.md#nocross)
 
 The one rule of cross compiling is that **you can not execute what you build.**
 When your host (your computer) is `x86_64` and you are cross compiling to let's
 say `armv6l`, the compiled result can be executed only on `armv6l`, not on
-`x86_64` ([unless you use QEMU](tips_and_tricks.md#qemu), but that method can
+`x86_64` ([unless you use QEMU](../tips_and_tricks.md#qemu), but that method can
 not be used everywhere).
 
 Sometimes the build system tries to run what it compiles. Software using such
@@ -1070,14 +1070,14 @@ or tags should be preferred.
 
 Releases can be found on the right side panel on GitHub:
 
-![GitHub release side panel](images/j4-dmenu-desktop/github_release_side_panel.png)
+![GitHub release side panel](../images/j4-dmenu-desktop/github_release_side_panel.png)
 
 Some projects include prebuilt binaries in their releases. You mustn't use them
 if you want your package to be included in
 [void-packages](https://github.com/void-linux/void-packages). You should choose
 the `Source code (tar.gz)` option:
 
-![GitHub release](images/j4-dmenu-desktop/github_release.png)
+![GitHub release](../images/j4-dmenu-desktop/github_release.png)
 
 You can then put this into the `distfiles` variable.
 
@@ -1267,7 +1267,7 @@ checksum=77c5605d0c1291bcf1e13b186ea3b32ddf4753de0d0e39127b4a7d2098393e25
 
 ### `version` and `distfiles`
 A package update procedure ([which by the way has it's own tutorial
-here](package-update-tutorial.md)) usually consists of two things:
+here](../package-update-tutorial.md)) usually consists of two things:
 
 1. changing `version`
 2. updating `checksum`
@@ -1384,7 +1384,7 @@ checks](contributing.md#solving-check-errors).
 ```
 
 When 2. happens, you should try to fix it or at least [notify upstream
-developers](troubleshooting.md#notifying-upstream) (by creating an issue in the
+developers](../troubleshooting.md#notifying-upstream) (by creating an issue in the
 repository for example). They may or may not be willing to fix it.
 
 There are two mechanisms commonly used to fix things manually: patches and
@@ -1422,10 +1422,10 @@ it doesn't work now because it depends on nonstandard header file pulling that
 is not a sign of good C++ code. Thankfully the solution is pretty simple.
 
 If you do not have experience with C or C++, you'll have to [ask for
-help](xbps-src-packaging-tutorial.md#irc) or try to look for a patch
-elsewhere. Sometimes the fix has been already implemented in master. You can
-then get this patch and [respectfully ask upstream to make a newer release
-including the fix](troubleshooting.md#notifying-upstream).
+help](index.md#irc) or try to look for a patch elsewhere. Sometimes the fix has
+been already implemented in master. You can then get this patch and
+[respectfully ask upstream to make a newer release including the
+fix](../troubleshooting.md#notifying-upstream).
 
 Or you can get "inspired" by other repositories like the [official Arch
 repo](https://archlinux.org/packages/), [the AUR](https://aur.archlinux.org/),
@@ -1514,7 +1514,7 @@ Fixes failing build on missing header file. Fixed in master.
 
 It should build successfully with or without checks and it should cross compile
 well. If that isn't the case, consider [cleaning the
-masterdir](troubleshooting.md#having-clean-masterdir).
+masterdir](../troubleshooting.md#having-clean-masterdir).
 
 ### Summary
 We use

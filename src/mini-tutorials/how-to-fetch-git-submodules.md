@@ -12,17 +12,17 @@ that breakage won't occur, you should replace the submodule with actual packaged
 dependency.
 
 If you choose this path, you will likely have to [patch the build
-system](packaging-j4-dmenu-desktop.md#when-their-build-system-is-broken) or
-modify it in some other way to accept the packaged dependency. If you are
+system](../xbps-src-tutorial/packaging-j4-dmenu-desktop.md#when-their-build-system-is-broken)
+or modify it in some other way to accept the packaged dependency. If you are
 knowledgable of git submodules and upstream's build system, you could propose a
 more packaging friendly way to handle dependencies [to
-upstream](troubleshooting.md#notifying-upstream).
+upstream](../troubleshooting.md#notifying-upstream).
 
 But if the project is using a old version of the submodule or a customized one,
 this likely won't be possible. The submodule also might not be packaged.
 
 Header only libraries also [don't really meet the quality
-requirements](packaging-j4-dmenu-desktop.md#quality-requirements) (but it
+requirements](../xbps-src-tutorial/packaging-j4-dmenu-desktop.md#quality-requirements) (but it
 depends), so packaging them as a dependency might not be reasonable. Leaving the
 header only dependency as a git submodule is preferable in this scenario.
 
@@ -52,11 +52,11 @@ second method is [using plain `git`](#using-git).
 ### Using GitHub UI
 Go to the release the package is using (here it's the latest release `v0.3.3`):
 
-![main page](images/git_submodules/main_page.png)
+![main page](../images/git_submodules/main_page.png)
 
 Click on the associated tag:
 
-![release tag](images/git_submodules/release_tag.png)
+![release tag](../images/git_submodules/release_tag.png)
 
 This will take you back to the repository in the state it was when the release
 was made.
@@ -73,14 +73,14 @@ located. `gazou`'s `.gitmodules` looks like this:
 
 You should return to the root of the repository. You must click on the correct link:
 
-![return](images/git_submodules/return.png)
+![return](../images/git_submodules/return.png)
 
 If you click on the link crossed out on the picture, you will return to master
 and you will no longer be browsing the repo at the specified commit.
 
 You should go to the directories where the submodules should be:
 
-![submodule commit](images/git_submodules/submodule_commit.png)
+![submodule commit](../images/git_submodules/submodule_commit.png)
 
 You should also make sure that you are still checked out to the release. The
 green box shouldn't contain `master` nor `main`. It should be a tag.
@@ -99,11 +99,11 @@ This hash is usable, but you should make sure that the commit isn't tied to a
 tag. Tags should be preferred over commit hashes because they are nicer and
 shorted. To do that, click on the top commit:
 
-![tag commit](images/git_submodules/tag_commit.png)
+![tag commit](../images/git_submodules/tag_commit.png)
 
 You should see whether there is a tag listed:
 
-![tagged pin](images/git_submodules/tagged_pin.png)
+![tagged pin](../images/git_submodules/tagged_pin.png)
 
 If it isn't (it is on the picture), return to the root of the repo while
 preserving the checkout like before and proceed with [getting the
@@ -111,12 +111,12 @@ archive](#getting-the-archive).
 
 Click on the tag. If you get brought to a release page, click on the tag again:
 
-![next tag](images/git_submodules/next_tag.png)
+![next tag](../images/git_submodules/next_tag.png)
 
 #### Getting the archive
 Click on "Code" and copy the link for downloading ZIP:
 
-![get link](images/git_submodules/get_link.png)
+![get link](../images/git_submodules/get_link.png)
 
 This is the link to download the submodule. Note that `void-packages` prefers
 `.tar.gz` archives instead of `.zip` archives. GitHub has no button for that,
@@ -298,4 +298,4 @@ to change the name of the downloaded archive. They are then put into
            `build_wrksrc` can be used to tell `xbps-src` which of the extracted
            directories should be treated as the primary one. [CWD is set to
            `build_wrksrc` in some build
-           steps.](packaging-j4-dmenu-desktop.md#cwd)
+           steps.](../xbps-src-tutorial/packaging-j4-dmenu-desktop.md#cwd)

@@ -20,7 +20,7 @@ of it is in their repository: <https://github.com/sharkdp/bat>
 - `short_desc`: `Cat(1) clone with syntax highlighting and Git integration`
 - `license`: `bat` has two licenses, `Apache-2.0` and `MIT`:
 
-   ![license](images/bat/license.png)
+   ![license](../images/bat/license.png)
 
    Multiple licenses should be separated by ", " like this:
    ```
@@ -42,7 +42,7 @@ of it is in their repository: <https://github.com/sharkdp/bat>
 
 - `distfiles`: `bat`'s release has a lot of files in it:
 
-   ![bat release](images/bat/release.png)
+   ![bat release](../images/bat/release.png)
 
    Prebuilt archives can not be used in
    [`void-packages`](https://github.com/void-linux/void-packages). So you must
@@ -290,7 +290,7 @@ post_install() {
 }
 ```
 
-[This is an useful trick by the way.](tips_and_tricks.md#setting-environmental-variables)
+[This is an useful trick by the way.](../tips_and_tricks.md#setting-environmental-variables)
 
 `BAT_ASSETS_GEN_DIR` uses `XBPS_BUILDDIR`, `pkgname` and `version` variables.
 `pkgname` and `version` are defined in the template and `XBPS_BUILDDIR` is an

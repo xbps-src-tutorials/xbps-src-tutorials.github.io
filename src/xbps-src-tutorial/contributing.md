@@ -70,30 +70,30 @@ account](https://docs.github.com/en/account-and-profile/setting-up-and-managing-
 
 This is what a good commit looks like:
 
-![good commit](images/contributing/good_commit.png)
+![good commit](../images/contributing/good_commit.png)
 
 When you'll hover over it, you'll see a popup:
 
-![good commit popup](images/contributing/good_commit_popup.png)
+![good commit popup](../images/contributing/good_commit_popup.png)
 
 This is how a bad commit looks like:
 
-![bad commit](images/contributing/bad_commit.png)
+![bad commit](../images/contributing/bad_commit.png)
 
 When you hover over it, nothing happens.
 
 Here are some funny examples of bad commits:
 
-![funny commit](images/contributing/meator_with_meator.png)
+![funny commit](../images/contributing/meator_with_meator.png)
 
-![funny commit closeup](images/contributing/meator_with_meator_detailed.png)
+![funny commit closeup](../images/contributing/meator_with_meator_detailed.png)
 
 Here I have collaborated with myself apparently. This can happen when your
 author string doesn't match your `user.name` and `user.email`.
 
 ## Things to check
 [You should ensure that the repo is up to
-date.](troubleshooting.md#being-up-to-date)
+date.](../troubleshooting.md#being-up-to-date)
 
 You should also make sure that no `xlint` errors are in the templates you want
 to contribute.
@@ -118,7 +118,7 @@ git checkout upstream/master -b <a-descriptive-name>
 ```
 
 to really make sure the branch is [up to
-date](troubleshooting.md#being-up-to-date).[^uptodate]
+date](../troubleshooting.md#being-up-to-date).[^uptodate]
 
 ## Making the commits
 The most important requirement (apart from quality requirements) are commit
@@ -207,10 +207,10 @@ using different architectures and libcs.
 
 Here is an example of a failed check:
 
-![failed check](images/contributing/failed_check.png)
+![failed check](../images/contributing/failed_check.png)
 
 You can click on Details to see what `xbps-src` outputted. [It is also useful to
-reproduce the error locally.](tips_and_tricks.md#reproduce-checks-locally)
+reproduce the error locally.](../tips_and_tricks.md#reproduce-checks-locally)
 
 You should try to fix these errors. Cross compilation is the source of most
 problems when contributing new packages. This is briefly described in [Packaging
@@ -422,12 +422,12 @@ You can then follow the link provided by git to create the pull request.
 
 ## That's all folks!
 This is the end of xbps-src packaging tutorial. Thank you for taking the time to
-read this tutorial! Feel free to share your [feedback](feedback.md) if you'd
+read this tutorial! Feel free to share your [feedback](../feedback.md) if you'd
 like to.
 
 If you want to continue reading, you can look at
-[troubleshooting](troubleshooting.md) and [tips and tricks](tips_and_tricks.md)
-for more useful info about `xbps-src`.
+[troubleshooting](../troubleshooting.md) and [tips and
+tricks](../tips_and_tricks.md) for more useful info about `xbps-src`.
 
 ---
 
