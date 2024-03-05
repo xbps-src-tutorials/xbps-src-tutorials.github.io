@@ -25,6 +25,35 @@ XBPS_CCACHE=yes
 ```
 to `etc/conf`.
 
+## Find out which package owns a specific file
+A common sight while dependency hunting is that package's build system complains
+about missing file XYZ. This might be a library, a header file or something
+else. Knowing how to resolve the filename to a package is crucial for
+identifying `(host)makedepends` of a template.
+
+XBPS supports this `file -> package` lookup. You can use `xbps-query --ownedby`
+for that. But it's pretty slow.
+
+The `xlocate` script from the `xtools` package can look up packages by
+filenames. It works by pulling [an index from the official
+repo](https://repo-default.voidlinux.org/xlocate/) (which is much faster than
+`xbps-query --ownedby`).
+
+You can use `xlocate` like this:
+
+```
+> xlocate -S
+Fetching objects: 11688, done.
+From https://repo-default.voidlinux.org/xlocate/xlocate
+ + e122c3634...a2659176f master     -> master  (forced update)
+> xlocate xlocate
+xtools-0.59_1   /usr/bin/xlocate
+xtools-0.59_1   /usr/share/man/man1/xlocate.1 -> /usr/share/man/man1/xtools.1
+```
+
+It is also documented [in the Void Linux
+Handbook](https://docs.voidlinux.org/xbps/index.html#finding-files-and-packages).
+
 ## Show dependency install progress
 Some packages may have large dependencies that take a long time to download.
 `xbps-src` shows no progress monitor whatsoever for installing dependency
