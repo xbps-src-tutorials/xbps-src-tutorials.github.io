@@ -374,6 +374,19 @@ git push -u origin khal
 
 It will output a link that will open the pull request.
 
+You should preferably ping the `maintainer` of the package by putting `@name`
+(for example `@meator`) in the pull request description. This will issue a
+notification to the maintainer. You don't have to do this if the maintainer is
+
+```
+Orphaned <orphan@voidlinux.org>
+```
+
+If that is the case and
+you're interested in the package (if you aren't interested in it, why are you
+updating it?), you should consider [adopting the
+package](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md#adopting-a-template).
+
 ---
 
 [^clone]: There are alternative ways of cloning. They are described at
