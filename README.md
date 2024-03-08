@@ -53,8 +53,8 @@ No. <https://xbps-src-tutorials.github.io/> should be the final URL for xbps-src
 tutorials.
 
 ### What's the release schedule of GitHub releases?
-There is none! I will make a release whenever I feel like it or it I'll be asked
-to do so.
+There is none! I will make a release whenever I feel like it or whenever I'll be
+asked to do so.
 
 ### Why did you choose a program with half broken build system which doesn't even build without patches as your first example usage of xbps-src?
 I believe it is useful to showcase `xbps-src`'s capabilities on a real-world
