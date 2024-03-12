@@ -7,10 +7,9 @@ them.
 
 ## Proper setup
 ```admonish
-If you've been following the [xbps-src packaging
-tutorial](xbps-src-packaging-tutorial.md), you will have `void-packages` already
-set up in a certain way. I provide instructions on how to fix the setup in [a
-later section](#contributing-bat-and-oniguruma).
+If you've been following the [xbps-src packaging tutorial](index.html), you will
+have `void-packages` already set up in a certain way. I provide instructions on
+how to fix the setup in [a later section](#contributing-bat-and-oniguruma).
 ```
 
 You should have a GitHub account and know how to use it (this is one of the

@@ -18,8 +18,7 @@ accounted for. There is no universal way to fix it, you have to figure it out.
 
 If a simple `version` update won't cut it, you'll have to make changes to the
 template. You can read the [xbps-src packaging
-tutorial](xbps-src-packaging-tutorial.md) for an in-depth explanation of
-templates.
+tutorial](xbps-src-tutorial) for an in-depth explanation of templates.
 
 This tutorial is aimed at simpler packages. You likely won't be able to update
 browsers, kernels, DEs and other stuff without a great amount of work.
