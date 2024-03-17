@@ -108,13 +108,15 @@ You might also need to actually chroot into masterdir. Don't chroot manually,
 ./xbps-src chroot
 ```
 
-### exit 1
+### false
 `xbps-src` terminates when any unchecked command returns non-zero. This means
-that if you want to stop the build at a very specific line, you can put
+that if you want to stop the build at a specific line, you can put
+
 ```sh
-exit 1
+false
 ```
-before it.
+
+before it[^exit1].
 
 You can again examine the builddir and destdir after that.
 
@@ -223,3 +225,5 @@ builds breaking your computer.
 If you insist, you can try [`ethereal` chroot
 method](https://github.com/void-linux/void-packages/tree/master?tab=readme-ov-file#ethereal).
 It **destroys host system it runs on**.
+
+[^exit1]: A similar result can be attained by using `exit 1`.
