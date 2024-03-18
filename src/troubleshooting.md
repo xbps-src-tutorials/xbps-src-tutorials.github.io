@@ -155,14 +155,14 @@ their repo.
 You should always check that a issue describing the problem isn't already open
 or closed to avoid making duplicate issues.
 
-You should also check whether the problem hasn't been fixed in `master` already.
-If that is the case, the next upstream release will likely resolve the issue.
-You can add a patch to the template in the meantime (and make a comment in the
-header that the next release will make the patch obsolete). You can also
-politely ask upstream when is the next release planned. I've seen some projects
-which have had their latest release years ago and which have fixed a lot of
-issues in `master`. This is unfortunate for package maintainers who only use
-versioned releases.
+You should also check whether the problem hasn't been fixed in their development
+branch[^master] already. If that is the case, the next upstream release will
+likely resolve the issue. You can add a patch to the template in the meantime
+(and make a comment in the header that the next release will make the patch
+obsolete). You can also politely ask upstream when is the next release planned.
+I've seen some projects which have had their latest release years ago and which
+have fixed a lot of issues in their development branch[^master]. This is
+unfortunate for package maintainers who only use versioned releases.
 
 Upstream maintainers may or may not be willing to act on an issue and fix it.
 If the issue is related to cross compilation or musl, upstream might not have
@@ -227,3 +227,6 @@ method](https://github.com/void-linux/void-packages/tree/master?tab=readme-ov-fi
 It **destroys host system it runs on**.
 
 [^exit1]: A similar result can be attained by using `exit 1`.
+[^master]: The development branch is usually the first branch you land on when
+           looking at upstream's repository. It's usually called `master`,
+           `main`, `develop` or something else.
