@@ -5,7 +5,11 @@ dependencies. They require special attention when making `xbps-src` templates.
 
 <!-- toc -->
 
-## Should the dependency be a submodule?
+## Preface
+Before talking about using git submodules in templates, few things have to be
+considered:
+
+### Should the dependency be a submodule?
 `xbps-src` should handle all dependencies if possible. If the project depends on
 a git submodule that is already packaged in `void-packages` and you are sure
 that breakage won't occur, you should replace the submodule with actual packaged
@@ -26,7 +30,7 @@ requirements](../xbps-src-tutorial/packaging-j4-dmenu-desktop.md#quality-require
 depends), so packaging them as a dependency might not be reasonable. Leaving the
 header only dependency as a git submodule is preferable in this scenario.
 
-## Release archives
+### Release archives
 This tutorial assumes that the submodule isn't included in the release archive.
 GitHub doesn't include submodules in default release archives and upstream
 developers usually don't care to add a proper release archive with all
@@ -37,8 +41,12 @@ submodules because they're already there.
 
 ## Downloading
 The proper official way to handle submodules is to add their archive to
-`distfiles`. But you must the version of the submodule that is used in the
-packaged release.
+`distfiles`. `git --recursive` is not tolerable in templates. `git` usage in
+general should be avoided in templates.
+
+To add the submodule to `distfiles`, you must have link to an archive containing
+the submodule. To get that link, you need to know the version of the submodule
+that is being used in the packaged release.
 
 ## Hunting for submodule archives
 I will be showing this off on the
@@ -50,7 +58,9 @@ I will show off two ways to figure out the submodule source archive. One is
 second method is [using plain `git`](#using-git).
 
 ### Using GitHub UI
-Go to the release the package is using (here it's the latest release `v0.3.3`):
+Go to the release the template is using
+([`gazou`](https://github.com/void-linux/void-packages/blob/3ddc63b10ff4f7a574996a3a43952c39c732101f/srcpkgs/gazou/template)'s
+template is using release `v0.3.3`):
 
 ![main page](../images/git_submodules/main_page.png)
 
@@ -95,23 +105,55 @@ The URL will now contain the commit hash:
 https://github.com/Skycoder42/QHotkey/tree/eb7ddaba57b108f99c2fefcd4eb23cef9c0ed681
 ```
 
+Here the commit hash is
+
+```
+eb7ddaba57b108f99c2fefcd4eb23cef9c0ed681
+```
+
 This hash is usable, but you should make sure that the commit isn't tied to a
-tag. Tags should be preferred over commit hashes because they are nicer and
-shorted. To do that, click on the top commit:
+tag. Tags should be preferred over commit hashes because they are nicer,
+shorter and more descriptive.
+
+#### Finding out submodule's tag
+To find out whether a commit is tied to a tag, click on the top commit:
 
 ![tag commit](../images/git_submodules/tag_commit.png)
 
-You should see whether there is a tag listed:
+You should see one or more tags listed:
 
-![tagged pin](../images/git_submodules/tagged_pin.png)
+![commit tags](../images/git_submodules/commit_tags.png)
 
-If it isn't (it is on the picture), return to the root of the repo while
+You should take note of the commit hash of the commit. We know the commit hash
+from before, but it's highlighted here in green again for good measure (it is a
+shortened version of it).
+
+You should check all of the tags mentioned (there may be only a single one or
+multiple like in the screenshot). We check them to see whether the examined
+commit (here `eb7ddab`) is tied to a tag.
+
+We first click on tag `1.5.0`:
+
+![tag 1.5.0](../images/git_submodules/v1.5.0.png)
+
+![commit 1.5.0](../images/git_submodules/v1.5.0-commit.png)
+
+The commit hash doesn't match `eb7ddab`. `1.5.0` isn't the correct tag. Let's
+try `1.4.2`:
+
+![tag 1.4.2](../images/git_submodules/v1.4.2.png)
+
+![commit 1.4.2](../images/git_submodules/v1.4.2-commit.png)
+
+`eb7ddab`, that's our commit. This means that tag `1.4.2` is the same as the
+commit `eb7ddaba57b108f99c2fefcd4eb23cef9c0ed681`. We can therefore use tag
+`1.4.2` instead of the commit hash. Click on the tag (highlighted in green) and
+proceed with instructions.
+
+If there isn't a tag tied to the commit (it is on the picture, but it might not
+be in the project you're packaging), return to the root of the repo while
 preserving the checkout like before and proceed with [getting the
 archive](#getting-the-archive).
-
-Click on the tag. If you get brought to a release page, click on the tag again:
-
-![next tag](../images/git_submodules/next_tag.png)
 
 #### Getting the archive
 Click on "Code" and copy the link for downloading ZIP:
@@ -123,11 +165,11 @@ This is the link to download the submodule. Note that `void-packages` prefers
 but you can simply change the link:
 
 ```
-https://github.com/Skycoder42/QHotkey/archive/refs/tags/1.5.0.zip
+https://github.com/Skycoder42/QHotkey/archive/refs/tags/1.4.2.zip
 ```
 
 ```
-https://github.com/Skycoder42/QHotkey/archive/refs/tags/1.5.0.tar.gz
+https://github.com/Skycoder42/QHotkey/archive/refs/tags/1.4.2.tar.gz
 ```
 
 This is the resulting archive. It might contain the commit hash if the submodule
@@ -203,7 +245,7 @@ https://github.com/<repo owner>/<repo name>/archive/<COMMIT>.tar.gz
 
 For `QHotkey` it looks like this:
 ```
-https://github.com/Skycoder42/QHotkey/archive/refs/tags/1.5.0.tar.gz
+https://github.com/Skycoder42/QHotkey/archive/refs/tags/1.4.2.tar.gz
 ```
 ```
 https://github.com/Skycoder42/QHotkey/archive/eb7ddaba57b108f99c2fefcd4eb23cef9c0ed681.tar.gz
