@@ -124,6 +124,9 @@ You should see one or more tags listed:
 
 ![commit tags](../images/git_submodules/commit_tags.png)
 
+If you see no tags listed, go back and proceed with [getting the
+archive](#getting-the-archive).
+
 You should take note of the commit hash of the commit. We know the commit hash
 from before, but it's highlighted here in green again for good measure (it is a
 shortened version of it).
@@ -160,9 +163,21 @@ Click on "Code" and copy the link for downloading ZIP:
 
 ![get link](../images/git_submodules/get_link.png)
 
-This is the link to download the submodule. Note that `void-packages` prefers
-`.tar.gz` archives instead of `.zip` archives. GitHub has no button for that,
-but you can simply change the link:
+This is the link to download the submodule.
+
+~~~admonish warning
+If you get the following link:
+
+```
+https://github.com/Skycoder42/QHotkey/archive/refs/heads/master.zip
+```
+
+i.e. something containing **`refs/heads`** and not `refs/tags` or a commit hash,
+you have followed the instructions incorrectly.
+~~~
+
+Note that `void-packages` prefers `.tar.gz` archives instead of `.zip` archives.
+GitHub has no button for that, but you can simply edit the link:
 
 ```
 https://github.com/Skycoder42/QHotkey/archive/refs/tags/1.4.2.zip
