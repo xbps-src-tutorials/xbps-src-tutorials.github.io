@@ -17,7 +17,8 @@ for personal use.
 - knowledge of libraries (what's a static/dynamic library, why are they
   important, what's a SONAME etc.) is useful
 - knowing what is a patch, how to make one and how to apply one is preferable
-  (they are used in this article, but shouldn't be necessary in more normal use)
+  (they are used in [packaging j4-dmenu-desktop](packaging-j4-dmenu-desktop.md)
+  section of this tutorial, but shouldn't be necessary in more normal use)
 
 ### Non-prerequisites
 This tutorial assumes no prior knowledge of packaging systems.
