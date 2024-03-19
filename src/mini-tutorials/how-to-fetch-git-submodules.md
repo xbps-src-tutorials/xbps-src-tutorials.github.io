@@ -81,7 +81,8 @@ located. `gazou`'s `.gitmodules` looks like this:
 
 `gazou` has a single submodule in `third-party/QHotkey`.
 
-You should return to the root of the repository. You must click on the correct link:
+You should return to the root of the repository. You must click on the correct
+link (or use your browser's "back" button):
 
 ![return](../images/git_submodules/return.png)
 
@@ -124,7 +125,8 @@ You should see one or more tags listed:
 
 ![commit tags](../images/git_submodules/commit_tags.png)
 
-If you see no tags listed, go back and proceed with [getting the
+If you see no tags listed, return to the repository (depicted in the first
+picture of this section) and proceed with [getting the
 archive](#getting-the-archive).
 
 You should take note of the commit hash of the commit. We know the commit hash
@@ -229,7 +231,7 @@ When you `cd` into the directory the module resides in (here it's
 the submodule is associated with a tag:
 
 ```
-commit eb7ddaba57b108f99c2fefcd4eb23cef9c0ed681 (HEAD, tag: 1.4.2)
+commit eb7ddaba57b108f99c2fefcd4eb23cef9c0ed681 (HEAD, tag: 1.4.2) <=========
 Merge: 53745ba 8584ff1
 Author: Felix Barz <Skycoder42@users.noreply.github.com>
 Date:   Wed Oct 21 07:10:48 2020 +0200
@@ -239,10 +241,12 @@ Date:   Wed Oct 21 07:10:48 2020 +0200
     Fix Clang Tidy warnings
 ```
 
-Here it is. It's in tag `1.4.2`. It might not be in your package. Your program
-could even have several git submodules with tagged and untagged commits mixed.
+Here it is (I have highlighted it with the `<=========` arrow, `(HEAD)` without
+a tag will be shown otherwise). It's in tag `1.4.2`. The commit might not be
+tied to a tag in your package. Your program could even have several git
+submodules with tagged and untagged commits mixed.
 
-If the submodule is pinned to a tag, you should use a tag instead of a commit.
+If the submodule is pinned to a tag, you should use a tag instead of a commit hash.
 
 You now have to construct the archive link. The following instructions are valid
 for GitHub only, you will have to adjust it if the package isn't hosted on
