@@ -30,7 +30,7 @@ header only dependency as a git submodule is preferable in this scenario.
 This tutorial assumes that the submodule isn't included in the release archive.
 GitHub doesn't include submodules in default release archives and upstream
 developers usually don't care to add a proper release archive with all
-submodules included. This is the "correct" way to make release archives.
+submodules included (which is the "correct" way to make release archives).
 
 When submodules are included in a release archive, you don't have to worry about
 submodules because they're already there.
