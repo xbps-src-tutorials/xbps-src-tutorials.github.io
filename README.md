@@ -44,6 +44,8 @@ have bookmarked `https://meator.github.io/xbps-src-tutorials/`.
 This repository will no longer accept contributions. All contribution efforts
 should be moved to the new repository.
 
+---
+
 # Xbps-src tutorials
 This is a collection of tutorials describing the `xbps-src` package build system
 of Void Linux. It is made using [mdBook](https://rust-lang.github.io/mdBook/).
