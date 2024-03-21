@@ -32,13 +32,14 @@ You can build this book with
 ```
 
 ## Releases
-[Releases](https://github.com/meator/xbps-src-tutorials/releases/latest) of this
-tutorial are available for offline reading. They include a prebuilt book.
+[Releases](https://github.com/xbps-src-tutorials/xbps-src-tutorials.github.io/releases/latest)
+of this tutorial are available for offline reading. They include a prebuilt
+book.
 
 If you want the zipfile of the latest website deployment, go to
-<https://github.com/meator/xbps-src-tutorials/actions>, select the top workflow
-run, click on the `build` job and click on the `Upload artifact` action. It
-should contain a link to a zipfile at the bottom of it.
+<https://github.com/xbps-src-tutorials/xbps-src-tutorials.github.io/actions>,
+select the top workflow run, click on the `build` job and click on the `Upload
+artifact` action. It should contain a link to a zipfile at the bottom of it.
 
 ## FAQ
 ### What's up with meator.github.io/xbps-src-tutorials/?
