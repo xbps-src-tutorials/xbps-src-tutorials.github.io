@@ -379,7 +379,7 @@ Here are the results of benchmarks on my computer:
 | shallow clone | `git clone --depth=1 "git@github.com:void-linux/void-packages.git"` | 0m12.161s | 98M |
 
 The benchmarks have been done using the
-[`git-clone-benchmark.sh`](https://github.com/meator/xbps-src-tutorials/blob/main/resources/git-clone-benchmark.sh)
+[`git-clone-benchmark.sh`](https://github.com/xbps-src-tutorials/xbps-src-tutorials.github.io/blob/main/resources/git-clone-benchmark.sh)
 script.
 
 The full clone is the "safe bet". Everything will work. I recommend doing a full
