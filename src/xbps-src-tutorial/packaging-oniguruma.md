@@ -281,7 +281,6 @@ You can query the SONAMEs a library provides with `objdump`
 You can query the SONAMEs a program needs similarly:
 ```
 > objdump -p /usr/bin/bat | grep NEEDED
-meator ~/git/xbps-src-tutorial/src/images>% objdump -p /usr/bin/bat | grep NEEDED                                                                                     [0]
   NEEDED               libonig.so.5
   NEEDED               libgcc_s.so.1
   NEEDED               libm.so.6
