@@ -8,8 +8,7 @@ title = "xbps-src tutorials"
 default-theme = "ayu"
 preferred-dark-theme = "ayu"
 curly-quotes = true
-git-repository-url = "https://github.com/meator/xbps-src-tutorials"
-site-url = "/xbps-src-tutorials/"
+git-repository-url = "https://github.com/xbps-src-tutorials/xbps-src-tutorials.github.io"
 
 [preprocessor.toc]
 command = "mdbook-toc"
