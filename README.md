@@ -41,6 +41,16 @@ run, click on the `build` job and click on the `Upload artifact` action. It
 should contain a link to a zipfile at the bottom of it.
 
 ## FAQ
+### What's up with meator.github.io/xbps-src-tutorials/?
+This is the original URL the website was hosted on. It has been replaced by
+xbps-src-tutorials.github.io. The old URL is still functional, but it redirects
+to the correct website now. If you want to know more, you can look at the old
+repo: https://github.com/meator/xbps-src-tutorials
+
+### Will you change the URL ever again?
+No. <https://xbps-src-tutorials.github.io/> should be the final URL for xbps-src
+tutorials.
+
 ### What's the release schedule of GitHub releases?
 There is none! I will make a release whenever I feel like it or it I'll be asked
 to do so.
