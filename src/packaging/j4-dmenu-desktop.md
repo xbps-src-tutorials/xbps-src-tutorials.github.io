@@ -82,7 +82,8 @@ sudo xbps-remove j4-dmenu-desktop
 
 Because the package _owns_ its files, it can verify their state. Let's say that
 you have modified some `j4-dmenu-desktop` files by accident. If you have noticed
-it, you can uninstall it and reinstall it. But you might have not even noticed.
+it, you can uninstall it and reinstall it. However, you might not have even
+noticed.
 
 The package manager can check the state of the package and it can print all
 filenames which do not match the package. This is done with `xbps-pkgdb`. It can
@@ -274,8 +275,8 @@ The most important is `xbps-src`. It is a Bash script which uses XBPS to
 build and package programs.
 
 The `srcpkgs` directory contains all _templates_ used by `xbps-src` to build
-packages.  Templates contains metadata of a package and instructions for
-building it.
+packages. Templates contains metadata of a package and instructions for building
+it.
 
 The `hostdir` directory has two main purposes: it stores the source archives (or
 other files that have to be downloaded for the package to build) and it stores
@@ -289,8 +290,8 @@ The resulting `.xbps` packages will end up in `hostdir/binpkgs` or in
 
 But the most important directory is `masterdir-<arch>` (I will from now on
 assume that your computer is x86_64 and refer to this directory as
-`masterdir-x86_64` like on the diagram above[^uname]).  The package is built in it. It
-is isolated from the rest of the computer. It contains a small Void Linux
+`masterdir-x86_64` like on the diagram above[^uname]). The package is built in
+it. It is isolated from the rest of the computer. It contains a small Void Linux
 install suitable for chrooting (no kernel included, no firmware included, no
 user utilities). It has the `base-chroot` base package[^basechroot] installed
 (normal Void Linux systems have `base-system` installed).
@@ -299,9 +300,9 @@ The source of the package will be extracted (or put by other means) to
 `masterdir-x86_64/builddir/<package name>-<version>/` and it will install the
 built executable and supplementary files to
 `masterdir-x86_64/builddir/destdir/<package name>-<version>` as if it was
-installing to `/`.  This is called **"fake destdir"** and it is supported by
-most major build systems. For instance, if a program would be normally installed
-to `/usr/bin/j4-dmenu-desktop`, it will be installed to
+installing to `/`. This is called **"fake destdir"** and it is supported by most
+major build systems. For instance, if a program would be normally installed to
+`/usr/bin/j4-dmenu-desktop`, it will be installed to
 `builddir/destdir/j4-dmenu-desktop-2.18/usr/bin/j4-dmenu-desktop` instead
 (relative to `masterdir-x86_64/`).
 
@@ -728,7 +729,7 @@ The `wrksrc` of a package is defined as
 `<masterdir>/builddir/${pkgname}-${version}`. For `j4-dmenu-desktop` it's
 `masterdir-x86_64/builddir/j4-dmenu-desktop-2.18`. `xbps-src` expects files to
 be in `$wrksrc`, but git puts them into `j4-dmenu-desktop` (without the
-version part `-2.18`).  This must be fixed.
+version part `-2.18`). This must be fixed.
 
 Now we know that the current working directory is managed by `xbps-src`, so the
 `cd` call in `do_fetch()` is unnecessary. But it is necessary in `do_build()`
@@ -1341,7 +1342,7 @@ deprecated. Checks should therefore be turned off. This means that all our work
 of figuring out `WITH_GIT_CATCH` and `CATCH_INCLUDE_DIR` came to nothing, but
 now we know how the tests would have been fixed if they would have worked.
 `j4-dmenu-desktop`'s build system now has to be instructed not to build checks.
-They luckily provide another CMake option for that, `WITH_TESTS`.  This will get
+They luckily provide another CMake option for that, `WITH_TESTS`. This will get
 rid of the `catch2` dependency altogether.
 
 _At the time of writing this tutorial, even the official packaged version doesn't
