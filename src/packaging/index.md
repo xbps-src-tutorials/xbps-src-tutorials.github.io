@@ -1,3 +1,7 @@
+<!-- WARNING: Relative links aren't used on this page and this page only. All
+other pages use relative links as expected. This is because of
+https://github.com/rust-lang/mdBook/issues/2341 -->
+
 # Xbps-src packaging tutorial
 
 **This tutorial is up to date as of March 4, 2024**
@@ -17,7 +21,7 @@ for personal use.
 - knowledge of libraries (what's a static/dynamic library, why are they
   important, what's a SONAME etc.) is useful
 - knowing what is a patch, how to make one and how to apply one is preferable
-  (they are used in [packaging j4-dmenu-desktop](j4-dmenu-desktop.md)
+  (they are used in [packaging j4-dmenu-desktop](/packaging/j4-dmenu-desktop.md)
   section of this tutorial, but shouldn't be necessary in more normal use)
 
 ### Non-prerequisites
@@ -35,18 +39,20 @@ I try to cover the basics. Feel free to skip some sections. But don't skip too
 much. This tutorial is written to be read from beginning to the end.
 
 This tutorial is divided into four sections: packaging
-[`j4-dmenu-desktop`](j4-dmenu-desktop.md), [`bat`](bat.md),
-[`oniguruma`](oniguruma.md) and [`rofimoji`](rofimoji.md).  Packaging
-[`j4-dmenu-desktop`](j4-dmenu-desktop.md) showcases basic concepts of `xbps-src`
-and [`bat`](bat.md), [`oniguruma`](oniguruma.md) and [`rofimoji`](rofimoji.md)
+[`j4-dmenu-desktop`](/packaging/j4-dmenu-desktop.md),
+[`bat`](/packaging/bat.md), [`oniguruma`](/packaging/oniguruma.md) and
+[`rofimoji`](/packaging/rofimoji.md).  Packaging
+[`j4-dmenu-desktop`](/packaging/j4-dmenu-desktop.md) showcases basic concepts of
+`xbps-src` and [`bat`](/packaging/bat.md),
+[`oniguruma`](/packaging/oniguruma.md) and [`rofimoji`](/packaging/rofimoji.md)
 show additional concepts that couldn't be shown on `j4-dmenu-desktop`.
 
 All four of these are already packaged in Void Linux. The first three are
-compiled programs, [`rofimoji`](rofimoji.md) is not.
+compiled programs, [`rofimoji`](/packaging/rofimoji.md) is not.
 
 Contributing the packages to
 [`void-packages`](https://github.com/void-linux/void-packages) is described in
-[Contributing](contributing.md).
+[Contributing](/packaging/contributing.md).
 
 ### Paths
 If not said otherwise, relative paths are relative to the directory the
