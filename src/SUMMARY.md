@@ -12,5 +12,5 @@
    - [How to add completions?](./mini-tutors/completions.md)
    - [How to fetch git submodules?](./mini-tutors/git-submodules.md)
 - [Troubleshooting](./troubleshooting.md)
-- [Tips and tricks](./tips_and_tricks.md)
+- [Tips and tricks](./tips-and-tricks.md)
 - [Feedback](./feedback.md)
