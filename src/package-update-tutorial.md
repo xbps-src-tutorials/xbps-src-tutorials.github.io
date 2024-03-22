@@ -389,7 +389,7 @@ package](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md
 ---
 
 [^clone]: There are alternative ways of cloning. They are described at
-          [different ways of cloning](tips_and_tricks.md#different-ways-of-cloning).
+          [different ways of cloning](tips-and-tricks.md#different-ways-of-cloning).
 [^remotes]: This is briefly described in the [remotes section of contributing
             (of this tutorial, not void-packages'
             CONTRIBUTING)](packaging/contributing.md#remotes)

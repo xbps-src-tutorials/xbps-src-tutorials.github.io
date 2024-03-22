@@ -290,7 +290,7 @@ post_install() {
 }
 ```
 
-[This is an useful trick by the way.](../tips_and_tricks.md#setting-environmental-variables)
+[This is an useful trick by the way.](../tips-and-tricks.md#setting-environmental-variables)
 
 `BAT_ASSETS_GEN_DIR` uses `XBPS_BUILDDIR`, `pkgname` and `version` variables.
 `pkgname` and `version` are defined in the template and `XBPS_BUILDDIR` is an

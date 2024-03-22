@@ -209,7 +209,7 @@ Here is an example of a failed check:
 ![failed check](../images/contributing/failed_check.png)
 
 You can click on Details to see what `xbps-src` outputted. [It is also useful to
-reproduce the error locally.](../tips_and_tricks.md#reproduce-checks-locally)
+reproduce the error locally.](../tips-and-tricks.md#reproduce-checks-locally)
 
 You should try to fix these errors. Cross compilation is the source of most
 problems when contributing new packages. This is briefly described in [Packaging
@@ -426,7 +426,7 @@ like to.
 
 If you want to continue reading, you can look at
 [troubleshooting](../troubleshooting.md) and [tips and
-tricks](../tips_and_tricks.md) for more useful info about `xbps-src`.
+tricks](../tips-and-tricks.md) for more useful info about `xbps-src`.
 
 ---
 

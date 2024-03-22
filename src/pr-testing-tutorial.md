@@ -63,7 +63,7 @@ git clone https://github.com/void-linux/void-packages.git
 This takes about 15 minutes and 626MiB on my laptop.
 
 To speed this up, you can look at [different ways of
-cloning](tips_and_tricks.md#different-ways-of-cloning). But the full clone
+cloning](tips-and-tricks.md#different-ways-of-cloning). But the full clone
 should be preferred.
 
 You can then continue with [You have a `void-packages`

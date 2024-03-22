@@ -70,7 +70,7 @@ As you sure remember, you can't run programs compiled for target architecture on
 host. If the program is compiled (`hatch` mentioned above isn't by the way, so
 the following advice doesn't apply to it), you'll have to use `build_helper=qemu`.
 
-This is described in [tips and tricks](../tips_and_tricks.md#qemu).
+This is described in [tips and tricks](../tips-and-tricks.md#qemu).
 
 This is used in
 [`mdBook`](https://github.com/void-linux/void-packages/blob/3ddc63b10ff4f7a574996a3a43952c39c732101f/srcpkgs/mdBook/template#L18-L21)

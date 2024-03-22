@@ -223,7 +223,7 @@ At the time of writing this tutorial, cloning the repo took me 15 minutes on my
 notebook. It had 626 MB.
 
 [There are faster ways to clone, but this way should be
-preferred.](../tips_and_tricks.md#different-ways-of-cloning)
+preferred.](../tips-and-tricks.md#different-ways-of-cloning)
 
 While you wait for it to clone, you can learn more about
 [void-packages](https://github.com/void-linux/void-packages):
@@ -915,12 +915,12 @@ for each architecture?
 No! It has just `x86_64` and it cross compiles to all other architectures.
 
 [Note that there are some specific architectures for which you don't have to
-(and you shouldn't) cross compile.](../tips_and_tricks.md#nocross)
+(and you shouldn't) cross compile.](../tips-and-tricks.md#nocross)
 
 The one rule of cross compiling is that **you can not execute what you build.**
 When your host (your computer) is `x86_64` and you are cross compiling to let's
 say `armv6l`, the compiled result can be executed only on `armv6l`, not on
-`x86_64` ([unless you use QEMU](../tips_and_tricks.md#qemu), but that method can
+`x86_64` ([unless you use QEMU](../tips-and-tricks.md#qemu), but that method can
 not be used everywhere).
 
 Sometimes the build system tries to run what it compiles. Software using such
