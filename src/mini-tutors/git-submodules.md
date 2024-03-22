@@ -16,7 +16,7 @@ that breakage won't occur, you should replace the submodule with actual packaged
 dependency.
 
 If you choose this path, you will likely have to [patch the build
-system](../xbps-src-tutorial/packaging-j4-dmenu-desktop.md#when-their-build-system-is-broken)
+system](../packaging/j4-dmenu-desktop.md#when-their-build-system-is-broken)
 or modify it in some other way to accept the packaged dependency. If you are
 knowledgable of git submodules and upstream's build system, you could propose a
 more packaging friendly way to handle dependencies [to
@@ -26,7 +26,7 @@ But if the project is using a old version of the submodule or a customized one,
 this likely won't be possible. The submodule also might not be packaged.
 
 Header only libraries also [don't really meet the quality
-requirements](../xbps-src-tutorial/packaging-j4-dmenu-desktop.md#quality-requirements) (but it
+requirements](../packaging/j4-dmenu-desktop.md#quality-requirements) (but it
 depends), so packaging them as a dependency might not be reasonable. Leaving the
 header only dependency as a git submodule is preferable in this scenario.
 
@@ -359,4 +359,4 @@ to change the name of the downloaded archive. They are then put into
            `build_wrksrc` can be used to tell `xbps-src` which of the extracted
            directories should be treated as the primary one. [CWD is set to
            `build_wrksrc` in some build
-           steps.](../xbps-src-tutorial/packaging-j4-dmenu-desktop.md#cwd)
+           steps.](../packaging/j4-dmenu-desktop.md#cwd)

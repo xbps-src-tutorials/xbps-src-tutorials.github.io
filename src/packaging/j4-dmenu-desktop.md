@@ -885,7 +885,7 @@ Stages are usually executed in `$wrksrc`.
 Concepts described here hold true for **compiled** packages and libraries. They
 do not apply for packages which aren't compiled (like Python
 packages[^bytecompiled]). This is further described in [packaging
-rofimoji](packaging-rofimoji.md).
+rofimoji](rofimoji.md).
 
 If you intent to package non-compiled packages, you should still read the
 following sections, but you can pay less attention to them.
@@ -1591,7 +1591,7 @@ Packaging `j4-dmenu-desktop` shows most useful capabilities of `xbps-src` but
 not all of them. I've written a (significantly shorter) walkthrough through
 packaging another program, [`bat`](https://github.com/sharkdp/bat):
 
-[Packaging bat](packaging-bat.md)
+[Packaging bat](bat.md)
 
 ---
 [^youcan]: I'm sure there's a way to install a package without its dependencies,

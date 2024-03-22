@@ -145,7 +145,7 @@ The following architectures are checked:
 
 I assume you are on `x86_64` (I make this assumption in the entire tutorial as
 I've mentioned in
-[j4-dmenu-desktop](xbps-src-tutorial/packaging-j4-dmenu-desktop.md#void-packages-structure)). The
+[j4-dmenu-desktop](packaging/j4-dmenu-desktop.md#void-packages-structure)). The
 following instructions can be easily changed to fit other architectures as well.
 For example if you are on `musl`, you won't have to create a special builddir
 for `x86_64-musl` because that is your default builddir.
@@ -464,7 +464,7 @@ _If you're on `x86_64`, this method is recommended only for `i686` and `x86_64-m
 
 ### Running compiled programs inside `masterdir` (QEMU build helper) { #qemu }
 As I've mentioned in [Packaging
-j4-dmenu-desktop](xbps-src-tutorial/packaging-j4-dmenu-desktop.md#what-is-cross-compilation), you
+j4-dmenu-desktop](packaging/j4-dmenu-desktop.md#what-is-cross-compilation), you
 can't run compiled executables when building a template under normal conditions.
 
 _This applies only for **cross compilation**, not for [native compilation for
@@ -501,9 +501,8 @@ hungry.
 If upstream's build system wants to execute things (and it isn't `cmake` nor
 `meson`[^badqemu]), you will have to convince it to use QEMU. You'll probably
 have to [make patches to the build
-system](xbps-src-tutorial/packaging-j4-dmenu-desktop.md#when-their-build-system-is-broken). This
-can be difficult
-sometimes. You should consider [notifying upstream about
+system](packaging/j4-dmenu-desktop.md#when-their-build-system-is-broken). This
+can be difficult sometimes. You should consider [notifying upstream about
 it](troubleshooting.md#notifying-upstream).
 
 ### Using the native package

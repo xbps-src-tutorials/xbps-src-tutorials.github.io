@@ -298,7 +298,7 @@ the project has one.
 It might be necessary to modify the template to fix the build. There is no
 universal way to fix these problems, but general understanding of `xbps-src` is
 helpful in these situations. I recommend you reading the [xbps-src packaging
-tutorial](xbps-src-tutorial/index.md).
+tutorial](packaging/index.md).
 
 ## `xlint`
 You should always run `xlint` when finishing a package. It can find common
@@ -317,10 +317,10 @@ haven't caused the warnings), it is tolerable to leave the warning be. You
 should make a comment about it in the pull request description.
 
 ## Making a pull request
-Contributing is described at [Contributing](xbps-src-tutorial/contributing.md). You should already
-have a working clone of your fork, the `upstream` remote should be set up and
-you should be on a non-default branch. You can skip these parts in
-[Contributing](xbps-src-tutorial/contributing.md).
+Contributing is described at [Contributing](packaging/contributing.md). You
+should already have a working clone of your fork, the `upstream` remote should
+be set up and you should be on a non-default branch. You can skip these parts in
+[Contributing](packaging/contributing.md).
 
 [You should ensure that the branch is up to date.](troubleshooting.md#being-up-to-date)
 
@@ -392,4 +392,4 @@ package](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md
           [different ways of cloning](tips_and_tricks.md#different-ways-of-cloning).
 [^remotes]: This is briefly described in the [remotes section of contributing
             (of this tutorial, not void-packages'
-            CONTRIBUTING)](xbps-src-tutorial/contributing.md#remotes)
+            CONTRIBUTING)](packaging/contributing.md#remotes)

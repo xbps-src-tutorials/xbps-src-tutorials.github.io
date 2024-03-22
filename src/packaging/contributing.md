@@ -21,7 +21,7 @@ CONTRIBUTING](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTI
 You should read it.
 
 If you have followed the tutorial (namely [Packaging
-j4-dmenu-desktop](packaging-j4-dmenu-desktop.md)), you should already have a
+j4-dmenu-desktop](j4-dmenu-desktop.md)), you should already have a
 `void-packages` clone. If that is the case, you don't have to clone it again,
 you just have to change the remotes. This is hinted at [below](#remotes).
 
@@ -213,9 +213,9 @@ reproduce the error locally.](../tips_and_tricks.md#reproduce-checks-locally)
 
 You should try to fix these errors. Cross compilation is the source of most
 problems when contributing new packages. This is briefly described in [Packaging
-j4-dmenu-desktop](packaging-j4-dmenu-desktop.md) in
-[this](packaging-j4-dmenu-desktop.md#when-their-build-system-is-broken) and
-[this](packaging-j4-dmenu-desktop.md#patches) section.
+j4-dmenu-desktop](j4-dmenu-desktop.md) in
+[this](j4-dmenu-desktop.md#when-their-build-system-is-broken) and
+[this](j4-dmenu-desktop.md#patches) section.
 
 You should also make sure whether you have correctly divided dependencies to
 `hostmakedepends` and `makedepends`. If a dependency is in the wrong category,
@@ -249,7 +249,7 @@ manipulating git history.
 _Do not actually contribute `bat` and `oniguruma`! They are already packaged._
 
 Your repo should look something like this if you have been following [Packaging
-bat](packaging-bat.md) and [Packaging oniguruma](packaging-oniguruma.md):
+bat](bat.md) and [Packaging oniguruma](oniguruma.md):
 ```git
 > git status
 On branch bat

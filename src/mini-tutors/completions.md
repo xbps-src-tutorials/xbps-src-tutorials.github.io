@@ -44,13 +44,13 @@ or somewhere else. Or they might not be documented at all.
 Sometimes the build system needs to generate completions.
 
 This should be familiar to you if you've read my [xbps-src packaging
-tutorial](../xbps-src-tutorial/index.md), because it's used in
-[`bat`](../xbps-src-tutorial/packaging-bat.md) itself.
+tutorial](../packaging/index.md), because it's used in
+[`bat`](../packaging/bat.md) itself.
 
 A disadvantage of this approach is that the shell completion generation might
 have extra dependencies or it might require tweaking (like setting
 `BAT_ASSETS_GEN_DIR` in
-[`bat`](../xbps-src-tutorial/packaging-bat.md#installing-supplementary-files)).
+[`bat`](../packaging/bat.md#installing-supplementary-files)).
 
 If the build system generates completions, it also usually installs them. But
 this isn't the case in `bat` for example.

@@ -182,7 +182,7 @@ way of communication could be a mailing list, there might simply not be any way
 to contact the maintainers and more.
 
 ## Failing checks
-See [contributing](xbps-src-tutorial/contributing.md#solving-check-errors).
+See [contributing](packaging/contributing.md#solving-check-errors).
 
 ## Other problems
 ### Builds use only a single thread

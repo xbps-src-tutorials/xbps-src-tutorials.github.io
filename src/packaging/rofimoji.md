@@ -143,8 +143,8 @@ This is our dependency. But I should talk about dependencies more.
 
 ## Dependencies for interpreted packages
 As I've mentioned in [the cross compilation section of packaging
-j4-dmenu-desktop](packaging-j4-dmenu-desktop.md#what-is-cross-compilation),
-cross compilation isn't really a thing for interpreted languages like Python.
+j4-dmenu-desktop](j4-dmenu-desktop.md#what-is-cross-compilation), cross
+compilation isn't really a thing for interpreted languages like Python.
 
 ```admonish
 This is true for
@@ -167,8 +167,8 @@ makedepends="python3-devel"
 ```
 
 One disadvantage of interpreted packages is that [Shlib
-detection](packaging-oniguruma.md#shlib-dependencies) doesn't exist for them.
-This means that you have to manually add all dependencies to `depends`.
+detection](oniguruma.md#shlib-dependencies) doesn't exist for them.  This means
+that you have to manually add all dependencies to `depends`.
 
 ## Hunting for dependencies
 As you may know, the main package manager for Python is `pip`. It uses the

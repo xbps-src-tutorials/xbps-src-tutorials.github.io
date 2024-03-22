@@ -393,8 +393,7 @@ If a library is a dependency of another package, we **should** add the SHLIB to
 packaged because they are the dependency of the target executable which the
 packager wants, standalone libraries aren't usually packaged and one could even
 argue that it wouldn't be accepted because of [packaging
-requirements](packaging-j4-dmenu-desktop.md#quality-requirements), but it
-depends).
+requirements](j4-dmenu-desktop.md#quality-requirements), but it depends).
 
 ### How to add a shlib dependency?
 The error message emitted by by `./xbps-src pkg bat` already shows the SONAME
@@ -460,8 +459,8 @@ a carefully crafted packaging tutorial or something.
 The documentation doesn't get installed to `$DESTDIR` by default, it just lies
 in `doc/` subdirectory of source. Their build system doesn't install it.[^cmake]
 But the documentation doesn't need to be generated ([unlike the manpage and
-completions in `bat`](packaging-bat.md#installing-supplementary-files)), we can
-just copy the files to `$DESTDIR`.
+completions in `bat`](bat.md#installing-supplementary-files)), we can just copy
+the files to `$DESTDIR`.
 
 Where will we install the documentation? `usr/share/doc/oniguruma/` is
 appropriate. `/usr/share/doc/` is usually used for these sorts of things.
@@ -653,7 +652,7 @@ oniguruma:8: license 'BSD', but no use of vlicense
 ```
 
 `BSD-2-Clause` is one of the licenses which require installation. The solution
-is the same [as in `bat`](packaging-bat.md#installing-licenses):
+is the same [as in `bat`](bat.md#installing-licenses):
 
 ```bash
 # Template file for 'oniguruma'
@@ -827,7 +826,7 @@ handling the name dynamically serves no practical purpose.
 I'm sure you're pretty tired of `bat` now. Let's package something completely
 different: [`rofimoji`](https://github.com/fdw/rofimoji):
 
-[Packaging rofimoji](packaging-rofimoji.md)
+[Packaging rofimoji](rofimoji.md)
 
 [^minimal]: Some people (although they are a minority) use an alternative
             `base-` package instead of `base-system` for their system. But these

@@ -171,7 +171,7 @@ library in the runtime, it must be in `depends`. But that is not necessary,
 because `xbps-src` is smart.
 
 ## Shlib dependencies
-_This is described in [Packaging oniguruma](packaging-oniguruma.md) in detail._
+_This is described in [Packaging oniguruma](oniguruma.md) in detail._
 
 To compile the `bat` package which depends on library `oniguruma`, `bat` must
 have `oniguruma-devel` in its `hostmakedepends`. But `oniguruma` must be
@@ -193,7 +193,7 @@ there.
 Interpreted programming languages like Python can not have shlib dependency
 detection due to the way they work. You have to specify all `depends`
 dependencies for them. This is further described later in [packaging
-rofimoji](packaging-rofimoji.md#dependencies-for-interpreted-packages).
+rofimoji](rofimoji.md#dependencies-for-interpreted-packages).
 ```
 
 ### Some progress
@@ -470,7 +470,7 @@ You might be wondering how the SHLIB detection works. This is best explained
 while packaging a library. The next part of this tutorial packages
 [`oniguruma`](https://github.com/kkos/oniguruma), a dependency of `bat`:
 
-[Packaging oniguruma](packaging-oniguruma.md)
+[Packaging oniguruma](oniguruma.md)
 
 ---
 
