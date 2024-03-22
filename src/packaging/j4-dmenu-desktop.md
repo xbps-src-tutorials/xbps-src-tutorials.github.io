@@ -203,13 +203,24 @@ package off of it, which will save you time.
 Now, we actually begin.
 
 First, you need to clone the
-[`void-packages`](https://github.com/void-linux/void-packages) repository:
-```sh
+[`void-packages`](https://github.com/void-linux/void-packages) repository.
+[`CONTRIBUTING`](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md#creating-updating-and-modifying-packages-in-void-by-yourself)
+recommends using SSH. [This needs to be set up for it to
+work.](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
+If you have SSH set up, you can clone the repo with:
+
+```
+git clone git@github.com:void-linux/void-packages.git
+```
+
+If you do not want to set up SSH keys, you can clone with HTTPS:
+
+```
 git clone https://github.com/void-linux/void-packages.git
 ```
 
-It contains everything needed to build a XBPS package[^deps] and a collection of
-templates for packages in the official repositories.
+The git repository contains everything needed to build a XBPS package[^deps] and
+a collection of templates for packages in the official repositories.
 
 If you have experience with other package managers, I should note that
 [void-packages](https://github.com/void-linux/void-packages) keeps all package
