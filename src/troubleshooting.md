@@ -123,9 +123,10 @@ You can again examine the builddir and destdir after that.
 Note that you should [clean the masterdir after you're done.](#having-clean-masterdir)
 
 ### Environment
-`xbps-src` heavily overrides the environment during build. You shouldn't
-override it, you should let `xbps-src` handle it. You should also prefer using
-[buitin
+`xbps-src` heavily overrides the environment during build. You must be aware of
+this when overriding basic variables like `CFLAGS`, `LDFLAGS` etc. because they
+are already defined by `xbps-src`. Avoid modifying the environment when you
+don't have to. You should also prefer using [buitin
 variables](https://github.com/void-linux/void-packages/blob/master/Manual.md#global_vars)
 instead of examining environmental variables manually. The environment set by
 `xbps-src` should be considered a _implementation detail_ which may be subject
@@ -137,8 +138,8 @@ locally outside of the masterdir, you can put
 env
 ```
 before the targetted command or in a standalone function like `pre_configure()`
-or some other one. You can then observe the output of `./xbps-src pkg` to see
-the environment.
+or some other one to print the environment. You can then observe the output of
+`./xbps-src pkg` to see what `env` outputs.
 
 ### Build style scripts
 Build style scripts are located at
