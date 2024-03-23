@@ -1,14 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
-set +o errexit +o nounset
+set +o nounset
 
 get_asset_version() {
 	[ $# -ne 1 ] && return 1
-	asset_version="$(grep -o -m 1 -P '(?<=assets_version = ")[^"]*' "$1/book.toml")"
+	asset_version="$(grep -o -m 1 -P '(?<=assets_version = ")[^"]*' "$1/book.toml" || exit 1)"
 }
 
 populate_cache() {
-	if ! type mdbook-admonish > /dev/null 2>&1; then
+	if ! type mdbook-admonish >/dev/null 2>&1; then
 		echo "\
 mdbook-admonish must be installed! See
 https://github.com/tommilligan/mdbook-admonish" 1>&2
@@ -17,15 +17,15 @@ https://github.com/tommilligan/mdbook-admonish" 1>&2
 
 	[ $# -ne 1 ] && return 1
 
-	dir="$1"
+	local dir="$1"
 
-	mkdir -p "$dir"
+	mkdir -p "$dir" || exit 1
 
 	# Create a fake mdbook config file so that mdbook-admonish can install its files
 	# to it.
-	touch "${dir}/book.toml"
+	touch "${dir}/book.toml" || exit 1
 
-	mdbook-admonish install "$dir"
+	mdbook-admonish install "$dir" || exit 1
 
 	if ! [ -f "${dir}/mdbook-admonish.css" ]; then
 		echo "Couldn't generate ${dir}/mdbook-admonish.css!" 1>&2
@@ -33,14 +33,44 @@ https://github.com/tommilligan/mdbook-admonish" 1>&2
 	fi
 }
 
+additional_css() {
+	[ $# -ne 1 ] && return 1
+	local book_toml="$1"
+
+	local line
+	line="$(grep 'additional-css' "$book_toml")"
+
+	case $? in
+	0)
+		additional_css_decl="$(echo "$line" | grep -Pom 1 '(?<=\[)[^]]*')"
+		return 0
+		;;
+	1)
+		additional_css_decl=""
+		return 0
+		;;
+	*)
+		exit 1
+		;;
+	esac
+}
+
 exec_mdbook() {
 	[ $# -lt 2 ] && return 1
-	asset_version="$1"
-	finaldir="$2"
+	local asset_version="$1"
+	local finaldir="$2"
 	shift 2
-	exec env MDBOOK_PREPROCESSOR__ADMONISH="{\"assets_version\": \"$asset_version\"}"\
-	 MDBOOK_OUTPUT__HTML__ADDITIONAL_CSS="[\"${finaldir}/mdbook-admonish.css\"]"\
-	 mdbook "$@"
+
+	local additional_css=""
+	if [ -n "$additional_css_decl" ]; then
+		additional_css="$additional_css_decl, "
+	fi
+
+	additional_css="${additional_css}\"${finaldir}/mdbook-admonish.css\""
+
+	exec env MDBOOK_PREPROCESSOR__ADMONISH="{\"assets_version\": \"$asset_version\"}" \
+		MDBOOK_OUTPUT__HTML__ADDITIONAL_CSS="[$additional_css]" \
+		mdbook "$@"
 }
 
 usage="\
@@ -73,7 +103,7 @@ Example usage:
 "
 
 # I assume $0 is set and it's valid.
-basedir="$(dirname $0)"
+basedir="$(dirname "$0")"
 cachedir="cache/"
 
 while getopts hb:c: f; do
@@ -99,11 +129,13 @@ shift $((OPTIND - 1))
 
 finaldir="${basedir}/${cachedir}"
 
+additional_css "${basedir}/book.toml" || exit 1
+
 if [ -f "${finaldir}/mdbook-admonish.css" ]; then
-	get_asset_version "$finaldir"
-	exec_mdbook "$asset_version" "$finaldir" "$@"
+	get_asset_version "$finaldir" || exit 1
+	exec_mdbook "$asset_version" "$finaldir" "$@" || exit 1
 else
-	populate_cache "$finaldir"
-	get_asset_version "$finaldir"
-	exec_mdbook "$asset_version" "$finaldir" "$@"
+	populate_cache "$finaldir" || exit 1
+	get_asset_version "$finaldir" || exit 1
+	exec_mdbook "$asset_version" "$finaldir" "$@" || exit 1
 fi
