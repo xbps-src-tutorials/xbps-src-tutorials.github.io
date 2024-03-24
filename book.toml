@@ -3,6 +3,7 @@ authors = ["meator"]
 language = "en"
 multilingual = false
 title = "xbps-src tutorials"
+description = "Collection of xbps-src packaging tutorials for Void Linux."
 
 [output.html]
 default-theme = "ayu"
