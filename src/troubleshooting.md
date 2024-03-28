@@ -5,6 +5,10 @@ ones.
 <!-- toc -->
 
 ## Check these first
+When having any problems with `xbps-src`, you should first verify that you [are
+up to date](#being-up-to-date) and that you have a [clean
+masterdir](#having-clean-masterdir) as described below:
+
 ### Being up to date
 Having a outdated clone of
 [`void-packages`](https://github.com/void-linux/void-packages) is the most
