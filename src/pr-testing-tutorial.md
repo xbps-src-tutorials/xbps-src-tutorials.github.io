@@ -5,7 +5,8 @@
 This tutorial will guide you through testing changes made in an open pull
 request in [`void-packages`](https://github.com/void-linux/void-packages).
 
-### Prerequisites
+**Prerequisites**
+
 - basic knowledge of Git
 - basics of CLI
 

@@ -10,7 +10,8 @@ This tutorial will guide you through packaging using `xbps-src` for inclusion
 in [void-packages](https://github.com/void-linux/void-packages) repository or
 for personal use.
 
-### Prerequisites
+**Prerequisites**
+
 - use Void Linux (this is not a hard requirement, there are ways to build XBPS
   packages from foreign distros, but this is outside the scope of this tutorial)
 - basic knowledge of Git
@@ -24,7 +25,8 @@ for personal use.
   (they are used in [packaging j4-dmenu-desktop](/packaging/j4-dmenu-desktop.md)
   section of this tutorial, but shouldn't be necessary in more normal use)
 
-### Non-prerequisites
+**Non-prerequisites**
+
 This tutorial assumes no prior knowledge of packaging systems.
 
 ---

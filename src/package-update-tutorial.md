@@ -5,7 +5,8 @@
 This tutorial will guide you through updating an already existing package using
 `xbps-src`.
 
-### Prerequisites
+**Prerequisites**
+
 - basic knowledge of Git
 - basic knowledge of GitHub for contributing (have an account, know how to make
   a pull request)
