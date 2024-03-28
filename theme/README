@@ -1,0 +1,3 @@
+head.hbs disables Dark Reader.
+
+favicon.svg is the favicon for the book. It is generated from resources/logo.svg
