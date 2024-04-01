@@ -122,6 +122,14 @@ Because of this, I edit it by hand. The appropriate `<changefreq>` should be
 changed when a page is updated. Appropriate `<url>` tags should be added or
 removed when pages are added or removed.
 
+I retrieve `<changefreq>` by running
+
+```
+git log -n 1 --pretty=format:%cI <file>
+```
+
+This isn't 100% accurate, but it should be close enough.
+
 ## Troubleshooting
 ### The book doesn't build! I'm getting a mdbook_admonish error!
 The following error
