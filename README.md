@@ -116,6 +116,12 @@ usage of admonish (which shouldn't be difficult to replace) and the mdBook's
 If some other system would provide better features, poring this tutorial to it
 shouldn't be that difficult.
 
+### How is `src/sitemap.xml` handled?
+None of the sitemap generators I know about don't meet this book's needs.
+Because of this, I edit it by hand. The appropriate `<changefreq>` should be
+changed when a page is updated. Appropriate `<url>` tags should be added or
+removed when pages are added or removed.
+
 ## Troubleshooting
 ### The book doesn't build! I'm getting a mdbook_admonish error!
 The following error
