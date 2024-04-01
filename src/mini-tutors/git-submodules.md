@@ -30,6 +30,12 @@ requirements](../packaging/j4-dmenu-desktop.md#quality-requirements) (but it
 depends), so packaging them as a dependency might not be reasonable. Leaving the
 header only dependency as a git submodule is preferable in this scenario.
 
+```admonish info
+If the submodule doesn't have tags, it can't be packaged, because it doesn't
+meet quality requirements. If that is the case, it must be handled like a
+submodule using methods described below.
+```
+
 ### Release archives
 This tutorial assumes that the submodule isn't included in the release archive.
 GitHub doesn't include submodules in default release archives and upstream
@@ -117,6 +123,16 @@ tag. Tags should be preferred over commit hashes because they are nicer,
 shorter and more descriptive.
 
 #### Finding out submodule's tag
+
+```admonish info
+If the submodule has no tags (like in the picture below):
+
+![no tags](../images/git_submodules/no_tags.png)
+
+You can skip this step and go to [getting the archive](#getting-the-archive)
+while using the commit hash you got before.
+```
+
 To find out whether a commit is tied to a tag, click on the top commit:
 
 ![tag commit](../images/git_submodules/tag_commit.png)
