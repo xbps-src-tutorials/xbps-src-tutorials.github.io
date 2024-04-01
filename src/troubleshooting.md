@@ -199,12 +199,12 @@ You can set the number of jobs manually by putting `XBPS_MAKEJOBS` to
 
 It is documented [in `etc/defaults.conf`](https://github.com/void-linux/void-packages/blob/master/etc/defaults.conf#L65-L70):
 ```bash
-# [OPTIONAL]
-# Number of parallel jobs to execute when building packages that
-# use make(1) or alike commands. Defaults to the result of nproc(1).
-# If nproc(1) is not available, defaults to 1.
-#
-#XBPS_MAKEJOBS=4
+[OPTIONAL]
+Number of parallel jobs to execute when building packages that
+use make(1) or alike commands. Defaults to the result of nproc(1).
+If nproc(1) is not available, defaults to 1.
+
+XBPS_MAKEJOBS=4
 ```
 
 ## Error messages
