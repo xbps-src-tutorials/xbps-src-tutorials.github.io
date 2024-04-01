@@ -142,8 +142,8 @@ You should see one or more tags listed:
 ![commit tags](../images/git_submodules/commit_tags.png)
 
 If you see no tags listed, return to the repository (depicted in the first
-picture of this section) and proceed with [getting the
-archive](#getting-the-archive).
+picture of this section when excluding the info notice) and proceed with
+[getting the archive](#getting-the-archive).
 
 You should take note of the commit hash of the commit. We know the commit hash
 from before, but it's highlighted here in green again for good measure (it is a
