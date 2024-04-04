@@ -217,7 +217,7 @@ It also depends on its build system, `poetry-core`.
 
 Upstream's build system will help you figure out the dependencies, but it won't
 find them for you. The dependencies will likely have a different name in PyPI
-than on Void. They also might not be packages or they might be packaged
+than on Void. They also might not be packaged or they might be packaged
 differently compared to the PyPI version (but this is unlikely).
 
 `xbps-query -Rs` is usually enough to figure out dependencies:

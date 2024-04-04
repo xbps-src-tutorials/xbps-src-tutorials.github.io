@@ -413,7 +413,7 @@ repository and notifies the room of failed builds.
 You can spy on BuildBot's output with `xbuildbarf` (from `xtools`).
 
 ## Package updates
-The official builders periodically check for updates of packages. It acn be
+The official builders periodically check for updates of packages. It can be
 found here: <https://repo-default.voidlinux.org/void-updates/void-updates.txt>
 
 It corresponds to `./xbps-src update-check`.
