@@ -76,6 +76,9 @@ There are two ways to check out a PR: with `gh` or with `git`.
 #### gh
 This method requires `github-cli` to be installed.
 
+`github-cli` requires authentication to your GitHub account. If you aren't
+authenticated, `github-cli` will show you instructions on how to authenticate.
+
 You can check out the pull request by
 ```
 gh pr checkout 48934
@@ -96,6 +99,10 @@ The generic process looks like this[^source]:
 ```
 git fetch upstream pull/<number>/head:<some branch name>
 git checkout <some branch name>
+```
+
+```admonish warning
+`<some branch name>` should be an unique branch name. Don't choose `master`!
 ```
 
 I will showcase it on the pull request mentioned above.
