@@ -113,11 +113,11 @@ The tutorial is written pretty much in pure Markdown. The exceptions are the
 usage of admonish (which shouldn't be difficult to replace) and the mdBook's
 `{{#include}}` mechanism.
 
-If some other system would provide better features, poring this tutorial to it
+If some other system would provide better features, porting this tutorial to it
 shouldn't be that difficult.
 
 ### How is `src/sitemap.xml` handled?
-None of the sitemap generators I know about don't meet this book's needs.
+None of the sitemap generators I know about meet this book's needs.
 Because of this, I edit it by hand. The appropriate `<changefreq>` should be
 changed when a page is updated. Appropriate `<url>` tags should be added or
 removed when pages are added or removed.
