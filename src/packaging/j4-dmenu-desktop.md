@@ -268,7 +268,7 @@ of [void-packages](https://github.com/void-linux/void-packages):
 ```
 
 Here is a more graphic and simplified version of it showing `j4-dmenu-desktop`,
-`bat` and `oniguruma` packages:
+`bat`, `oniguruma` and `rofimoji` packages:
 ![void-packages structure](../images/directory_structure.svg)
 
 The most important is `xbps-src`. It is a Bash script which uses XBPS to
