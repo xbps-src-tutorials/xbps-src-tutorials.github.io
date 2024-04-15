@@ -20,8 +20,8 @@ for personal use.
 - basics of CLI
 - knowledge of the build system of the packaged program is preferable
 - knowledge of libraries (what's a static/dynamic library, why are they
-  important, what's a SONAME etc.) is useful
-- knowing what is a patch, how to make one and how to apply one is preferable
+  important, what's a SONAME, etc.) is useful
+- knowing what a patch is, how to make one, and how to apply it is preferable
   (they are used in [packaging j4-dmenu-desktop](/packaging/j4-dmenu-desktop.md)
   section of this tutorial, but shouldn't be necessary in more normal use)
 
@@ -38,11 +38,11 @@ those who do not have experience with build systems. This tutorial aims to
 bridge that gap.
 
 I try to cover the basics. Feel free to skip some sections. But don't skip too
-much. This tutorial is written to be read from beginning to the end.
+much. This tutorial is written to be read from beginning to end.
 
 This tutorial is divided into four sections: packaging
 [`j4-dmenu-desktop`](/packaging/j4-dmenu-desktop.md),
-[`bat`](/packaging/bat.md), [`oniguruma`](/packaging/oniguruma.md) and
+[`bat`](/packaging/bat.md), [`oniguruma`](/packaging/oniguruma.md), and
 [`rofimoji`](/packaging/rofimoji.md).  Packaging
 [`j4-dmenu-desktop`](/packaging/j4-dmenu-desktop.md) showcases basic concepts of
 `xbps-src` and [`bat`](/packaging/bat.md),
@@ -69,8 +69,8 @@ copying from code blocks in this tutorial.
 
 ### Extended logs
 Some logs in this tutorial are cut. You can expand them by clicking on the eye
-icon on the upper right corner of a code sample. The button will appear when
-you'll hover over the code block.
+icon in the upper right corner of a code sample. The button will appear when
+you hover over the code block.
 
 ```hidelines=~
 ~content
@@ -96,7 +96,7 @@ which contains everything there is to know about `xbps-src`
 - [CONTRIBUTING](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md),
 which contains useful info about contributing packages to `void-packages` like
 commit message format requirements, **package requirements** (we'll come back to
-this soon) and more
+this soon), and more
 
 The [Manual](https://github.com/void-linux/void-packages/blob/master/Manual.md)
 is more akin to a reference manual, but the first few sections briefly explain
@@ -104,7 +104,7 @@ the basics of `xbps-src`.
 
 ### Obsolescence of this tutorial
 I chose to package the latest versions of the programs I'm showcasing at the
-time of writing this tutorial. But `j4-dmenu-desktop`, `bat`, `oniguruma` and
+time of writing this tutorial. But `j4-dmenu-desktop`, `bat`, `oniguruma`, and
 `rofimoji` might have newer versions available by the time you read this,
 rendering the packages I'm showcasing obsolete.
 
@@ -127,7 +127,7 @@ complicated programs for you at your will.
 
 When asking there, do **not** paste error logs or templates directly to the
 channel. You will likely be kicked for this. Use a paste site instead. You can
-use <https://bpa.st/>, <https://0x0.st/>, <https://termbin.com/> or some other
+use <https://bpa.st/>, <https://0x0.st/>, <https://termbin.com/>, or some other
 paste site.
 
 It is often useful to pipe the output of a command directly to a paste site.
