@@ -282,7 +282,7 @@ a8ccbcc43fc1dbbc464e53f7f1d99cf15832be43a67f38700e535d99d9c1325e
 => ERROR: khal-0.11.3_1: couldn't verify distfiles, exiting...
 ```
 
-The last three lines are highlighted red. You don't have to worry about the
+The last three lines are highlighted in red. You don't have to worry about the
 `ERROR`, this is the intended behaviour of `xgensum`.
 
 The package should be usable now. You can now build it with
@@ -293,12 +293,12 @@ The package should be usable now. You can now build it with
 If it doesn't build, there is a possibility that there has been a breaking
 change in the update (I am speaking generally, `khal` specifically should
 build). This is a possibility that I've mentioned at the beginning of this page.
-You should check the release notes in the GitHub Releases page or a changelog if
+You should check the release notes on the GitHub Releases page or a changelog if
 the project has one.
 
 It might be necessary to modify the template to fix the build. There is no
-universal way to fix these problems, but general understanding of `xbps-src` is
-helpful in these situations. I recommend you reading the [xbps-src packaging
+universal way to fix these problems, but a general understanding of `xbps-src`
+is helpful in these situations. I recommend you read the [xbps-src packaging
 tutorial](packaging/index.md).
 
 ## `xlint`
@@ -312,7 +312,7 @@ xlint khal
 ```
 should output nothing.
 
-It it does output warnings, you should fix them. But if the template is
+If it does output warnings, you should fix them. But if the template is
 complicated and the warning did occur before you have made the changes (you
 haven't caused the warnings), it is tolerable to leave the warning be. You
 should make a comment about it in the pull request description.

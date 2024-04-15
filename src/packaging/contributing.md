@@ -42,7 +42,7 @@ origin	git@github.com:meator/void-packages.git (push)
 upstream	git@github.com:void-linux/void-packages.git (fetch)
 upstream	git@github.com:void-linux/void-packages.git (push)
 ```
-This is how HTTPS looks like:
+This is what HTTPS looks like:
 ```
 > git remote -v
 origin	https://github.com/meator/void-packages.git (fetch)
@@ -62,7 +62,7 @@ git remote add upstream https://github.com/void-linux/void-packages.git
 
 See [`git-remote(1)`](https://man.voidlinux.org/git-remote) for more info.
 
-### Linking commits to GitHub account
+### Linking commits to the GitHub account
 As mentioned in the linked document, you should [have your commits linked to
 your GitHub
 account](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address?platform=linux).
@@ -75,7 +75,7 @@ When you'll hover over it, you'll see a popup:
 
 ![good commit popup](../images/contributing/good_commit_popup.png)
 
-This is how a bad commit looks like:
+This is what a bad commit looks like:
 
 ![bad commit](../images/contributing/bad_commit.png)
 
@@ -97,7 +97,7 @@ date.](../troubleshooting.md#being-up-to-date)
 You should also make sure that no `xlint` errors are in the templates you want
 to contribute.
 
-It is little late for that now, but you should make sure your package is
+It is a little late for that now, but you should make sure your package is
 following [quality requirements](#quality-requirements).
 
 ## Setting up a branch
@@ -120,7 +120,7 @@ to really make sure the branch is [up to
 date](../troubleshooting.md#being-up-to-date).[^uptodate]
 
 ## Making the commits
-The most important requirement (apart from quality requirements) are commit
+The most important requirement (apart from quality requirements) is commit
 message formats. You can read about them
 [here](https://github.com/void-linux/void-packages/blob/master/CONTRIBUTING.md#committing-your-changes).
 To quote from it:
@@ -211,7 +211,7 @@ Here is an example of a failed check:
 You can click on Details to see what `xbps-src` outputted. [It is also useful to
 reproduce the error locally.](../tips-and-tricks.md#reproduce-checks-locally)
 
-You should try to fix these errors. Cross compilation is the source of most
+You should try to fix these errors. Cross-compilation is the source of most
 problems when contributing new packages. This is briefly described in [Packaging
 j4-dmenu-desktop](j4-dmenu-desktop.md) in
 [this](j4-dmenu-desktop.md#when-their-build-system-is-broken) and
@@ -304,7 +304,7 @@ git stash pop
 ~~~
 
 ~~~admonish info
-I will showcase preparing `bat` and `oniguruma` for pull request. Because they
+I will showcase preparing `bat` and `oniguruma` for a pull request. Because they
 are already packaged, we'll have to cheat a little and pretend that we have just
 made them. We'll first make a commit that removes the original packages. _You
 won't have to do this when packaging a "real" package._

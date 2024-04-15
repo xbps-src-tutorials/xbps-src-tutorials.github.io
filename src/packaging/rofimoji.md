@@ -30,14 +30,14 @@ Repository used for gathering the info: <https://github.com/fdw/rofimoji>
 - `distfiles`: <https://github.com/fdw/rofimoji/archive/refs/tags/6.2.0.tar.gz>
 
 ## Python's packaging systems
-Python is known for it's complicated build systems. Explaining them is beyond
+Python is known for its complicated build systems. Explaining them is beyond
 the scope of this tutorial (and beyond the scope of my comprehension to be
 honest).
 
 But thankfully `xbps-src`'s build systems do most of the job. It provides the
 following build styles: `python2-module`, `python3-module` and `python3-pep517`
 The `-module` styles use `setup.py` which is kinda deprecated (I recommend you
-reading [this
+read [this
 article](https://blogs.gentoo.org/mgorny/2021/11/07/the-future-of-python-build-systems-and-gentoo/)
 for more info) and the `python3-pep517` (as the name implies) uses [PEP
 517](https://peps.python.org/pep-0517/).
@@ -142,25 +142,25 @@ Now, we can build:
 This is our dependency. But I should talk about dependencies more.
 
 ## Dependencies for interpreted packages
-As I've mentioned in [the cross compilation section of packaging
-j4-dmenu-desktop](j4-dmenu-desktop.md#what-is-cross-compilation), cross
-compilation isn't really a thing for interpreted languages like Python.
+As I've mentioned in [the cross-compilation section of packaging
+j4-dmenu-desktop](j4-dmenu-desktop.md#what-is-cross-compilation),
+cross-compilation isn't really a thing for interpreted languages like Python.
 
 ```admonish
 This is true for
-**pure** Python. Some Python code can have C or C++ extensions (usually handled
-by [Cython](https://cython.org/)). If that is the case, rules of cross
-compilation described earlier still hold true.
+**pure** Python. Some Python code can have C or C++ extensions (usually
+handled by [Cython](https://cython.org/)). If that is the case, the rules of
+cross-compilation described earlier still hold.
 ```
 
 Because of this, a lot of things that require close attention for compiled
 packages can be ignored for interpreted ones.
 
-For example, you usually doesn't have to distinguish `hostmakedepends` and
+For example, you usually don't have to distinguish `hostmakedepends` and
 `makedepends`. All dependencies which should be present in the masterdir should
 be defined in `hostmakedepends`. `makedepends` isn't usually used.
 
-One exception to this rule are Python compiled extensions. These usually have
+One exception to this rule is Python compiled extensions. These usually have
 
 ```bash
 makedepends="python3-devel"
@@ -184,7 +184,7 @@ To quote the [Manual](https://github.com/void-linux/void-packages/blob/master/Ma
   template and `install_requires` dependencies to `depends` in the template;
   include `python3` in `depends` if there are no other python dependencies.
 
-This advice applies for PEP 517 too, you'll just have to look for the
+This advice applies to PEP 517 too, you'll just have to look for the
 dependencies in different places.
 
 Let's look at [`rofimoji`'s
@@ -282,7 +282,7 @@ post_install() {
 }
 ```
 
-## Comparing with upstream template
+## Comparing with the upstream template
 This is our template:
 
 ```bash
@@ -332,8 +332,8 @@ post_install() {
 
 These two templates are almost identical, which is a good sign.
 
-Official template's `short_desc` is more concise than ours. It also installs the
-manpage, which is useful.
+The official template's `short_desc` is more concise than ours. It also installs
+the manpage, which is useful.
 
 ## The end?
 Well, you've made it. This is the end of the practical part of this tutorial.

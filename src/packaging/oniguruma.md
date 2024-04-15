@@ -145,7 +145,7 @@ mv usr/include $DESTDIR/usr/include
 `xnew` prefill it with things that should generally appear in a `-devel`
 package.
 
-Here is the filled out template:
+Here is the filled-out template:
 ```bash
 # Template file for 'oniguruma'
 pkgname=oniguruma
@@ -267,7 +267,7 @@ oniguruma>=6.8.1_1
 ```
 
 It depends on `oniguruma>=6.8.1_1` even though the template doesn't even have a
-`depends` field? How is that possible?
+`depends` field. How is that possible?
 
 Each program remembers what dynamic libraries has it been linked with. It
 remembers the SONAME of the linked library.
@@ -304,7 +304,8 @@ I have largely overlooked the `common/` directory. It contains `xbps-src`
 internal scripts, definitions of build styles and more. But it also contains the
 SONAME to package mapping.
 
-A best example to show how it's working is to showcase when it doesn't work. Let's do that:
+The best example to show how it's working is to showcase when it doesn't work.
+Let's do that:
 
 We have a `oniguruma` (and `oniguruma-devel`) template:
 ```bash
@@ -336,8 +337,8 @@ oniguruma-devel_package() {
 }
 ```
 
-and we want to build `bat` using the template we have crafted in the previous
-part of the tutorial:
+and we want to build `bat` using the template we crafted in the previous part of
+the tutorial:
 
 ```bash
 # Template file for 'bat'
@@ -385,8 +386,8 @@ Let's build `oniguruma` and then `bat`:
 This shows us that we don't have to add every library SONAME to `common/shlibs`,
 but we have to add every SONAME REQUIRES.
 
-Note that if the build of `bat` wouldn't have failed, it would **not** have
-`oniguruma` in its runtime dependencies.
+Note that if the build of `bat` hadn't failed, it would **not** have `oniguruma`
+in its runtime dependencies.
 
 If a library is a dependency of another package, we **should** add the SHLIB to
 `common/shlibs`, but it isn't mandatory otherwise (but libraries are usually
@@ -457,7 +458,7 @@ put into `oniguruma-doc`. What a coincidence. It's almost like this is a part of
 a carefully crafted packaging tutorial or something.
 
 The documentation doesn't get installed to `$DESTDIR` by default, it just lies
-in `doc/` subdirectory of source. Their build system doesn't install it.[^cmake]
+in the `doc/` subdirectory of the source. Their build system doesn't install it.[^cmake]
 But the documentation doesn't need to be generated ([unlike the manpage and
 completions in `bat`](bat.md#installing-supplementary-files)), we can just copy
 the files to `$DESTDIR`.
@@ -541,7 +542,7 @@ xnew oniguruma oniguruma-devel
 ```
 
 `xnew` recognised that the second argument `oniguruma-devel` is a subpackage and
-it has created the symlink in `srcpkgs/` for us. But now, we have added a
+it has created the symlink in `srcpkgs/` for us. But now, we have added an
 `oniguruma-doc` subpackage "manually", so we have to create the symlink:
 
 ```
@@ -567,10 +568,10 @@ This means that we can very well build packages like this:
 
 All three of these are equivalent. `./xbps-src pkg oniguruma-doc` doesn't just
 build the documentation, it builds all (sub)packages of `oniguruma` because
-`srcpkgs/oniguruma-doc` is really `srcpkgs/oniguruma`.
+`srcpkgs/oniguruma-doc` is actually `srcpkgs/oniguruma`.
 
 ## Cleaning up
-This is out template so far:
+This is our template so far:
 ```bash
 # Template file for 'oniguruma'
 pkgname=oniguruma
@@ -608,7 +609,7 @@ oniguruma-doc_package() {
 }
 ```
 
-`oniguruma` is a very self contained library and it has no dependencies, so we
+`oniguruma` is a very self-contained library and it has no dependencies, so we
 won't need any of the `*depends` variables:
 
 ```bash
@@ -696,7 +697,7 @@ The license file is called `COPYING` in `oniguruma`.
 
 A repeated run of `xlint` returns no findings.
 
-## Comparing with upstream template
+## Comparing with the upstream template
 This is our template:
 ```bash
 # Template file for 'oniguruma'
@@ -811,11 +812,11 @@ The upstream template adds
 configure_args="--enable-posix-api=yes"
 ```
 
-This tells `oniguruma`'s buildsystem GNU configure that it should enable POSIX
+This tells `oniguruma`'s build system GNU configure that it should enable POSIX
 APIs. I am not entirely sure what it does, but I'm sure it serves an important
 purpose and it shouldn't be removed. This is not related to `xbps-src` package
-management, this is a `oniguruma` specific thing. If you happen to need to use
-some "magic flags" in your template, you should document them with an
+management, this is an `oniguruma`-specific thing. If you happen to need to
+use some "magic flags" in your template, you should document them with an
 accompanying comment.
 
 The official template uses `${sourcepkg}` in some places. Excessive use of
@@ -831,7 +832,7 @@ different: [`rofimoji`](https://github.com/fdw/rofimoji):
 [^minimal]: Some people (although they are a minority) use an alternative
             `base-` package instead of `base-system` for their system. But these
             dependencies are so basic that even these people should have them.
-[^cmake]: As I mentioned in the very beginning of page, `oniguruma` has multiple
+[^cmake]: As I mentioned at the very beginning of the page, `oniguruma` has multiple
           build systems. I wasn't able to find anything related to documentation
           in their configure script, but their `CMakeLists.txt` [has an option
           for installing

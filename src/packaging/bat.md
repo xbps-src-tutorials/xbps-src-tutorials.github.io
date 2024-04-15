@@ -11,8 +11,8 @@ rm -r srcpkgs/bat
 <!-- toc -->
 
 ## Gathering info
-To package `bat`, we first need to gather metadata needed in the template. Most
-of it is in their repository: <https://github.com/sharkdp/bat>
+To package `bat`, we first need to gather the metadata needed in the template.
+Most of it is in their repository: <https://github.com/sharkdp/bat>
 
 - latest `version`: `0.24.0` (not `v0.24.0`)
 - `build_style`: the Cargo build system is used (this is common for Rust
@@ -26,7 +26,7 @@ of it is in their repository: <https://github.com/sharkdp/bat>
    ```
    license="Apache-2.0, MIT"
    ```
-- `homepage`: project has no custom homepage, <https://github.com/sharkdp/bat>
+- `homepage`: the project has no custom homepage, <https://github.com/sharkdp/bat>
   is sufficient
 - `changelog`: the repo has a `CHANGELOG.md` file, so we should link to it.
 
@@ -175,7 +175,7 @@ _This is described in [Packaging oniguruma](oniguruma.md) in detail._
 
 To compile the `bat` package which depends on library `oniguruma`, `bat` must
 have `oniguruma-devel` in its `hostmakedepends`. But `oniguruma` must be
-installed alongside `bat` for `bat` to work, because `oniguruma` provides
+installed alongside `bat` for `bat` to work because `oniguruma` provides
 dynamic libraries `bat` needs.
 
 When a program is linked against a static library, the program "remembers" which
@@ -210,11 +210,11 @@ The first warning is easy to fix, the second one requires some explanation:
 
 ## Installing licenses
 Some licenses (namely `AGPL`, `MIT`, `BSD`, `ISC`, `X11`, and custom licenses)
-require the license to be installed alongside the program to make user aware of
-it.
+require the license to be installed alongside the program to make users aware
+of it.
 
 Licenses are installed in `/usr/share/licenses`. `xbps-src` includes a helper
-function called `vlicense` that install the file it is supplied with to
+function called `vlicense` that installs the file it is supplied with to
 `usr/share/licenses/<pkgname>`. This is what the `xlint` warning is referring
 to. It is usually called in `post_install()`
 
@@ -247,7 +247,7 @@ manually.
 Since they are data files and they do not have to be compiled, installing them
 is very simple. They just have to be copied to `$DESTDIR`.
 
-`bat` provides a manpage, but it is generated during the build process[^batspecific]. It get's
+`bat` provides a manpage, but it is generated during the build process[^batspecific]. It gets
 put into
 
 ```
@@ -265,7 +265,7 @@ This shows us that `bat` provides a way to override the directory by setting the
 `BAT_ASSETS_GEN_DIR` environmental variable.
 
 But how would you set an environmental variable in a template? The template is
-"just a bash script", so the correct way is using `export`:
+"just a bash script", so the correct way is to use `export`:
 
 ```bash
 # Template file for 'bat'
@@ -290,10 +290,10 @@ post_install() {
 }
 ```
 
-[This is an useful trick by the way.](../tips-and-tricks.md#setting-environmental-variables)
+[This is a useful trick by the way.](../tips-and-tricks.md#setting-environmental-variables)
 
 `BAT_ASSETS_GEN_DIR` uses `XBPS_BUILDDIR`, `pkgname` and `version` variables.
-`pkgname` and `version` are defined in the template and `XBPS_BUILDDIR` is an
+`pkgname` and `version` are defined in the template and `XBPS_BUILDDIR` is a
 useful variable (one of many) provided by `xbps-src`. See the
 [Manual](https://github.com/void-linux/void-packages/blob/master/Manual.md#global-variables)
 for more info.
@@ -363,7 +363,7 @@ know that `xbps-src` has helpers for this, you don't even have to know where
 these should be installed.
 
 The `vcompletion` helper requires the type of completion script as the second
-argument. This is best presented in practise:
+argument. This is best presented in practice:
 
 ```bash
 # Template file for 'bat'
@@ -392,7 +392,7 @@ post_install() {
 }
 ```
 
-## Comparing with upstream template
+## Comparing with the upstream template
 This is our template:
 ```bash
 # Template file for 'bat'
@@ -474,13 +474,13 @@ while packaging a library. The next part of this tutorial packages
 
 ---
 
-[^batspecific]: This is a `bat` specific thing. Other projects might have their
-                data files in the repository without need of generation. The
-                packaging process is the same, you just `vman` or `vcompletion`
-                the files.
+[^batspecific]: This is a `bat`-specific thing. Other projects might have their
+                data files in the repository without the need for generation.
+                The packaging process is the same, you just `vman` or
+                `vcompletion` the files.
 [^tranzystorekk]: This pull request was made by
                   [tranzystorekk](https://github.com/tranzystorekk), a Void
                   Linux contributor at the time of writing this tutorial. It's
                   nice to see a fellow Voider improving the projects they're
                   packaging. You should take inspiration from this if you have
-                  the know how (and if upstream needs fixing).
+                  the know-how (and if upstream needs fixing).
