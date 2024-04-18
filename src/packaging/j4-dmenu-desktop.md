@@ -774,7 +774,7 @@ do_install() {
 ```
 
 But wait, why didn't we have to install `make`? We don't have to add `make` to
-dependencies because is one of the basic dependencies of `base-chroot`, so
+dependencies because it is one of the basic dependencies of `base-chroot`, so
 `make` is automatically installed in every `masterdir`.
 
 Now, there are only two issues that are preventing `j4-dmenu-desktop` from
