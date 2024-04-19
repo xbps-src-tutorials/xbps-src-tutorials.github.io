@@ -3,7 +3,7 @@
 <!-- toc -->
 
 ## Speed up repeated builds
-When debugging a bailing template build, you need to build the template
+When debugging a failing template build, you need to build the template
 repeatedly a lot. This can be lengthy. Using `ccache` can greatly speed up the
 process for supported programming languages (mainly C and C++ projects).
 
