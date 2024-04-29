@@ -152,9 +152,6 @@ upstream	https://github.com/void-linux/void-packages.git (fetch)
 upstream	https://github.com/void-linux/void-packages.git (push)
 ```
 
-If you have followed the [git](#git) route, you will also have two entries for
-the remote you have chosen (I have used `my_remote` above).
-
 If you do not have the `upstream` entry, you must add it:
 ```sh
 git remote add upstream https://github.com/void-linux/void-packages.git
