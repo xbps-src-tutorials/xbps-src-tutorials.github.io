@@ -6,24 +6,24 @@ dependencies. They require special attention when making `xbps-src` templates.
 <!-- toc -->
 
 ## Preface
-Before talking about using git submodules in templates, few things have to be
+Before talking about using git submodules in templates, a few things have to be
 considered:
 
 ### Should the dependency be a submodule?
 `xbps-src` should handle all dependencies if possible. If the project depends on
 a git submodule that is already packaged in `void-packages` and you are sure
-that breakage won't occur, you should replace the submodule with actual packaged
-dependency.
+that breakage won't occur, you should replace the submodule with an actual
+packaged dependency.
 
 If you choose this path, you will likely have to [patch the build
 system](../packaging/j4-dmenu-desktop.md#when-their-build-system-is-broken)
 or modify it in some other way to accept the packaged dependency. If you are
-knowledgable of git submodules and upstream's build system, you could propose a
-more packaging friendly way to handle dependencies [to
+knowledgeable of git submodules and upstream's build system, you could propose
+a more packaging-friendly way to handle dependencies [to
 upstream](../troubleshooting.md#notifying-upstream).
 
-But if the project is using a old version of the submodule or a customized one,
-this likely won't be possible. The submodule also might not be packaged.
+But if the project is using an old version of the submodule or a customized
+one, this likely won't be possible. The submodule also might not be packaged.
 
 Header only libraries also [don't really meet the quality
 requirements](../packaging/j4-dmenu-desktop.md#quality-requirements) (but it
@@ -33,7 +33,7 @@ header only dependency as a git submodule is preferable in this scenario.
 ```admonish info
 If the submodule doesn't have tags, it can't be packaged, because it doesn't
 meet quality requirements. If that is the case, it must be handled like a
-submodule using methods described below.
+submodule using the methods described below.
 ```
 
 ### Release archives
@@ -50,9 +50,9 @@ The proper official way to handle submodules is to add their archive to
 `distfiles`. `git --recursive` is not tolerable in templates. `git` usage in
 general should be avoided in templates.
 
-To add the submodule to `distfiles`, you must have link to an archive containing
-the submodule. To get that link, you need to know the version of the submodule
-that is being used in the packaged release.
+To add the submodule to `distfiles`, you must have a link to an archive
+containing the submodule. To get that link, you need to know the version of the
+submodule that is being used in the packaged release.
 
 ## Hunting for submodule archives
 I will be showing this off on the
@@ -100,7 +100,7 @@ You should go to the directories where the submodules should be:
 ![submodule commit](../images/git_submodules/submodule_commit.png)
 
 You should also make sure that you are still checked out to the release. The
-green box shouldn't contain `master` nor `main`. It should be a tag.
+green box shouldn't contain `master` or `main`. It should be a tag.
 
 Click on the submodule. You will be taken to the submodule in the commit it was
 pinned to when the release of the template you're packaging (here `gazou`) was
@@ -153,7 +153,7 @@ You should check all of the tags mentioned (there may be only a single one or
 multiple like in the screenshot). We check them to see whether the examined
 commit (here `eb7ddab`) is tied to a tag.
 
-We first click on tag `1.5.0`:
+We first click on the tag `1.5.0`:
 
 ![tag 1.5.0](../images/git_submodules/v1.5.0.png)
 
@@ -206,12 +206,12 @@ https://github.com/Skycoder42/QHotkey/archive/refs/tags/1.4.2.tar.gz
 ```
 
 This is the resulting archive. It might contain the commit hash if the submodule
-is pointing to a untagged commit.
+is pointing to an untagged commit.
 
 You can now proceed with [adding distfiles](#add-distfiles).
 
 ### Using git
-Go tho the root of the repository and get a git link. On GitHub, you can simply
+Go to the root of the repository and get a git link. On GitHub, you can simply
 append `.git` to the URL to get a HTTPS link for cloning the repo. You can also
 use the green "Code" button. Other hosting services might require a different
 process to get the git link.
@@ -225,7 +225,7 @@ git clone --depth 1 --single-branch --branch <tag> <repo>
 
 This is faster than a full clone.
 
-You should check what submodules does the repo need. They are defined in
+You should check what submodules the repo needs. They are defined in
 `.gitmodules` in the root of the repository:
 ```
 > cat .gitmodules
@@ -268,12 +268,12 @@ You now have to construct the archive link. The following instructions are valid
 for GitHub only, you will have to adjust it if the package isn't hosted on
 GitHub.
 
-Tagged archive link looks like this:
+A tagged archive link looks like this:
 ```
 https://github.com/<repo owner>/<repo name>/archive/refs/tags/<TAG>.tar.gz
 ```
 
-Untagged archive link looks like this:
+An untagged archive link looks like this:
 ```
 https://github.com/<repo owner>/<repo name>/archive/<COMMIT>.tar.gz
 ```
