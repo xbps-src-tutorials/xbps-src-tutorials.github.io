@@ -10,7 +10,7 @@ process for supported programming languages (mainly C and C++ projects).
 You can enable it with the [`XBPS_CCACHE`
 option:](https://github.com/void-linux/void-packages/blob/master/etc/defaults.conf#L51-L56)
 
-```bash
+```
 [OPTIONAL]
 Enable or disable ccache when building packages. The ccache directory
 is stored in the hostdir, i.e hostdir/ccache. For go builds this enables
