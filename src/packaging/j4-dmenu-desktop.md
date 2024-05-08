@@ -1505,8 +1505,8 @@ Here is the **final** template:
 pkgname=j4-dmenu-desktop
 version=2.18
 revision=1
-configure_args="-DWITH_TESTS=NO"
 build_style=cmake
+configure_args="-DWITH_TESTS=NO"
 depends=dmenu
 short_desc="Fast desktop menu"
 maintainer="meator <meator.dev@gmail.com>"
