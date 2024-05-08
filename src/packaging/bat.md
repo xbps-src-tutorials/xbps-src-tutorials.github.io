@@ -44,7 +44,7 @@ Most of it is in their repository: <https://github.com/sharkdp/bat>
 
    ![bat release](../images/bat/release.png)
 
-   Prebuilt archives can not be used in
+   Prebuilt archives cannot be used in
    [`void-packages`](https://github.com/void-linux/void-packages). So you must
    copy the `Source code (tar.gz)` link.
 
@@ -190,7 +190,7 @@ This means that you don't usually have to specify libraries in `depends`. Only
 there.
 
 ```admonish warning
-Interpreted programming languages like Python can not have shlib dependency
+Interpreted programming languages like Python cannot have shlib dependency
 detection due to the way they work. You have to specify all `depends`
 dependencies for them. This is further described later in [packaging
 rofimoji](rofimoji.md#dependencies-for-interpreted-packages).

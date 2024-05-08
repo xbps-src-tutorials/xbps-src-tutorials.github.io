@@ -106,7 +106,7 @@ libgcc>=4.4.0_1
 glibc>=2.32_1
 ```
 
-You can't[^youcan] install a package without its dependencies, so breakage can not
+You can't[^youcan] install a package without its dependencies, so breakage cannot
 occur.
 
 ## What is a package, anyway?
@@ -434,7 +434,7 @@ explanation:
   Choosing a name for a package can be sometimes tricky. It should follow the
   upstream name. If you're unsure, read Void's [package naming
   conventions](https://github.com/void-linux/void-packages/blob/master/Manual.md#programs).
-- `version` = version of the package; it can not contain dashes or underscore
+- `version` = version of the package; it cannot contain dashes or underscore
               and at least one digit is required
 
    The version shouldn't contain unnecessary characters:
@@ -930,11 +930,11 @@ No! It has just `x86_64` and it cross-compiles to all other architectures.
 [Note that there are some specific architectures for which you don't have to
 (and you shouldn't) cross-compile.](../tips-and-tricks.md#nocross)
 
-The one rule of cross-compiling is that **you can not execute what you build.**
+The one rule of cross-compiling is that **you cannot execute what you build.**
 When your host (your computer) is `x86_64` and you are cross-compiling to let's
 say `armv6l`, the compiled result can be executed only on `armv6l`, not on
-`x86_64` ([unless you use QEMU](../tips-and-tricks.md#qemu), but that method can
-not be used everywhere).
+`x86_64` ([unless you use QEMU](../tips-and-tricks.md#qemu), but that method
+cannot be used everywhere).
 
 Sometimes the build system tries to run what it compiles. Software using such
 build systems is not cross-compilation friendly. Such build systems have to be
@@ -1158,8 +1158,8 @@ There are four types of dependencies: `hostmakedepends`, `makedepends`,
 **host** when cross-compiling.
 
 `makedepends` are dependencies (usually `-devel` packages of libraries) that are
-required for cross-compiling. They are compiled for **target** architecture (can
-not be used on the host).
+required for cross-compiling. They are compiled for **target** architecture
+(cannot be used on the host).
 
 `depends` are **runtime** dependencies. In contrast to `hostmakedepends` and
 `makedepends`, `xbps-src` does nothing with `depends`, it just adds the

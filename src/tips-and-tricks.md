@@ -388,7 +388,7 @@ clone if you plan to make multiple contributions or use
 
 If that isn't the case, shallow clone should be enough.
 
-You can't easily update a shallow clone. This means that you can not follow
+You can't easily update a shallow clone. This means that you cannot follow
 instructions in [being up to date](troubleshooting.md#being-up-to-date).
 
 Shallow clones can behave a bit differently when compared to full clones. This
