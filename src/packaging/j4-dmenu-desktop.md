@@ -1260,7 +1260,7 @@ So a corrected `cmake` command line would be constructed like this:
 cmake -DWITH_GIT_CATCH=NO -DCATCH_INCLUDE_DIR=$XBPS_CROSS_BASE/usr/include/catch2 ..
 ```
 
-But there's a problem: We are no longer executing `cmake`, the build system
+But there's a problem: We are no longer executing `cmake`, the build style
 does. A solution is to use one of the configuration variables the `cmake` build
 style provides, namely `configure_args`.
 
