@@ -178,8 +178,8 @@ have `oniguruma-devel` in its `hostmakedepends`. But `oniguruma` must be
 installed alongside `bat` for `bat` to work because `oniguruma` provides
 dynamic libraries `bat` needs.
 
-When a program is linked against a static library, the program "remembers" which
-library it has been linked to. It marks the SONAME of the library in the
+When a program is linked against a dynamic library, the program "remembers"
+which library it has been linked to. It marks the SONAME of the library in the
 executable. The details of this process are beyond the scope of this tutorial.
 
 `xbps-src` reads the SONAMEs of the executables and libraries in `$DESTDIR`. It
