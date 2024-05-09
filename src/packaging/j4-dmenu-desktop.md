@@ -740,7 +740,7 @@ and `do_install()`, because their CWD will be set to `$wrksrc` and not
 ```bash
 # Template file for 'j4-dmenu-desktop'
 pkgname=j4-dmenu-desktop
-version=r2.18
+version=2.18
 revision=1
 hostmakedepends="git cmake"
 makedepends=""
@@ -814,7 +814,7 @@ fixed template:
 ```bash
 # Template file for 'j4-dmenu-desktop'
 pkgname=j4-dmenu-desktop
-version=r2.18
+version=2.18
 revision=1
 hostmakedepends="git cmake"
 makedepends=""
@@ -1025,7 +1025,7 @@ This is the old template:
 ```bash
 # Template file for 'j4-dmenu-desktop'
 pkgname=j4-dmenu-desktop
-version=r2.18
+version=2.18
 revision=1
 hostmakedepends="git"
 makedepends=""
@@ -1062,7 +1062,7 @@ This is the template with `build_style=cmake`:
 ```bash
 # Template file for 'j4-dmenu-desktop'
 pkgname=j4-dmenu-desktop
-version=r2.18
+version=2.18
 revision=1
 hostmakedepends="git cmake"
 build_style=cmake
@@ -1129,7 +1129,7 @@ Here is the modified template:
 ```bash
 # Template file for 'j4-dmenu-desktop'
 pkgname=j4-dmenu-desktop
-version=r2.18
+version=2.18
 revision=1
 # git is still needed
 hostmakedepends="git"
@@ -1183,7 +1183,7 @@ Here is the modified template:
 ```bash
 # Template file for 'j4-dmenu-desktop'
 pkgname=j4-dmenu-desktop
-version=r2.18
+version=2.18
 revision=1
 hostmakedepends="git"
 build_style=cmake
@@ -1268,7 +1268,7 @@ Here is the modified template:
 ```bash
 # Template file for 'j4-dmenu-desktop'
 pkgname=j4-dmenu-desktop
-version=r2.18
+version=2.18
 revision=1
 # git is removed from hostmakedepends
 makedepends="catch2"
