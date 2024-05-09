@@ -51,13 +51,13 @@ there.
 
 If you are a more knowledgeable Linux user, you could set up a separate destdir
 for `j4-dmenu-desktop`. You will have to add it to `$PATH` and potentially handle
-dynamic libraries. This is cumbersome.
+shared libraries. This is cumbersome.
 
 Let's say that you were so amazed by `j4-dmenu-desktop` that you rushed to tell
 your friends and colleagues about it. They naturally want to try it out too. But
 the program could be big, it could take hours to build and its build system
 could be complicated and involved. All these problems are avoidable because
-your friends only need the executables (and dynamic libraries + possibly some
+your friends only need the executables (and shared libraries + possibly some
 supplementary data files like `/etc/` config). You already have all of this, you
 just need to send it to them. They don't need the code.
 

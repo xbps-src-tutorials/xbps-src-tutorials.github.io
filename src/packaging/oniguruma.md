@@ -49,11 +49,11 @@ This is useful to for example separate large documentation from a program.
 But this feature is used the most for `-devel` packages. All libraries usually
 provide (at least) two packages: the main package and a `-devel` package.
 
-The main package contains the core (dynamic) library. It is needed for programs
+The main package contains the core (shared) library. It is needed for programs
 which depend on this library.
 
 The `-devel` package contains development files needed to **compile** projects
-that depend on the library. It includes extra symbolic links to the dynamic
+that depend on the library. It includes extra symbolic links to the shared
 library, static libraries, pkg-config files, CMake files, header files and more.
 
 The `-devel` package should always depend on the main package. Installing the
@@ -269,7 +269,7 @@ oniguruma>=6.8.1_1
 It depends on `oniguruma>=6.8.1_1` even though the template doesn't even have a
 `depends` field. How is that possible?
 
-Each program remembers what dynamic libraries has it been linked with. It
+Each program remembers what shared libraries has it been linked with. It
 remembers the SONAME of the linked library.
 
 You can query the SONAMEs a library provides with `objdump`
