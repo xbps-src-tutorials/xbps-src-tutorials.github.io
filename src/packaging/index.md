@@ -19,7 +19,7 @@ for personal use.
   a fork, know how to make a pull request)
 - basics of CLI
 - knowledge of the build system of the packaged program is preferable
-- knowledge of libraries (what's a static/dynamic library, why are they
+- knowledge of libraries (what's a static/shared library, why are they
   important, what's a SONAME, etc.) is useful
 - knowing what a patch is, how to make one, and how to apply it is preferable
   (they are used in [packaging j4-dmenu-desktop](/packaging/j4-dmenu-desktop.md)
