@@ -1,6 +1,19 @@
 # Packaging j4-dmenu-desktop
 <!-- toc -->
 
+```admonish attention
+This section of the xbps-src packaging tutorial focuses on packaging
+j4-dmenu-desktop version **r2.18**. This version was the latest released version
+when this tutorial was written, but it has since been superseded by release
+**r3.0**, which addresses many of the issues discussed in this tutorial.
+
+As described in the [introduction of this
+tutorial](index.md#obsolescence-of-this-tutorial), specific packages discussed
+in this tutorial may be out of date by the time you are reading this. But the
+choice to package version r2.18 is deliberate here. This version showcases
+many useful features of xbps-src that help with fixing upstream packages.
+```
+
 You've heard about a cool program called
 [j4-dmenu-desktop](https://github.com/enkore/j4-dmenu-desktop), a desktop menu
 that uses `dmenu` and you want to try it out. To do so, you have to:
