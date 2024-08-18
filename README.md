@@ -20,6 +20,14 @@ currently packaged on Void Linux. You can download its executable in
 extract the appropriate archive and put the executable into a directory in
 `$PATH`.
 
+#### Building with Nix
+Alternatively, [nix](https://github.com/NixOS/nix) can be used to automatically
+(and reproducibly) download dependencies. This can be done with `nix-book.sh`,
+which is a wrapper around `book.sh` (described below); it behaves the same,
+and it accepts the same arguments.
+
+`nix-book.sh` is used in the GitHub workflow which builds the website.
+
 ### Build process
 You mustn't build this book with raw `mdbook`. This repo provides a `book.sh`
 script which handles book building. See `book.sh -h` for more info about the
