@@ -43,7 +43,7 @@ jobs:
         # Cache purging is delegated to GitHub (this means a maximum 10G of data accessed
         # less than a week ago).
         with:
-          primary-key: nix-${{ hashFiles('**/*.nix') }}
+          primary-key: nix-${{ hashFiles('nix-book.sh') }}
           restore-prefixes-first-match: nix-
       - name: Setup Pages
         id: pages
