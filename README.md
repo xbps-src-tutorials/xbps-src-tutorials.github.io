@@ -20,6 +20,11 @@ currently packaged on Void Linux. You can download its executable in
 extract the appropriate archive and put the executable into a directory in
 `$PATH`.
 
+This book also makes use of
+[`mdbook-catppuccin`](https://github.com/catppuccin/mdBook), but it is managed
+internally, it doesn't need to be installed. Support for catppuccin themes can
+be turned off with `./book.sh -e false`.
+
 #### Building with Nix
 Alternatively, [nix](https://github.com/NixOS/nix) can be used to automatically
 (and reproducibly) download dependencies. This can be done with `nix-book.sh`,
