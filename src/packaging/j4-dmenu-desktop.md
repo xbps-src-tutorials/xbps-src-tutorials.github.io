@@ -1098,19 +1098,31 @@ Let's get rid of that one too.
 ### Downloading source
 Using `git` to download sources is not acceptable in 99% of situations. As
 mentioned in [quality requirements](#quality-requirements), only **released,
-stable programs are packaged**. Pulling directly from `HEAD` is wrong. Releases
-or tags should be preferred.
+stable programs are packaged**.
+
+As mentioned in the beginning of this page, this tutorial focuses on packaging
+j4-dmenu-desktop version **r2.18**. But that is not what we've been packaging
+so far. `git clone https://github.com/enkore/j4-dmenu-desktop.git` was
+invoked to fetch j4-dmenu-desktop, which downloads the **latest development
+version**[^fixgit]. This hinders reproducibility, and it makes the package less
+reliable.
+
+Pulling directly from `HEAD` is wrong. Releases or tags should be preferred.
 
 Releases can be found on the right-side panel on GitHub:
 
 ![GitHub release side panel](../images/j4-dmenu-desktop/github_release_side_panel.png)
+
+Scroll down until you see r2.18:
+
+![GitHub release](../images/j4-dmenu-desktop/github_release.png)
 
 Some projects include prebuilt binaries in their releases. You mustn't use them
 if you want your package to be included in
 [void-packages](https://github.com/void-linux/void-packages). You should choose
 the `Source code (tar.gz)` option:
 
-![GitHub release](../images/j4-dmenu-desktop/github_release.png)
+![GitHub release asset](../images/j4-dmenu-desktop/github_release_asset.png)
 
 You can then put this into the `distfiles` variable.
 
@@ -1634,3 +1646,6 @@ packaging another program, [`bat`](https://github.com/sharkdp/bat):
 [^bytecompiled]: Python packages are _byte compiled_ on Void, but that is
                  something different.
 [^buildstyledeps]: Not all build styles do that.
+[^fixgit]: `git` can be invoked with `--branch r2.18` to package the correct
+           version, but that also pulls unneeded git history, and it is more
+           difficult to verify its state (SHA256SUMs are used for tarballs).
