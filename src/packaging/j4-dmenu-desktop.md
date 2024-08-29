@@ -34,8 +34,8 @@ All is well, everything works. But this approach has some disadvantages.
 `sudo make install` can do a lot of things. It can install the executable to the
 system (that's why we're running it), it can install some libraries needed for
 `j4-dmenu-desktop`, it can install configuration files, documentation, shell
-completions, examples, etc. All these files are just installed to the system and
-you have to keep track of them.
+completions, examples, etc. You should keep track of all the files that have
+been installed.
 
 Why do you have to keep track of them? Let's say that you have tried
 `j4-dmenu-desktop` out and you weren't satisfied with its features, so you want
@@ -211,7 +211,7 @@ providing the package is already
 open](https://github.com/void-linux/void-packages/pulls), or if [someone has
 already packaged it but it was rejected or
 abandoned](https://github.com/void-linux/void-packages/pulls?q=is%3Apr+is%3Aclosed).
-If there already is a pull request but it has been abandoned, you base your
+If there already is a pull request but it has been abandoned, you can base your
 package off of it, which will save you time.
 
 ## xbps-src
