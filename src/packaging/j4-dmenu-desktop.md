@@ -1276,8 +1276,8 @@ global variables](https://github.com/void-linux/void-packages/blob/master/Manual
 and one of them is `$XBPS_CROSS_BASE`. The best thing about it is that it
 works when compiling normally too. It is set to an appropriate directory when
 cross-compiling (for example for `aarch64` it's `/usr/aarch64-linux-gnu`) and
-it's set to nothing when compiling normally. This means that `$XBPS_CROSS_BASE/
-usr/include/catch2` will be always valid. And this is our value of
+it's set to nothing when compiling normally. This means that
+`$XBPS_CROSS_BASE/usr/include/catch2` will be always valid. And this is our value of
 `CATCH_INCLUDE_DIR`.
 
 So a corrected `cmake` command line would be constructed like this:
