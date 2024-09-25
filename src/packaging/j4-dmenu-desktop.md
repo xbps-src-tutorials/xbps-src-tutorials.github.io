@@ -283,7 +283,8 @@ of [void-packages](https://github.com/void-linux/void-packages):
 
 Here is a more graphic and simplified version of it showing `j4-dmenu-desktop`,
 `bat`, `oniguruma` and `rofimoji` packages:
-![void-packages structure](../images/directory_structure.svg)
+
+{{#include ../images/directory_structure.svg}}
 
 The most important is `xbps-src`. It is a Bash script which uses XBPS to
 build and package programs.
@@ -621,14 +622,15 @@ For that, we will need build phases.
 ### Build phases
 An `xbps-src` build has 10 phases:
 
-![xbps-src phases](../images/j4-dmenu-desktop/simple_stages.svg)
+{{#include ../images/j4-dmenu-desktop/simple_stages.svg}}
+
 (Phases in italic are less important for writing templates.)
 
 Almost all phases have a `pre_<phase>()` and a `post_<phase>()` functions. These
 get executed before and after said phase. The phase itself is the function
 `do_<phase>()`. Here are all phases that can be overridden in a template:
 
-![all xbps-src phases](../images/j4-dmenu-desktop/all_stages.svg)
+{{#include ../images/j4-dmenu-desktop/all_stages.svg}}
 
 Only the **`do_install()`** function is mandatory, all other functions are
 optional.
