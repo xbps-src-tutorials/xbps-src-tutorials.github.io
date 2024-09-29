@@ -2,7 +2,12 @@
 other pages use relative links as expected. This is because of
 https://github.com/rust-lang/mdBook/issues/2341 -->
 
+<div style="display: flex; align-items: center;">
+
 # Xbps-src packaging tutorial
+
+<iframe style="margin-left: auto; color-scheme: light;" src="https://ghbtns.com/github-btn.html?user=xbps-src-tutorials&repo=xbps-src-tutorials.github.io&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+</div>
 
 **This tutorial is up to date as of September 29, 2024**
 
