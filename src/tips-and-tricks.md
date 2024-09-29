@@ -404,7 +404,13 @@ git pull --unshallow
 This should be slightly faster than a clean full clone, but not by much.
 
 ## Official builds
-You can observe the BuildBot here: <https://build.voidlinux.org/waterfall>
+You can observe the BuildBot here: <https://build.voidlinux.org/#/waterfall>
+
+```admonish note
+Void's buildbot was recently updated, the old link
+<https://build.voidlinux.org/waterfall> no longer works. Update your bookmarks
+if necessary.
+```
 
 There's also a bot set up on the `#xbps` Libera Chat channel which tracks
 changes to the [`void-packages`](https://github.com/void-linux/void-packages)
