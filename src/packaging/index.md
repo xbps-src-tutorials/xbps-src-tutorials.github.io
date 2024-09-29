@@ -6,7 +6,7 @@ https://github.com/rust-lang/mdBook/issues/2341 -->
 
 # Xbps-src packaging tutorial
 
-<iframe style="margin-left: auto; color-scheme: light;" src="https://ghbtns.com/github-btn.html?user=xbps-src-tutorials&repo=xbps-src-tutorials.github.io&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+<iframe style="margin-left: auto;" src="https://ghbtns.com/github-btn.html?user=xbps-src-tutorials&repo=xbps-src-tutorials.github.io&type=star&count=true&size=large" frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
 </div>
 
 **This tutorial is up to date as of September 29, 2024**
