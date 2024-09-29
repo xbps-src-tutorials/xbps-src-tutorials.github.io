@@ -1,6 +1,6 @@
 # Package update tutorial
 
-**This tutorial is up to date as of March 4, 2024**
+**This tutorial is up to date as of September 29, 2024**
 
 This tutorial will guide you through updating an already existing package using
 `xbps-src`.

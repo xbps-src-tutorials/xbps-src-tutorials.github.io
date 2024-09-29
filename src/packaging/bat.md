@@ -119,7 +119,7 @@ This is a pretty nice error message. It clearly explains that it didn't find
 pkgname=bat
 version=0.24.0
 revision=1
-hostmakedepends=pkg-config
+hostmakedepends="pkg-config"
 build_style=cargo
 short_desc="Cat(1) clone with syntax highlighting and Git integration"
 maintainer="meator <meator.dev@gmail.com>"
@@ -128,6 +128,13 @@ homepage="https://github.com/sharkdp/bat"
 changelog="https://raw.githubusercontent.com/sharkdp/bat/master/CHANGELOG.md"
 distfiles="https://github.com/sharkdp/bat/archive/refs/tags/v${version}.tar.gz"
 checksum=907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
+```
+
+```admonish note
+Don't forget to run
+[`./xbps-src clean`](../troubleshooting.md#having-clean-masterdir) in between
+failed builds. While it may not be necessary in this case, skipping it can cause
+issues in other scenarios, especially when editing the template.
 ```
 
 The following error arises:
@@ -152,8 +159,8 @@ important rule of dependency hunting in `xbps-src`.
 pkgname=bat
 version=0.24.0
 revision=1
-hostmakedepends=pkg-config
-makedepends=oniguruma-devel
+hostmakedepends="pkg-config"
+makedepends="oniguruma-devel"
 build_style=cargo
 short_desc="Cat(1) clone with syntax highlighting and Git integration"
 maintainer="meator <meator.dev@gmail.com>"
@@ -164,11 +171,35 @@ distfiles="https://github.com/sharkdp/bat/archive/refs/tags/v${version}.tar.gz"
 checksum=907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
 ```
 
-Note: Don't forget to `./xbps-src clean` the masterdir in between failed builds.
+We have resolved the `oniguruma` error, but when we try to build our new
+template, this happens:
 
-We have put `oniguruma-devel` to `hostmakedepends`, but the user also needs the
-library in the runtime, it must be in `depends`. But that is not necessary,
-because `xbps-src` is smart.
+```hidelines=~
+{{#include ../../data/bat_error3.txt}}
+```
+
+Like `oniguruma`, we'll need to add `libgit2-devel` to `makedepends`:
+
+```bash
+# Template file for 'bat'
+pkgname=bat
+version=0.24.0
+revision=1
+hostmakedepends="pkg-config"
+makedepends="oniguruma-devel libgit2-devel"
+build_style=cargo
+short_desc="Cat(1) clone with syntax highlighting and Git integration"
+maintainer="meator <meator.dev@gmail.com>"
+license="Apache-2.0, MIT"
+homepage="https://github.com/sharkdp/bat"
+changelog="https://raw.githubusercontent.com/sharkdp/bat/master/CHANGELOG.md"
+distfiles="https://github.com/sharkdp/bat/archive/refs/tags/v${version}.tar.gz"
+checksum=907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
+```
+
+We have put both `-devel` libraries into `makedepends`, but the user also needs
+the (shared) libraries in the runtime, their non-`-devel` versions must be in
+`depends`. But that is not necessary, because `xbps-src` is smart.
 
 ## Shlib dependencies
 _This is described in [Packaging oniguruma](oniguruma.md) in detail._
@@ -176,14 +207,15 @@ _This is described in [Packaging oniguruma](oniguruma.md) in detail._
 To compile the `bat` package which depends on library `oniguruma`, `bat` must
 have `oniguruma-devel` in its `hostmakedepends`. But `oniguruma` must be
 installed alongside `bat` for `bat` to work because `oniguruma` provides
-shared libraries `bat` needs.
+shared libraries `bat` needs. The same holds true for `libgit2`.
 
 When a program is linked against a shared library, the program "remembers"
 which library it has been linked to. It marks the SONAME of the library in the
 executable. The details of this process are beyond the scope of this tutorial.
 
 `xbps-src` reads the SONAMEs of the executables and libraries in `$DESTDIR`. It
-can detect runtime dependencies (like `oniguruma`) based on this information.
+can detect runtime dependencies (like `oniguruma` and `libgit2`) based on this
+information.
 
 This means that you don't usually have to specify libraries in `depends`. Only
 "external" runtime dependencies like some other programs are usually specified
@@ -215,8 +247,8 @@ of it.
 
 Licenses are installed in `/usr/share/licenses`. `xbps-src` includes a helper
 function called `vlicense` that installs the file it is supplied with to
-`usr/share/licenses/<pkgname>`. This is what the `xlint` warning is referring
-to. It is usually called in `post_install()`
+`${DESTDIR}/usr/share/licenses/<pkgname>`. This is what the `xlint` warning
+is referring to. It is usually called in `post_install()`
 
 ```bash
 # Template file for 'bat'
@@ -224,8 +256,8 @@ pkgname=bat
 version=0.24.0
 revision=1
 build_style=cargo
-hostmakedepends=pkg-config
-makedepends=oniguruma-devel
+hostmakedepends="pkg-config"
+makedepends="oniguruma-devel libgit2-devel"
 short_desc="Cat(1) clone with syntax highlighting and Git integration"
 maintainer="meator <meator.dev@gmail.com>"
 license="Apache-2.0, MIT"
@@ -273,8 +305,8 @@ pkgname=bat
 version=0.24.0
 revision=1
 build_style=cargo
-hostmakedepends=pkg-config
-makedepends=oniguruma-devel
+hostmakedepends="pkg-config"
+makedepends="oniguruma-devel libgit2-devel"
 short_desc="Cat(1) clone with syntax highlighting and Git integration"
 maintainer="meator <meator.dev@gmail.com>"
 license="Apache-2.0, MIT"
@@ -307,8 +339,8 @@ pkgname=bat
 version=0.24.0
 revision=1
 build_style=cargo
-hostmakedepends=pkg-config
-makedepends=oniguruma-devel
+hostmakedepends="pkg-config"
+makedepends="oniguruma-devel libgit2-devel"
 short_desc="Cat(1) clone with syntax highlighting and Git integration"
 maintainer="meator <meator.dev@gmail.com>"
 license="Apache-2.0, MIT"
@@ -338,8 +370,8 @@ pkgname=bat
 version=0.24.0
 revision=1
 build_style=cargo
-hostmakedepends=pkg-config
-makedepends=oniguruma-devel
+hostmakedepends="pkg-config"
+makedepends="oniguruma-devel libgit2-devel"
 short_desc="Cat(1) clone with syntax highlighting and Git integration"
 maintainer="meator <meator.dev@gmail.com>"
 license="Apache-2.0, MIT"
@@ -365,60 +397,16 @@ these should be installed.
 The `vcompletion` helper requires the type of completion script as the second
 argument. This is best presented in practice:
 
-```bash
-# Template file for 'bat'
-pkgname=bat
-version=0.24.0
-revision=1
-build_style=cargo
-hostmakedepends=pkg-config
-makedepends=oniguruma-devel
-short_desc="Cat(1) clone with syntax highlighting and Git integration"
-maintainer="meator <meator.dev@gmail.com>"
-license="Apache-2.0, MIT"
-homepage="https://github.com/sharkdp/bat"
-changelog="https://raw.githubusercontent.com/sharkdp/bat/master/CHANGELOG.md"
-distfiles="https://github.com/sharkdp/bat/archive/refs/tags/v${version}.tar.gz"
-checksum=907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
-
-export BAT_ASSETS_GEN_DIR="${XBPS_BUILDDIR}/${pkgname}-${version}"
-
-post_install() {
-	vlicense LICENSE-MIT
-	vman assets/manual/bat.1
-	vcompletion assets/completions/bat.fish fish
-	vcompletion assets/completions/bat.zsh zsh
-	vcompletion assets/completions/bat.bash bash
-}
+```bash,hidelines=~
+{{#include ../../data/bat_template_final.txt}}
 ```
+
+And that's it!
 
 ## Comparing with the upstream template
 This is our template:
-```bash
-# Template file for 'bat'
-pkgname=bat
-version=0.24.0
-revision=1
-build_style=cargo
-hostmakedepends=pkg-config
-makedepends=oniguruma-devel
-short_desc="Cat(1) clone with syntax highlighting and Git integration"
-maintainer="meator <meator.dev@gmail.com>"
-license="Apache-2.0, MIT"
-homepage="https://github.com/sharkdp/bat"
-changelog="https://raw.githubusercontent.com/sharkdp/bat/master/CHANGELOG.md"
-distfiles="https://github.com/sharkdp/bat/archive/refs/tags/v${version}.tar.gz"
-checksum=907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
-
-export BAT_ASSETS_GEN_DIR="${XBPS_BUILDDIR}/${pkgname}-${version}"
-
-post_install() {
-	vlicense LICENSE-MIT
-	vman assets/manual/bat.1
-	vcompletion assets/completions/bat.fish fish
-	vcompletion assets/completions/bat.zsh zsh
-	vcompletion assets/completions/bat.bash bash
-}
+```bash,hidelines=~
+{{#include ../../data/bat_template_final.txt}}
 ```
 
 This is the upstream template (at the time of writing this article):
@@ -426,7 +414,7 @@ This is the upstream template (at the time of writing this article):
 # Template file for 'bat'
 pkgname=bat
 version=0.24.0
-revision=1
+revision=2
 build_style=cargo
 hostmakedepends="pkg-config"
 makedepends="libgit2-devel oniguruma-devel"
@@ -440,10 +428,6 @@ checksum=907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
 
 export BAT_ASSETS_GEN_DIR="${XBPS_BUILDDIR}/${pkgname}-${version}"
 
-post_patch() {
-	cargo update --package git2@0.18.0 --precise 0.17.2
-}
-
 post_install() {
 	vlicense LICENSE-MIT
 	vdoc README.md
@@ -454,16 +438,7 @@ post_install() {
 }
 ```
 
-with the following patch:
-```patch
-{{#include ../../data/downgrade-git2.patch}}
-```
-
-The templates are similar, which is good. The official one tries to override a
-`libgit2` dependency with the packaged `libgit2-devel`. Our template just pulls
-this dependency with the rest.
-
-It also includes a patch to make the XBPS version of `libgit2` work in `bat`.
+The templates are almost identical, which is good.
 
 ## What now?
 You might be wondering how the SHLIB detection works. This is best explained

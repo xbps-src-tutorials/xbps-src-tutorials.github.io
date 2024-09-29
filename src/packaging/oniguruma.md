@@ -135,14 +135,15 @@ that the `-devel` package is a development package and it has prefilled
 `short_desc` and the `pkg_install()` function.
 
 The `pkg_install()` function makes heavy use of the `vmove` `xbps-src` helper.
-It moves `<file>` to `$DESTDIR/<file>`. These two are equivalent:
+It moves `<file>` to `$DESTDIR/<file>`. These two lines of shell script are
+equivalent:
 
 ```
 vmove usr/include
 mv usr/include $DESTDIR/usr/include
 ```
 
-`xnew` prefill it with things that should generally appear in a `-devel`
+`xnew` prefills it with things that should generally appear in a `-devel`
 package.
 
 Here is the filled-out template:
@@ -281,6 +282,7 @@ You can query the SONAMEs a library provides with `objdump`
 You can query the SONAMEs a program needs similarly:
 ```
 > objdump -p /usr/bin/bat | grep NEEDED
+  NEEDED               libgit2.so.1.7
   NEEDED               libonig.so.5
   NEEDED               libgcc_s.so.1
   NEEDED               libm.so.6
@@ -340,31 +342,8 @@ oniguruma-devel_package() {
 and we want to build `bat` using the template we crafted in the previous part of
 the tutorial:
 
-```bash
-# Template file for 'bat'
-pkgname=bat
-version=0.24.0
-revision=1
-build_style=cargo
-hostmakedepends=pkg-config
-makedepends=oniguruma-devel
-short_desc="Cat(1) clone with syntax highlighting and Git integration"
-maintainer="meator <meator.dev@gmail.com>"
-license="Apache-2.0, MIT"
-homepage="https://github.com/sharkdp/bat"
-changelog="https://raw.githubusercontent.com/sharkdp/bat/master/CHANGELOG.md"
-distfiles="https://github.com/sharkdp/bat/archive/refs/tags/v${version}.tar.gz"
-checksum=907554a9eff239f256ee8fe05a922aad84febe4fe10a499def72a4557e9eedfb
-
-export BAT_ASSETS_GEN_DIR="${XBPS_BUILDDIR}/${pkgname}-${version}"
-
-post_install() {
-	vlicense LICENSE-MIT
-	vman assets/manual/bat.1
-	vcompletion assets/completions/bat.fish fish
-	vcompletion assets/completions/bat.zsh zsh
-	vcompletion assets/completions/bat.bash bash
-}
+```bash,hidelines=~
+{{#include ../../data/bat_template_final.txt}}
 ```
 
 ```admonish warning
@@ -402,10 +381,11 @@ which is causing trouble:
 
 ```
 => bat-0.24.0_1: running pre-pkg hook: 04-generate-runtime-deps ...
+   SONAME: libgit2.so.1.7 <-> libgit2>=1.7.2_1
    SONAME: libonig.so.5 <-> UNKNOWN PKG PLEASE FIX!
    SONAME: libgcc_s.so.1 <-> libgcc>=4.4.0_1
-   SONAME: libm.so.6 <-> glibc>=2.38_1
-   SONAME: libc.so.6 <-> glibc>=2.38_1
+   SONAME: libm.so.6 <-> glibc>=2.39_1
+   SONAME: libc.so.6 <-> glibc>=2.39_1
 ```
 
 It is `libonig.so.5`. The header of `common/shlibs` describes it best, so I'll
@@ -819,9 +799,11 @@ management, this is an `oniguruma`-specific thing. If you happen to need to
 use some "magic flags" in your template, you should document them with an
 accompanying comment.
 
-The official template uses `${sourcepkg}` in some places. Excessive use of
-`${sourcepkg}` or `$pkgname` isn't good. Package names don't change often, so
-handling the name dynamically serves no practical purpose.
+The official template uses `${sourcepkg}` in some places where it doesn't have
+to. Excessive use of `${sourcepkg}` or `$pkgname` isn't good. Package names
+don't change often, so handling the name dynamically serves no practical purpose
+(except for the `depends` line in subpackages, that must contain
+`${sourcepkg}`).
 
 ## What now?
 I'm sure you're pretty tired of `bat` now. Let's package something completely

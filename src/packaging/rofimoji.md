@@ -90,7 +90,7 @@ maintainer="meator <meator.dev@gmail.com>"
 license="MIT"
 homepage="https://github.com/fdw/rofimoji"
 changelog="https://raw.githubusercontent.com/fdw/rofimoji/main/CHANGELOG.md"
-distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/6.2.0.tar.gz"
+distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/${version}.tar.gz"
 checksum=badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadb
 ```
 
@@ -112,7 +112,7 @@ maintainer="meator <meator.dev@gmail.com>"
 license="MIT"
 homepage="https://github.com/fdw/rofimoji"
 changelog="https://raw.githubusercontent.com/fdw/rofimoji/main/CHANGELOG.md"
-distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/6.2.0.tar.gz"
+distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/${version}.tar.gz"
 checksum=21da8e6879ac16d774f3ce6dfcd1783cec891ad172617eead2c10597f477d9a9
 ```
 
@@ -131,7 +131,7 @@ Now, we can build:
 {{#include ../../data/rofimoji_error1.txt}}
 ```
 
-`ModuleNotFoundError: No module named 'poetry'` `poetry` is missing.
+`ERROR Backend 'poetry.core.masonry.api' is not available.` `poetry` is missing.
 `xbps-query` shows us this:
 
 ```
@@ -247,7 +247,7 @@ maintainer="meator <meator.dev@gmail.com>"
 license="MIT"
 homepage="https://github.com/fdw/rofimoji"
 changelog="https://raw.githubusercontent.com/fdw/rofimoji/main/CHANGELOG.md"
-distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/6.2.0.tar.gz"
+distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/${version}.tar.gz"
 checksum=21da8e6879ac16d774f3ce6dfcd1783cec891ad172617eead2c10597f477d9a9
 ```
 
@@ -274,7 +274,7 @@ maintainer="meator <meator.dev@gmail.com>"
 license="MIT"
 homepage="https://github.com/fdw/rofimoji"
 changelog="https://raw.githubusercontent.com/fdw/rofimoji/main/CHANGELOG.md"
-distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/6.2.0.tar.gz"
+distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/${version}.tar.gz"
 checksum=21da8e6879ac16d774f3ce6dfcd1783cec891ad172617eead2c10597f477d9a9
 
 post_install() {
@@ -298,7 +298,7 @@ maintainer="meator <meator.dev@gmail.com>"
 license="MIT"
 homepage="https://github.com/fdw/rofimoji"
 changelog="https://raw.githubusercontent.com/fdw/rofimoji/main/CHANGELOG.md"
-distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/6.2.0.tar.gz"
+distfiles="https://github.com/fdw/rofimoji/archive/refs/tags/${version}.tar.gz"
 checksum=21da8e6879ac16d774f3ce6dfcd1783cec891ad172617eead2c10597f477d9a9
 
 post_install() {

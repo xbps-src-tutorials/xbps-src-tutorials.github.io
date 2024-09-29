@@ -1,6 +1,6 @@
 # PR testing tutorial
 
-**This tutorial is up to date as of March 4, 2024**
+**This tutorial is up to date as of September 29, 2024**
 
 This tutorial will guide you through testing changes made in an open pull
 request in [`void-packages`](https://github.com/void-linux/void-packages).
@@ -198,7 +198,7 @@ sudo xi -f <package>
 
 here it would be
 ```
-sudo xi mdBook
+sudo xi -f mdBook
 ```
 
 And that's it. If you don't want to build any more packages, you can run

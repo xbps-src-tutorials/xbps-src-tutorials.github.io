@@ -314,7 +314,7 @@ user utilities). It has the `base-chroot` base package[^basechroot] installed
 The source of the package will be extracted (or put by other means) to
 `masterdir-x86_64/builddir/<package name>-<version>/` and it will install the
 built executable and supplementary files to
-`masterdir-x86_64/builddir/destdir/<package name>-<version>` as if it was
+`masterdir-x86_64/destdir/<package name>-<version>` as if it was
 installing to `/`. This is called **"fake destdir"** and it is supported by most
 major build systems. For instance, if a program would be normally installed to
 `/usr/bin/j4-dmenu-desktop`, it will be installed to
@@ -365,16 +365,23 @@ masterdir.
 As noted in the [troubleshooting page](../troubleshooting.md), you should run
 `./xbps-src clean` often when debugging a failing build.
 
+```admonish tip
+This is pretty useful by the way. If an `xbps-src` build fails, you can always
+look into `masterdir-x86_64/builddir/<package name>-<version>` to find the
+package in the state `xbps-src` left it in if the package build fails.
+```
+
 ### Introduction to templates (aka the return of j4-dmenu-desktop)
-_`j4-dmenu-desktop` is [already packaged in
+~~~admonish warning
+`j4-dmenu-desktop` is [already packaged in
 void-packages](https://github.com/void-linux/void-packages/tree/master/srcpkgs/j4-dmenu-desktop).
 You'll have to remove it if you want to follow along. You can remove it by
-running:_
+running:
+
 ```
 rm -r srcpkgs/j4-dmenu-desktop
 ```
-_You can compare your template to the official one after you finish this
-tutorial._
+~~~
 
 Let's package j4-dmenu-desktop.
 
@@ -465,10 +472,20 @@ explanation:
   `version=0.24.0`
    ~~~
 
-- `revision` = revision of the package; it can sometimes happen that the package
-               has to be changed without updating it to for example fix some
-               problem with the currently packaged version; `revision` is used
-               to differentiate these
+  But all rules have exceptions. I've recently [seen a
+  package](https://sourceforge.net/projects/sf-xpaint/files/libxaw3dxft/) that
+  uses letters for versioning (`1.6.2`, `1.6.2b`, `1.6.2c`, `1.6.2d`...). The
+  letters should of course be included in `version` for this specific package,
+  because they are necessary to differentiate versions. And then there is the
+  legendary
+  `font-adobe-source-code-pro-2.038R~ro+1.058R~it+1.018R~VAR_1`. This package's
+  `pkgver` is so long that it breaks the UI of some XBPS utilities (but it's only
+  visual).
+
+- `revision` = revision of the package; it might sometimes be necessary to
+               update a package without changing its version (this is a
+               so-called "revbump"); this is useful when the currently packaged
+               version of the program needs fixing
 
    The `pkgver` of a package consists of `${pkgname}-${version}_${revision}`.
    For example `j4-dmenu-desktop-2.18_3`. As you can see, `revision` is
@@ -490,6 +507,17 @@ explanation:
 
    ~~~admonish success title="Good"
   `short_desc="Desktop menu"`
+   ~~~
+
+   The description should be terse (it is called `short_desc` for a reason):
+
+   ~~~admonish failure title="Bad"
+  ```sh
+  short_desc="This is a desktop menu"
+  ```
+  ```sh
+  short_desc="Desktop menu with support for dmenu-compatible menu programs"
+  ```
    ~~~
 
    A good choice for `short_desc` is the GitHub short description (if the
@@ -562,10 +590,10 @@ explanation:
 We need to gather all of this information about `j4-dmenu-desktop` to be able to
 package it.
 
-We will be packaging the latest release `2.18` of `j4-dmenu-desktop`. Its
-`short_desc` is `Fast desktop menu`, `maintainer` is prefilled,
-`j4-dmenu-desktop`'s license is `GPL-3.0-or-later`, its homepage is
-<https://github.com/enkore/j4-dmenu-desktop> and its changelog is
+We will be packaging the release `2.18` ([see note](#admonition-attention))
+of `j4-dmenu-desktop`. Its `short_desc` is `Fast desktop menu`, `maintainer`
+is prefilled, `j4-dmenu-desktop`'s license is `GPL-3.0-or-later`, its homepage
+is <https://github.com/enkore/j4-dmenu-desktop> and its changelog is
 <https://raw.githubusercontent.com/enkore/j4-dmenu-desktop/develop/CHANGELOG>.
 This is all we need for now.
 
@@ -737,6 +765,8 @@ that shouldn't be overridden. It is set to `<masterdir>/builddir`, here
 - `post_patch()` through `post_install()` (14 stages) are executed in
 `build_wrksrc` if it's defined, otherwise in `wrksrc`
 
+We can see here that most stages are executed with `$CWD` in `$wrksrc`.
+
 #### wrksrc
 `xbps-src` also defines some variables itself for us to use. One of them is
 `wrksrc`.
@@ -805,7 +835,7 @@ The current template doesn't install it to your computer's root, but to
 `masterdir`'s root, because `masterdir` is isolated.
 
 Installing things to `masterdir` is not tolerable in templates. It pollutes the
-`masterdir` and it can no longer be safely used afterwards.
+`masterdir` and it can no longer be safely used afterwards[^polute-masterdir].
 
 In CMake, this can be solved by calling `make install` like this:
 
@@ -951,12 +981,12 @@ say `armv6l`, the compiled result can be executed only on `armv6l`, not on
 `x86_64` ([unless you use QEMU](../tips-and-tricks.md#qemu), but that method
 cannot be used everywhere).
 
-Sometimes the build system tries to run what it compiles. Software using such
-build systems is not cross-compilation friendly. Such build systems have to be
-patched to allow cross-compilation. This requires knowledge of the package's
-build system and a basic understanding of the program's structure. This isn't
-trivial to solve, it depends on the size of the program and the complexity of
-its build system, but it's doable.
+Sometimes the package's build system tries to run what it compiles. Software
+using such build systems is not cross-compilation friendly. Such build systems
+have to be patched to allow cross-compilation. This requires knowledge of the
+package's build system and a basic understanding of the program's structure.
+This isn't trivial to solve, it depends on the size of the program and the
+complexity of its build system, but it's doable.
 
 ### How does cross-compilation work?
 _This describes the cross-compilation of C/C++ code. Other programming languages
@@ -965,7 +995,8 @@ in `xbps-src`._
 
 Cross-compilation works pretty much the same as normal compilation, but a cross
 compiler must be used instead of a normal one. Void Linux provides many cross
-compilers in the `cross-*` packages.
+compilers in the `cross-*` packages (for example `cross-armv7l-linux-gnueabihf`
+cross compiles to `armv7l` with `glibc` libc).
 
 You might wonder how can you modify the `j4-dmenu-desktop` template to support
 these `cross-` packages. But you do not have to, `xbps-src` does it for you if
@@ -1119,8 +1150,9 @@ Scroll down until you see r2.18:
 
 ![GitHub release](../images/j4-dmenu-desktop/github_release.png)
 
-Some projects include prebuilt binaries in their releases. You mustn't use them
-if you want your package to be included in
+Some projects include prebuilt binaries in their releases (`j4-dmenu-desktop`
+doesn't, but `bat` described [in the next chapter of this tutorial](bat.md)
+does). You mustn't use them if you want your package to be included in
 [void-packages](https://github.com/void-linux/void-packages). You should choose
 the `Source code (tar.gz)` option:
 
@@ -1373,11 +1405,8 @@ now we know how the tests would have been fixed if they had worked.
 They luckily provide another CMake option for that, `WITH_TESTS`. This will get
 rid of the `catch2` dependency altogether.
 
-_At the time of writing this tutorial, even the official packaged version doesn't
-have working checks._
-
 A comment near `configure_args` explaining this situation should be added to
-show good manners to other packagers.
+show good manners to other packagers reading the template.
 
 If `j4-dmenu-desktop`'s build system wouldn't provide a way to turn off checks,
 we could tell `xbps-src` to skip them. Checks can be turned off with the
@@ -1470,8 +1499,8 @@ not a sign of good C++ code. Thankfully the solution is pretty simple.
 
 If you do not have experience with C or C++, you'll have to [ask for
 help](index.md#irc) or try to look for a patch elsewhere. Sometimes the fix has
-been already implemented in master. You can then get this patch and
-[respectfully ask upstream to make a newer release including the
+been already implemented in upstream's development version. You can then get
+this patch and [respectfully ask upstream to make a newer release including the
 fix](../troubleshooting.md#notifying-upstream).
 
 Or you can get "inspired" by other repositories like the [official Arch
@@ -1509,7 +1538,12 @@ Fixes failing build on missing header file. Fixed in master.
  #include "LocaleSuffixes.hh"
 ```
 
-You can then put it to `srcpkgs/j4-dmenu-desktop/patches/fix_headers.patch`.
+If you obtained the patch from somewhere else (such as being "inspired" by
+another distro’s repositories, as mentioned above), you should include a link to
+the original patch in the header.
+
+You can put the patch in `srcpkgs/j4-dmenu-desktop/patches/fix_headers.patch`
+(you'll have to `mkdir` the `srcpkgs/j4-dmenu-desktop/patches/` directory).
 `j4-dmenu-desktop` should be buildable now.
 
 ### Linting
@@ -1605,7 +1639,7 @@ Stages are usually executed in `$wrksrc`.
 
 Building and installation should be handled by build styles.
 
-They can be modified with variables.
+They can be modified with variables like `configure_args`.
 
 Code should be downloaded using `distfiles` and not git. The `Source code
 (tar.gz)` GitHub archive should be chosen.
@@ -1645,6 +1679,10 @@ packaging another program, [`bat`](https://github.com/sharkdp/bat):
                void-packages masterdirs access a special repository called
                `bootstrap`.
 [^ornot]: Or not!
+[^polute-masterdir]: If the masterdir (the small isolated Void linux install that
+                     does all the building) gets into an inconsistent state, you
+                     can zap it as described in
+                     [troubleshooting](../troubleshooting.md#having-clean-masterdir).
 [^bytecompiled]: Python packages are _byte compiled_ on Void, but that is
                  something different.
 [^buildstyledeps]: Not all build styles do that.

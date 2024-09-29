@@ -4,11 +4,11 @@ https://github.com/rust-lang/mdBook/issues/2341 -->
 
 # Xbps-src packaging tutorial
 
-**This tutorial is up to date as of March 4, 2024**
+**This tutorial is up to date as of September 29, 2024**
 
-This tutorial will guide you through packaging using `xbps-src` for inclusion
-in [void-packages](https://github.com/void-linux/void-packages) repository or
-for personal use.
+This tutorial will guide you through packaging with `xbps-src`, either for
+inclusion in the [void-packages](https://github.com/void-linux/void-packages)
+repository or for personal use.
 
 **Prerequisites**
 
@@ -34,7 +34,7 @@ This tutorial assumes no prior knowledge of packaging systems.
 ## Introduction
 `xbps-src` is a simple but capable build system. It is one of Void Linux's major
 strengths, but its official documentation can be difficult to understand for
-those who do not have experience with build systems. This tutorial aims to
+those who do not have experience with packaging systems. This tutorial aims to
 bridge that gap.
 
 I try to cover the basics. Feel free to skip some sections. But don't skip too
