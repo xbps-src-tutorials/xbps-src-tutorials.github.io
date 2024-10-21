@@ -87,7 +87,7 @@ There are two ways to check out a PR: with `gh` or with `git`.
 This method requires `github-cli` to be installed.
 
 `github-cli` requires authentication to your GitHub account. If you aren't
-authenticated, `github-cli` will show you instructions on how to authenticate.
+authenticated, `gh` will show you instructions on how to authenticate.
 
 You can check out the pull request by
 ```
