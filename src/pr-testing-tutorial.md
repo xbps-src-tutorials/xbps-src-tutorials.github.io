@@ -18,7 +18,7 @@ request in [`void-packages`](https://github.com/void-linux/void-packages).
 The steps to follow differ depending on whether you already have a
 [`void-packages`](https://github.com/void-linux/void-packages) clone.
 
-- [You don’t have a `void-packages` clone](#you-dont-have-a-void-packages-clone)
+- You don’t have a `void-packages` clone
    - [You want to try out a singe PR and never touch `void-packages`
    again](#you-want-to-try-out-a-singe-pr-and-never-touch-void-packages-again)
    - [You want to have `void-packages` for future
