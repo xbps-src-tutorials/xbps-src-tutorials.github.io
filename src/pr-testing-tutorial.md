@@ -52,6 +52,11 @@ git clone --depth 1 --single-branch --branch=mdBook-completions https://github.c
 
 You must replace the branch and the link with yours.
 
+Don't forget to enter your freshly downloaded clone:
+```sh
+cd void-packages
+```
+
 You can now continue with [Setting up the builddir](#setting-up-the-builddir).
 
 #### You want to have `void-packages` for future use
@@ -66,6 +71,11 @@ This takes about 15 minutes and 626MiB on my laptop.
 To speed this up, you can look at [different ways of
 cloning](tips-and-tricks.md#different-ways-of-cloning). But the full clone
 should be preferred.
+
+Don't forget to enter your freshly downloaded clone:
+```sh
+cd void-packages
+```
 
 You can then continue with [You have a `void-packages`
 clone](#you-have-a-void-packages-clone).
