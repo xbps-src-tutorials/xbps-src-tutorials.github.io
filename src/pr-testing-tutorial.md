@@ -101,7 +101,8 @@ GitHub has a handy button for that:
 should select `void-linux/void-packages`.
 
 #### git
-You'll have to figure out the pull request number. You can find it here:
+You'll have to figure out the pull request number. You can find it here
+(excluding the leading `#` character):
 
 ![pr number](images/pr_testing/pr_number.png)
 
