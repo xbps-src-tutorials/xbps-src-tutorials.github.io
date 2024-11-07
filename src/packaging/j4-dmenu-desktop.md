@@ -72,7 +72,7 @@ the program could be big, it could take hours to build and its build system
 could be complicated and involved. All these problems are avoidable because
 your friends only need the executables (and shared libraries + possibly some
 supplementary data files like `/etc/` config). You already have all of this, you
-just need to send it to them. They don't need the code.
+just need to send it to them. They don't need the source.
 
 This means that you (again) have to know which files are installed by
 `j4-dmenu-desktop` to know what to send _and_ they will also have to keep track
