@@ -15,7 +15,7 @@ Having a outdated clone of
 common cause for problems in `xbps-src`.
 
 **`xbps-src` doesn't use remote repositories to resolve dependencies.** It uses
-the template files instead in the repository. An advantage of this approach is
+the template files in the repository instead. An advantage of this approach is
 that it makes `xbps-src` more independent from the remote repositories, but a
 major disadvantage is that this approach makes `xbps-src` more independent from
 the remote repositories.
