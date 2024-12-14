@@ -12,6 +12,12 @@ rm -r srcpkgs/rofimoji
 
 <!-- toc -->
 
+```admonish warning
+This chapter may become out of date soon. See
+<https://github.com/void-linux/void-packages/pull/53326> for more info.
+I'll update this chapter when time allows. --- meator
+```
+
 ## Gathering info
 Repository used for gathering the info: <https://github.com/fdw/rofimoji>
 
