@@ -561,8 +561,17 @@ explanation:
 
   ~~~
 
-  A project can have multiple licenses. They have to be all specified in
-  `license` delimited by ", " (comma and space).
+  A project can have multiple licenses. [SPDX license
+  expressions](https://spdx.github.io/spdx-spec/v3.0/annexes/SPDX-license-expressions/)
+  should be used when that happens. (examples: `MIT OR Apache-2.0`, `MIT AND
+  (LGPL-2.1-or-later OR BSD-3-Clause)`).
+
+  ```admonish note
+  void-packages used to use a comma (", ") to separate licenses. This is now
+  discouraged. The legacy comma-separated format should be converted when
+  encountered (old example: `GPL-3.0-or-later, custom:Hugware`).
+  ```
+
 - `homepage` = project's homepage; a link to the GitHub/GitLab etc. repository
                is usually sufficient (if the project doesn't have a custom
                website)
